@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the AnyValueArray class from the AnyValueArray library, for the Dart programming language.">
+  <title>AnyValueArray class - AnyValueArray library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">pip_services4_commons</a></li>
+    <li><a href="../file-___app_lib_src_data_AnyValueArray/file-___app_lib_src_data_AnyValueArray-library.html">AnyValueArray</a></li>
+    <li class="self-crumb">AnyValueArray class</li>
+  </ol>
+  <div class="self-name">AnyValueArray</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-class">AnyValueArray</span> class 
+ 
+</h1></div>
+
+    
+<section class="desc markdown">
+  <p>Cross-language implementation of dynamic object array what can hold values of any type.
+The stored values can be converted to different types using variety of accessor methods.</p>
+<h3 id="example">Example</h3>
+<pre class="language-dart"><code>var value1 =  AnyValueArray([1, '123.456', '2018-01-01']);
+
+value1.getAsBoolean(0);   // Result: true
+value1.getAsInteger(1);   // Result: 123
+value1.getAsFloat(1);     // Result: 123.456
+value1.getAsDateTime(2);  // Result:  Date(2018,0,1)
+</code></pre>
+<p>See <a href="../file-___app_lib_src_convert_StringConverter/StringConverter-class.html">StringConverter</a>
+See <a href="../file-___app_lib_src_convert_TypeConverter/TypeConverter-class.html">TypeConverter</a>
+See <a href="../file-___app_lib_src_convert_BooleanConverter/BooleanConverter-class.html">BooleanConverter</a>
+See <a href="../file-___app_lib_src_convert_IntegerConverter/IntegerConverter-class.html">IntegerConverter</a>
+See <a href="../file-___app_lib_src_convert_LongConverter/LongConverter-class.html">LongConverter</a>
+See <a href="../file-___app_lib_src_convert_DoubleConverter/DoubleConverter-class.html">DoubleConverter</a>
+See <a href="../file-___app_lib_src_convert_FloatConverter/FloatConverter-class.html">FloatConverter</a>
+See <a href="../file-___app_lib_src_convert_DateTimeConverter/DateTimeConverter-class.html">DateTimeConverter</a>
+See <a href="../file-___app_lib_src_data_ICloneable/ICloneable-class.html">ICloneable</a></p>
+</section>
+
+
+    <section>
+      <dl class="dl-horizontal">
+        
+  <dt>Inheritance</dt>
+  <dd>
+    <ul class="gt-separated dark clazz-relationships">
+      <li><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object-class.html">Object</a></li>
+        <li><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase-class.html">ListBase</a></li>
+      <li>AnyValueArray</li>
+    </ul>
+  </dd>
+
+        
+  <dt>Implemented types</dt>
+  <dd>
+    <ul class="comma-separated clazz-relationships">
+        <li><a href="../file-___app_lib_src_data_ICloneable/ICloneable-class.html">ICloneable</a></li>
+        <li><a href="../file-___app_lib_src_reflect_IValueWrapper/IValueWrapper-class.html">IValueWrapper</a></li>
+    </ul>
+  </dd>
+        
+
+
+        <dt>Available Extensions</dt>
+        <dd><ul class="comma-separated clazz-relationships">
+          <li><a href="https://api.dart.dev/stable/3.0.6/dart-core/EnumByName.html">EnumByName</a></li>
+          <li><a href="https://api.dart.dev/stable/3.0.6/dart-collection/IterableExtensions.html">IterableExtensions</a></li>
+          <li><a href="https://api.dart.dev/stable/3.0.6/dart-collection/NullableIterableExtensions.html">NullableIterableExtensions</a></li>
+        </ul></dd>
+
+        
+
+
+      </dl>
+    </section>
+
+    
+  <section class="summary offset-anchor" id="constructors">
+    <h2>Constructors</h2>
+
+    <dl class="constructor-summary-list">
+        <dt id="AnyValueArray" class="callable">
+          <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/AnyValueArray.html">AnyValueArray</a></span><span class="signature">(<span class="parameter" id="-param-values">[<span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a>?</span> <span class="parameter-name">values</span>]</span>)</span>
+        </dt>
+        <dd>
+          Creates a new instance of the array and assigns its value.
+        </dd>
+        <dt id="AnyValueArray.fromJson" class="callable">
+          <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/AnyValueArray.fromJson.html">AnyValueArray.fromJson</a></span><span class="signature">(<span class="parameter" id="fromJson-param-json"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.0.6/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">json</span></span>)</span>
+        </dt>
+        <dd>
+          Creates a new instance of the array from JSON.
+            <div class="constructor-modifier features">factory</div>
+        </dd>
+    </dl>
+  </section>
+
+    <section class="summary offset-anchor" id="instance-properties">
+      <h2>Properties</h2>
+
+      <dl class="properties">
+        <dt id="first" class="property inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/first.html">first</a></span>
+  <span class="signature">&#8596; dynamic</span> 
+
+</dt>
+<dd class="inherited">
+  The first element.
+  <div class="features"><span class="feature">read / write</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="hashCode" class="property inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object/hashCode.html">hashCode</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> 
+
+</dt>
+<dd class="inherited">
+  The hash code for this object.
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="isEmpty" class="property inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/isEmpty.html">isEmpty</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span> 
+
+</dt>
+<dd class="inherited">
+  Whether this collection has no elements.
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="isNotEmpty" class="property inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/isNotEmpty.html">isNotEmpty</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span> 
+
+</dt>
+<dd class="inherited">
+  Whether this collection has at least one element.
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="iterator" class="property inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/iterator.html">iterator</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterator-class.html">Iterator</a></span> 
+
+</dt>
+<dd class="inherited">
+  A new <code>Iterator</code> that allows iterating the elements of this <code>Iterable</code>.
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="last" class="property inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/last.html">last</a></span>
+  <span class="signature">&#8596; dynamic</span> 
+
+</dt>
+<dd class="inherited">
+  The last element.
+  <div class="features"><span class="feature">read / write</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="length" class="property">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/length.html">length</a></span>
+  <span class="signature">&#8596; <a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> 
+
+</dt>
+<dd>
+  The number of objects in this list.
+  <div class="features"><span class="feature">read / write</span><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="reversed" class="property inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/reversed.html">reversed</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a></span> 
+
+</dt>
+<dd class="inherited">
+  An <a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a> of the objects in this list in reverse order.
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="runtimeType" class="property inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object/runtimeType.html">runtimeType</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Type-class.html">Type</a></span> 
+
+</dt>
+<dd class="inherited">
+  A representation of the runtime type of the object.
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="single" class="property inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/single.html">single</a></span>
+  <span class="signature">&#8594; dynamic</span> 
+
+</dt>
+<dd class="inherited">
+  Checks that this iterable has only one element, and returns that element.
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+      </dl>
+    </section>
+
+    
+  <section
+      class="summary offset-anchor"
+      id="instance-methods">
+    <h2>Methods</h2>
+    <dl class="callables">
+        <dt id="add" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/add.html">add</a></span><span class="signature">(<wbr><span class="parameter" id="add-param-element"><span class="type-annotation">dynamic</span> <span class="parameter-name">element</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Adds <code>value</code> to the end of this list,
+extending the length by one.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="addAll" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/addAll.html">addAll</a></span><span class="signature">(<wbr><span class="parameter" id="addAll-param-iterable"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a></span> <span class="parameter-name">iterable</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Appends all objects of <code>iterable</code> to the end of this list.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="any" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/any.html">any</a></span><span class="signature">(<wbr><span class="parameter" id="any-param-test"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">dynamic</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Checks whether any element of this iterable satisfies <code>test</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="append" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/append.html">append</a></span><span class="signature">(<wbr><span class="parameter" id="append-param-elements"><span class="type-annotation">dynamic</span> <span class="parameter-name">elements</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Appends new elements to this array.
+  
+
+</dd>
+
+        <dt id="asMap" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/asMap.html">asMap</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  An unmodifiable <a href="https://api.dart.dev/stable/3.0.6/dart-core/Map-class.html">Map</a> view of this list.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="cast" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/cast.html">cast</a></span><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Returns a view of this list as a list of <code>R</code> instances.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="clear" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/clear.html">clear</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Clears this array by removing all its elements.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="clone" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/clone.html">clone</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Creates a binary clone of this object.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="contains" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/contains.html">contains</a></span><span class="signature">(<wbr><span class="parameter" id="contains-param-value"><span class="type-annotation">dynamic</span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Checks if this array contains a value.
+The check uses direct comparison between elements and the specified value.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="containsAsType" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/containsAsType.html">containsAsType</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="containsAsType-param-typeCode"><span class="type-annotation"><a href="../file-___app_lib_src_convert_TypeCode/TypeCode.html">TypeCode</a></span> <span class="parameter-name">typeCode</span>, </span><span class="parameter" id="containsAsType-param-value"><span class="type-annotation">dynamic</span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Checks if this array contains a value.
+The check before comparison converts elements and the value to type specified by type code.
+  
+
+</dd>
+
+        <dt id="elementAt" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/elementAt.html">elementAt</a></span><span class="signature">(<wbr><span class="parameter" id="elementAt-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Returns the <code>index</code>th element.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="every" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/every.html">every</a></span><span class="signature">(<wbr><span class="parameter" id="every-param-test"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">dynamic</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Checks whether every element of this iterable satisfies <code>test</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="expand" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/expand.html">expand</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="expand-param-f"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span>(<span class="parameter" id="param-element"><span class="type-annotation">dynamic</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Expands each element of this <a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a> into zero or more elements.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="fillRange" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/fillRange.html">fillRange</a></span><span class="signature">(<wbr><span class="parameter" id="fillRange-param-start"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">start</span>, </span><span class="parameter" id="fillRange-param-end"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">end</span>, </span><span class="parameter" id="fillRange-param-fill">[<span class="type-annotation">dynamic</span> <span class="parameter-name">fill</span>]</span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Overwrites a range of elements with <code>fillValue</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="firstWhere" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/firstWhere.html">firstWhere</a></span><span class="signature">(<wbr><span class="parameter" id="firstWhere-param-test"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">dynamic</span> <span class="parameter-name">element</span></span>), </span><span class="parameter" id="firstWhere-param-orElse">{<span class="type-annotation">dynamic</span> <span class="parameter-name">orElse</span>()?}</span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The first element that satisfies the given predicate <code>test</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="fold" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/fold.html">fold</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="fold-param-initialValue"><span class="type-annotation">T</span> <span class="parameter-name">initialValue</span>, </span><span class="parameter" id="fold-param-combine"><span class="type-annotation">T</span> <span class="parameter-name">combine</span>(<span class="parameter" id="param-previousValue"><span class="type-annotation">T</span> <span class="parameter-name">previousValue</span>, </span><span class="parameter" id="param-element"><span class="type-annotation">dynamic</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; T</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Reduces a collection to a single value by iteratively combining each
+element of the collection with an existing value
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="followedBy" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/followedBy.html">followedBy</a></span><span class="signature">(<wbr><span class="parameter" id="followedBy-param-other"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Creates the lazy concatenation of this iterable and <code>other</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="forEach" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/forEach.html">forEach</a></span><span class="signature">(<wbr><span class="parameter" id="forEach-param-action"><span class="type-annotation">void</span> <span class="parameter-name">action</span>(<span class="parameter" id="param-element"><span class="type-annotation">dynamic</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Invokes <code>action</code> on each element of this iterable in iteration order.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="fromJson" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/fromJson.html">fromJson</a></span><span class="signature">(<wbr><span class="parameter" id="fromJson-param-json"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.0.6/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">json</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Initialize this object from JSON Map object
+  
+
+</dd>
+
+        <dt id="get" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/get.html">get</a></span><span class="signature">(<wbr><span class="parameter" id="get-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Gets an array element specified by its index.
+  
+
+</dd>
+
+        <dt id="getAsArray" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsArray.html">getAsArray</a></span><span class="signature">(<wbr><span class="parameter" id="getAsArray-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray-class.html">AnyValueArray</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into an AnyValueArray or returns empty AnyValueArray if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsArrayWithDefault" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsArrayWithDefault.html">getAsArrayWithDefault</a></span><span class="signature">(<wbr><span class="parameter" id="getAsArrayWithDefault-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>, </span><span class="parameter" id="getAsArrayWithDefault-param-defaultValue"><span class="type-annotation"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray-class.html">AnyValueArray</a></span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray-class.html">AnyValueArray</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into an AnyValueArray or returns default value if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsBoolean" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsBoolean.html">getAsBoolean</a></span><span class="signature">(<wbr><span class="parameter" id="getAsBoolean-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a boolean or returns false if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsBooleanWithDefault" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsBooleanWithDefault.html">getAsBooleanWithDefault</a></span><span class="signature">(<wbr><span class="parameter" id="getAsBooleanWithDefault-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>, </span><span class="parameter" id="getAsBooleanWithDefault-param-defaultValue"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a boolean or returns default value if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsDateTime" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsDateTime.html">getAsDateTime</a></span><span class="signature">(<wbr><span class="parameter" id="getAsDateTime-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/DateTime-class.html">DateTime</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a DateTime or returns the current date if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsDateTimeWithDefault" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsDateTimeWithDefault.html">getAsDateTimeWithDefault</a></span><span class="signature">(<wbr><span class="parameter" id="getAsDateTimeWithDefault-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>, </span><span class="parameter" id="getAsDateTimeWithDefault-param-defaultValue"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/DateTime-class.html">DateTime</a></span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/DateTime-class.html">DateTime</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a DateTime or returns default value if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsDouble" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsDouble.html">getAsDouble</a></span><span class="signature">(<wbr><span class="parameter" id="getAsDouble-param-index"><span class="type-annotation">dynamic</span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/double-class.html">double</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a double or returns 0 if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsDoubleWithDefault" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsDoubleWithDefault.html">getAsDoubleWithDefault</a></span><span class="signature">(<wbr><span class="parameter" id="getAsDoubleWithDefault-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>, </span><span class="parameter" id="getAsDoubleWithDefault-param-defaultValue"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/double-class.html">double</a></span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/double-class.html">double</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a double or returns default value if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsDuration" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsDuration.html">getAsDuration</a></span><span class="signature">(<wbr><span class="parameter" id="getAsDuration-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Duration-class.html">Duration</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a Duration or returns the current date if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsDurationWithDefault" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsDurationWithDefault.html">getAsDurationWithDefault</a></span><span class="signature">(<wbr><span class="parameter" id="getAsDurationWithDefault-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>, </span><span class="parameter" id="getAsDurationWithDefault-param-defaultValue"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Duration-class.html">Duration</a></span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Duration-class.html">Duration</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a Duration or returns default value if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsFloat" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsFloat.html">getAsFloat</a></span><span class="signature">(<wbr><span class="parameter" id="getAsFloat-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/double-class.html">double</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a float or returns 0 if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsFloatWithDefault" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsFloatWithDefault.html">getAsFloatWithDefault</a></span><span class="signature">(<wbr><span class="parameter" id="getAsFloatWithDefault-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>, </span><span class="parameter" id="getAsFloatWithDefault-param-defaultValue"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/double-class.html">double</a></span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/double-class.html">double</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a float or returns default value if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsInteger" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsInteger.html">getAsInteger</a></span><span class="signature">(<wbr><span class="parameter" id="getAsInteger-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into an integer or returns 0 if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsIntegerWithDefault" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsIntegerWithDefault.html">getAsIntegerWithDefault</a></span><span class="signature">(<wbr><span class="parameter" id="getAsIntegerWithDefault-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>, </span><span class="parameter" id="getAsIntegerWithDefault-param-defaultValue"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into an integer or returns default value if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsLong" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsLong.html">getAsLong</a></span><span class="signature">(<wbr><span class="parameter" id="getAsLong-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a long or returns 0 if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsLongWithDefault" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsLongWithDefault.html">getAsLongWithDefault</a></span><span class="signature">(<wbr><span class="parameter" id="getAsLongWithDefault-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>, </span><span class="parameter" id="getAsLongWithDefault-param-defaultValue"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a long or returns default value if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsMap" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsMap.html">getAsMap</a></span><span class="signature">(<wbr><span class="parameter" id="getAsMap-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../file-___app_lib_src_data_AnyValueMap/AnyValueMap-class.html">AnyValueMap</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into an AnyValueMap or returns empty AnyValueMap if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsMapWithDefault" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsMapWithDefault.html">getAsMapWithDefault</a></span><span class="signature">(<wbr><span class="parameter" id="getAsMapWithDefault-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>, </span><span class="parameter" id="getAsMapWithDefault-param-defaultValue"><span class="type-annotation"><a href="../file-___app_lib_src_data_AnyValueMap/AnyValueMap-class.html">AnyValueMap</a></span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../file-___app_lib_src_data_AnyValueMap/AnyValueMap-class.html">AnyValueMap</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into an AnyValueMap or returns default value if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsNullableArray" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableArray.html">getAsNullableArray</a></span><span class="signature">(<wbr><span class="parameter" id="getAsNullableArray-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray-class.html">AnyValueArray</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into an AnyValueArray or returns null if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsNullableBoolean" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableBoolean.html">getAsNullableBoolean</a></span><span class="signature">(<wbr><span class="parameter" id="getAsNullableBoolean-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a boolean or returns null if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsNullableDateTime" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableDateTime.html">getAsNullableDateTime</a></span><span class="signature">(<wbr><span class="parameter" id="getAsNullableDateTime-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/DateTime-class.html">DateTime</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a DateTime or returns null if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsNullableDouble" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableDouble.html">getAsNullableDouble</a></span><span class="signature">(<wbr><span class="parameter" id="getAsNullableDouble-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/double-class.html">double</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a double or returns null if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsNullableDuration" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableDuration.html">getAsNullableDuration</a></span><span class="signature">(<wbr><span class="parameter" id="getAsNullableDuration-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Duration-class.html">Duration</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a Duration or returns null if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsNullableFloat" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableFloat.html">getAsNullableFloat</a></span><span class="signature">(<wbr><span class="parameter" id="getAsNullableFloat-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/double-class.html">double</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a float or returns null if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsNullableInteger" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableInteger.html">getAsNullableInteger</a></span><span class="signature">(<wbr><span class="parameter" id="getAsNullableInteger-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into an integer or returns null if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsNullableLong" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableLong.html">getAsNullableLong</a></span><span class="signature">(<wbr><span class="parameter" id="getAsNullableLong-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a long or returns null if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsNullableMap" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableMap.html">getAsNullableMap</a></span><span class="signature">(<wbr><span class="parameter" id="getAsNullableMap-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../file-___app_lib_src_data_AnyValueMap/AnyValueMap-class.html">AnyValueMap</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into an AnyValueMap or returns null if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsNullableString" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableString.html">getAsNullableString</a></span><span class="signature">(<wbr><span class="parameter" id="getAsNullableString-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/String-class.html">String</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a string or returns null if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsNullableType" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableType.html">getAsNullableType</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="getAsNullableType-param-type"><span class="type-annotation"><a href="../file-___app_lib_src_convert_TypeCode/TypeCode.html">TypeCode</a></span> <span class="parameter-name">type</span>, </span><span class="parameter" id="getAsNullableType-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; T?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a value defined by specied typecode.
+If conversion is not possible it returns null.
+  
+
+</dd>
+
+        <dt id="getAsObject" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsObject.html">getAsObject</a></span><span class="signature">(<wbr><span class="parameter" id="getAsObject-param-index">[<span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">index</span>]</span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Gets the value stored in array element without any conversions.
+When element index is not defined it returns the entire array value.
+  
+
+</dd>
+
+        <dt id="getAsString" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsString.html">getAsString</a></span><span class="signature">(<wbr><span class="parameter" id="getAsString-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a string or returns '' if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsStringWithDefault" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsStringWithDefault.html">getAsStringWithDefault</a></span><span class="signature">(<wbr><span class="parameter" id="getAsStringWithDefault-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>, </span><span class="parameter" id="getAsStringWithDefault-param-defaultValue"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/String-class.html">String</a></span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a string or returns default value if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsType" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsType.html">getAsType</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="getAsType-param-type"><span class="type-annotation"><a href="../file-___app_lib_src_convert_TypeCode/TypeCode.html">TypeCode</a></span> <span class="parameter-name">type</span>, </span><span class="parameter" id="getAsType-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; T</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a value defined by specied typecode.
+If conversion is not possible it returns default value for the specified type.
+  
+
+</dd>
+
+        <dt id="getAsTypeWithDefault" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsTypeWithDefault.html">getAsTypeWithDefault</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="getAsTypeWithDefault-param-type"><span class="type-annotation"><a href="../file-___app_lib_src_convert_TypeCode/TypeCode.html">TypeCode</a></span> <span class="parameter-name">type</span>, </span><span class="parameter" id="getAsTypeWithDefault-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>, </span><span class="parameter" id="getAsTypeWithDefault-param-defaultValue"><span class="type-annotation">T</span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; T</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into a value defined by specied typecode.
+If conversion is not possible it returns default value.
+  
+
+</dd>
+
+        <dt id="getAsValue" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsValue.html">getAsValue</a></span><span class="signature">(<wbr><span class="parameter" id="getAsValue-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../file-___app_lib_src_data_AnyValue/AnyValue-class.html">AnyValue</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts array element into an AnyValue or returns an empty AnyValue if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getRange" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/getRange.html">getRange</a></span><span class="signature">(<wbr><span class="parameter" id="getRange-param-start"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">start</span>, </span><span class="parameter" id="getRange-param-end"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">end</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Creates an <a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a> that iterates over a range of elements.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="getValue" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getValue.html">getValue</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/List-class.html">List</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Gets an array with values.
+  
+
+</dd>
+
+        <dt id="indexOf" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/indexOf.html">indexOf</a></span><span class="signature">(<wbr><span class="parameter" id="indexOf-param-element"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object-class.html">Object</a>?</span> <span class="parameter-name">element</span>, </span><span class="parameter" id="indexOf-param-start">[<span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">start</span> = <span class="default-value">0</span>]</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The first index of <code>element</code> in this list.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="indexWhere" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/indexWhere.html">indexWhere</a></span><span class="signature">(<wbr><span class="parameter" id="indexWhere-param-test"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">dynamic</span> <span class="parameter-name">element</span></span>), </span><span class="parameter" id="indexWhere-param-start">[<span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">start</span> = <span class="default-value">0</span>]</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The first index in the list that satisfies the provided <code>test</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="innerValue" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/innerValue.html">innerValue</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returned inner values in Map object
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="insert" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/insert.html">insert</a></span><span class="signature">(<wbr><span class="parameter" id="insert-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>, </span><span class="parameter" id="insert-param-element"><span class="type-annotation">dynamic</span> <span class="parameter-name">element</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Inserts <code>element</code> at position <code>index</code> in this list.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="insertAll" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/insertAll.html">insertAll</a></span><span class="signature">(<wbr><span class="parameter" id="insertAll-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>, </span><span class="parameter" id="insertAll-param-iterable"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a></span> <span class="parameter-name">iterable</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Inserts all objects of <code>iterable</code> at position <code>index</code> in this list.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="join" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/join.html">join</a></span><span class="signature">(<wbr><span class="parameter" id="join-param-separator">[<span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/String-class.html">String</a></span> <span class="parameter-name">separator</span> = <span class="default-value">&quot;&quot;</span>]</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Converts each element to a <a href="https://api.dart.dev/stable/3.0.6/dart-core/String-class.html">String</a> and concatenates the strings.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="lastIndexOf" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/lastIndexOf.html">lastIndexOf</a></span><span class="signature">(<wbr><span class="parameter" id="lastIndexOf-param-element"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object-class.html">Object</a>?</span> <span class="parameter-name">element</span>, </span><span class="parameter" id="lastIndexOf-param-start">[<span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">start</span>]</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The last index of <code>element</code> in this list.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="lastIndexWhere" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/lastIndexWhere.html">lastIndexWhere</a></span><span class="signature">(<wbr><span class="parameter" id="lastIndexWhere-param-test"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">dynamic</span> <span class="parameter-name">element</span></span>), </span><span class="parameter" id="lastIndexWhere-param-start">[<span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">start</span>]</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The last index in the list that satisfies the provided <code>test</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="lastWhere" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/lastWhere.html">lastWhere</a></span><span class="signature">(<wbr><span class="parameter" id="lastWhere-param-test"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">dynamic</span> <span class="parameter-name">element</span></span>), </span><span class="parameter" id="lastWhere-param-orElse">{<span class="type-annotation">dynamic</span> <span class="parameter-name">orElse</span>()?}</span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The last element that satisfies the given predicate <code>test</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="map" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/map.html">map</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="map-param-f"><span class="type-annotation">T</span> <span class="parameter-name">f</span>(<span class="parameter" id="param-element"><span class="type-annotation">dynamic</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The current elements of this iterable modified by <code>toElement</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="noSuchMethod" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Invoked when a nonexistent method or property is accessed.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="put" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/put.html">put</a></span><span class="signature">(<wbr><span class="parameter" id="put-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>, </span><span class="parameter" id="put-param-value"><span class="type-annotation">dynamic</span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Puts a new value into array element specified by its index.
+  
+
+</dd>
+
+        <dt id="reduce" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/reduce.html">reduce</a></span><span class="signature">(<wbr><span class="parameter" id="reduce-param-combine"><span class="type-annotation">dynamic</span> <span class="parameter-name">combine</span>(<span class="parameter" id="param-previousValue"><span class="type-annotation">dynamic</span> <span class="parameter-name">previousValue</span>, </span><span class="parameter" id="param-element"><span class="type-annotation">dynamic</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Reduces a collection to a single value by iteratively combining elements
+of the collection using the provided function.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="remove" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/remove.html">remove</a></span><span class="signature">(<wbr><span class="parameter" id="remove-param-element"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object-class.html">Object</a>?</span> <span class="parameter-name">element</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Removes the first occurrence of <code>value</code> from this list.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="removeAt" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/removeAt.html">removeAt</a></span><span class="signature">(<wbr><span class="parameter" id="removeAt-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Removes the object at position <code>index</code> from this list.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="removeLast" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/removeLast.html">removeLast</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Removes and returns the last object in this list.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="removeRange" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/removeRange.html">removeRange</a></span><span class="signature">(<wbr><span class="parameter" id="removeRange-param-start"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">start</span>, </span><span class="parameter" id="removeRange-param-end"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">end</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Removes a range of elements from the list.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="removeWhere" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/removeWhere.html">removeWhere</a></span><span class="signature">(<wbr><span class="parameter" id="removeWhere-param-test"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">dynamic</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Removes all objects from this list that satisfy <code>test</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="replaceRange" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/replaceRange.html">replaceRange</a></span><span class="signature">(<wbr><span class="parameter" id="replaceRange-param-start"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">start</span>, </span><span class="parameter" id="replaceRange-param-end"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">end</span>, </span><span class="parameter" id="replaceRange-param-newContents"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a></span> <span class="parameter-name">newContents</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Replaces a range of elements with the elements of <code>replacements</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="retainWhere" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/retainWhere.html">retainWhere</a></span><span class="signature">(<wbr><span class="parameter" id="retainWhere-param-test"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">dynamic</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Removes all objects from this list that fail to satisfy <code>test</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="setAll" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/setAll.html">setAll</a></span><span class="signature">(<wbr><span class="parameter" id="setAll-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>, </span><span class="parameter" id="setAll-param-iterable"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a></span> <span class="parameter-name">iterable</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Overwrites elements with the objects of <code>iterable</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="setAsObject" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/setAsObject.html">setAsObject</a></span><span class="signature">(<wbr><span class="parameter" id="setAsObject-param-index"><span class="type-annotation">dynamic</span> <span class="parameter-name">index</span>, </span><span class="parameter" id="setAsObject-param-value"><span class="type-annotation">dynamic</span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sets a new value to array element specified by its index.
+When the index is not defined, it resets the entire array value.
+This method has double purpose because method overrides are not supported in JavaScript.
+  
+
+</dd>
+
+        <dt id="setRange" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/setRange.html">setRange</a></span><span class="signature">(<wbr><span class="parameter" id="setRange-param-start"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">start</span>, </span><span class="parameter" id="setRange-param-end"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">end</span>, </span><span class="parameter" id="setRange-param-iterable"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a></span> <span class="parameter-name">iterable</span>, </span><span class="parameter" id="setRange-param-skipCount">[<span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">skipCount</span> = <span class="default-value">0</span>]</span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Writes some elements of <code>iterable</code> into a range of this list.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="shuffle" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/shuffle.html">shuffle</a></span><span class="signature">(<wbr><span class="parameter" id="shuffle-param-random">[<span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-math/Random-class.html">Random</a>?</span> <span class="parameter-name">random</span>]</span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Shuffles the elements of this list randomly.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="singleWhere" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/singleWhere.html">singleWhere</a></span><span class="signature">(<wbr><span class="parameter" id="singleWhere-param-test"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">dynamic</span> <span class="parameter-name">element</span></span>), </span><span class="parameter" id="singleWhere-param-orElse">{<span class="type-annotation">dynamic</span> <span class="parameter-name">orElse</span>()?}</span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The single element that satisfies <code>test</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="skip" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/skip.html">skip</a></span><span class="signature">(<wbr><span class="parameter" id="skip-param-count"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Creates an <a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a> that provides all but the first <code>count</code> elements.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="skipWhile" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/skipWhile.html">skipWhile</a></span><span class="signature">(<wbr><span class="parameter" id="skipWhile-param-test"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">dynamic</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Creates an <code>Iterable</code> that skips leading elements while <code>test</code> is satisfied.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="sort" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/sort.html">sort</a></span><span class="signature">(<wbr><span class="parameter" id="sort-param-compare">[<span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">compare</span>(<span class="parameter" id="param-a"><span class="type-annotation">dynamic</span> <span class="parameter-name">a</span>, </span><span class="parameter" id="param-b"><span class="type-annotation">dynamic</span> <span class="parameter-name">b</span></span>)?]</span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Sorts this list according to the order specified by the <code>compare</code> function.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="sublist" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/sublist.html">sublist</a></span><span class="signature">(<wbr><span class="parameter" id="sublist-param-start"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">start</span>, </span><span class="parameter" id="sublist-param-end">[<span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">end</span>]</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/List-class.html">List</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Returns a new list containing the elements between <code>start</code> and <code>end</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="take" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/take.html">take</a></span><span class="signature">(<wbr><span class="parameter" id="take-param-count"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Creates a lazy iterable of the <code>count</code> first elements of this iterable.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="takeWhile" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/takeWhile.html">takeWhile</a></span><span class="signature">(<wbr><span class="parameter" id="takeWhile-param-test"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">dynamic</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Creates a lazy iterable of the leading elements satisfying <code>test</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="toJson" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/toJson.html">toJson</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.0.6/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returned JSON Map object from values of this object
+  
+
+</dd>
+
+        <dt id="toList" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/toList.html">toList</a></span><span class="signature">(<wbr><span class="parameter" id="toList-param-growable">{<span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">growable</span> = <span class="default-value">true</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/List-class.html">List</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Creates a <a href="https://api.dart.dev/stable/3.0.6/dart-core/List-class.html">List</a> containing the elements of this <a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="toSet" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/toSet.html">toSet</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Set-class.html">Set</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Creates a <a href="https://api.dart.dev/stable/3.0.6/dart-core/Set-class.html">Set</a> containing the same elements as this iterable.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="toString" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/toString.html">toString</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Gets a string representation of the object.
+The result is a comma-separated list of string representations of individual elements as
+'value1,value2,value3'
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="where" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/where.html">where</a></span><span class="signature">(<wbr><span class="parameter" id="where-param-test"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">dynamic</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Creates a new lazy <a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a> with all elements that satisfy the
+predicate <code>test</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="whereType" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/whereType.html">whereType</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Creates a new lazy <a href="https://api.dart.dev/stable/3.0.6/dart-core/Iterable-class.html">Iterable</a> with all elements that have type <code>T</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor"
+      id="operators">
+    <h2>Operators</h2>
+    <dl class="callables">
+        <dt id="operator +" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/operator_plus.html">operator +</a></span><span class="signature">(<wbr><span class="parameter" id="+-param-other"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/List-class.html">List</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/List-class.html">List</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Returns the concatenation of this list and <code>other</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="operator ==" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The equality operator.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="operator []" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/operator_get.html">operator []</a></span><span class="signature">(<wbr><span class="parameter" id="[]-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd>
+  The object at the given <code>index</code> in the list.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="operator []=" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/operator_put.html">operator []=</a></span><span class="signature">(<wbr><span class="parameter" id="[]=-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>, </span><span class="parameter" id="[]=-param-item"><span class="type-annotation">dynamic</span> <span class="parameter-name">item</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sets the value at the given <code>index</code> in the list to <code>value</code>.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+    
+  <section class="summary offset-anchor" id="static-methods">
+    <h2>Static Methods</h2>
+    <dl class="callables">
+        <dt id="fromString" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/fromString.html">fromString</a></span><span class="signature">(<wbr><span class="parameter" id="fromString-param-values"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">values</span>, </span><span class="parameter" id="fromString-param-separator"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/String-class.html">String</a></span> <span class="parameter-name">separator</span>, </span><span class="parameter" id="fromString-param-removeDuplicates">[<span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">removeDuplicates</span> = <span class="default-value">false</span>]</span>)
+    <span class="returntype parameter">&#8594; <a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray-class.html">AnyValueArray</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Splits specified string into elements using a separator and assigns
+the elements to a newly created AnyValueArray.
+  
+
+</dd>
+
+        <dt id="fromValue" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/fromValue.html">fromValue</a></span><span class="signature">(<wbr><span class="parameter" id="fromValue-param-value"><span class="type-annotation">dynamic</span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray-class.html">AnyValueArray</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts specified value into AnyValueArray.
+  
+
+</dd>
+
+        <dt id="fromValues" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/fromValues.html">fromValues</a></span><span class="signature">(<wbr><span class="parameter" id="fromValues-param-values"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/List-class.html">List</a></span> <span class="parameter-name">values</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray-class.html">AnyValueArray</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Creates a new AnyValueArray from a list of values
+  
+
+</dd>
+
+    </dl>
+  </section>
+    
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">pip_services4_commons</a></li>
+  <li><a href="../file-___app_lib_src_data_AnyValueArray/file-___app_lib_src_data_AnyValueArray-library.html">AnyValueArray</a></li>
+  <li class="self-crumb">AnyValueArray class</li>
+</ol>
+
+
+    <h5>AnyValueArray library</h5>
+    <ol>
+      <li class="section-title"><a href="../file-___app_lib_src_data_AnyValueArray/file-___app_lib_src_data_AnyValueArray-library.html#classes">Classes</a></li>
+        <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray-class.html">AnyValueArray</a></li>
+
+
+
+
+
+
+
+
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <ol>
+
+        <li class="section-title"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray-class.html#constructors">Constructors</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/AnyValueArray.html">AnyValueArray</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/AnyValueArray.fromJson.html">fromJson</a></li>
+
+
+        <li class="section-title">
+          <a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray-class.html#instance-properties">Properties</a>
+        </li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/first.html">first</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object/hashCode.html">hashCode</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/isEmpty.html">isEmpty</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/isNotEmpty.html">isNotEmpty</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/iterator.html">iterator</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/last.html">last</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/length.html">length</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/reversed.html">reversed</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object/runtimeType.html">runtimeType</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/single.html">single</a></li>
+
+        <li class="section-title"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray-class.html#instance-methods">Methods</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/add.html">add</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/addAll.html">addAll</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/any.html">any</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/append.html">append</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/asMap.html">asMap</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/cast.html">cast</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/clear.html">clear</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/clone.html">clone</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/contains.html">contains</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/containsAsType.html">containsAsType</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/elementAt.html">elementAt</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/every.html">every</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/expand.html">expand</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/fillRange.html">fillRange</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/firstWhere.html">firstWhere</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/fold.html">fold</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/followedBy.html">followedBy</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/forEach.html">forEach</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/fromJson.html">fromJson</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/get.html">get</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsArray.html">getAsArray</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsArrayWithDefault.html">getAsArrayWithDefault</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsBoolean.html">getAsBoolean</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsBooleanWithDefault.html">getAsBooleanWithDefault</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsDateTime.html">getAsDateTime</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsDateTimeWithDefault.html">getAsDateTimeWithDefault</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsDouble.html">getAsDouble</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsDoubleWithDefault.html">getAsDoubleWithDefault</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsDuration.html">getAsDuration</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsDurationWithDefault.html">getAsDurationWithDefault</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsFloat.html">getAsFloat</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsFloatWithDefault.html">getAsFloatWithDefault</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsInteger.html">getAsInteger</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsIntegerWithDefault.html">getAsIntegerWithDefault</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsLong.html">getAsLong</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsLongWithDefault.html">getAsLongWithDefault</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsMap.html">getAsMap</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsMapWithDefault.html">getAsMapWithDefault</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableArray.html">getAsNullableArray</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableBoolean.html">getAsNullableBoolean</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableDateTime.html">getAsNullableDateTime</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableDouble.html">getAsNullableDouble</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableDuration.html">getAsNullableDuration</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableFloat.html">getAsNullableFloat</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableInteger.html">getAsNullableInteger</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableLong.html">getAsNullableLong</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableMap.html">getAsNullableMap</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableString.html">getAsNullableString</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsNullableType.html">getAsNullableType</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsObject.html">getAsObject</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsString.html">getAsString</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsStringWithDefault.html">getAsStringWithDefault</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsType.html">getAsType</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsTypeWithDefault.html">getAsTypeWithDefault</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getAsValue.html">getAsValue</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/getRange.html">getRange</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/getValue.html">getValue</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/indexOf.html">indexOf</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/indexWhere.html">indexWhere</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/innerValue.html">innerValue</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/insert.html">insert</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/insertAll.html">insertAll</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/join.html">join</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/lastIndexOf.html">lastIndexOf</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/lastIndexWhere.html">lastIndexWhere</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/lastWhere.html">lastWhere</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/map.html">map</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/put.html">put</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/reduce.html">reduce</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/remove.html">remove</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/removeAt.html">removeAt</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/removeLast.html">removeLast</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/removeRange.html">removeRange</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/removeWhere.html">removeWhere</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/replaceRange.html">replaceRange</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/retainWhere.html">retainWhere</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/setAll.html">setAll</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/setAsObject.html">setAsObject</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/setRange.html">setRange</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/shuffle.html">shuffle</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/singleWhere.html">singleWhere</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/skip.html">skip</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/skipWhile.html">skipWhile</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/sort.html">sort</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/sublist.html">sublist</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/take.html">take</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/takeWhile.html">takeWhile</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/toJson.html">toJson</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/toList.html">toList</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/toSet.html">toSet</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/toString.html">toString</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/where.html">where</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/whereType.html">whereType</a></li>
+
+        <li class="section-title"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray-class.html#operators">Operators</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/ListBase/operator_plus.html">operator +</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object/operator_equals.html">operator ==</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/operator_get.html">operator []</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/operator_put.html">operator []=</a></li>
+
+
+
+        <li class="section-title"><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray-class.html#static-methods">Static methods</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/fromString.html">fromString</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/fromValue.html">fromValue</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray/fromValues.html">fromValues</a></li>
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pip_services4_commons
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

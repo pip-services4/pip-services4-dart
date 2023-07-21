@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the setAsObject method from the StringValueMap class, for the Dart programming language.">
+  <title>setAsObject method - StringValueMap class - StringValueMap library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">pip_services4_commons</a></li>
+    <li><a href="../../file-___app_lib_src_data_StringValueMap/file-___app_lib_src_data_StringValueMap-library.html">StringValueMap</a></li>
+    <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap-class.html">StringValueMap</a></li>
+    <li class="self-crumb">setAsObject method</li>
+  </ol>
+  <div class="self-name">setAsObject</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-method">setAsObject</span> method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+
+<span class="returntype">void</span>
+<span class="name ">setAsObject</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="setAsObject-param-key"><span class="type-annotation">dynamic</span> <span class="parameter-name">key</span>, </span></li>
+<li><span class="parameter" id="setAsObject-param-value">[<span class="type-annotation">dynamic</span> <span class="parameter-name">value</span>]</span></li>
+</ol>)
+
+      
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Sets a new value to map element specified by its index.
+When the index is not defined, it resets the entire map value.
+This method has double purpose because method overrides are not supported in JavaScript.</p>
+<ul>
+<li><code>key</code>       (optional) a key of the element to set</li>
+<li><code>value</code>     a new element or map value.</li>
+</ul>
+<p>See <a href="../../file-___app_lib_src_convert_MapConverter/MapConverter/toMap.html">MapConverter.toMap</a></p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">void setAsObject(key, [value]) {
+  if (value == null) {
+    clear();
+    var values = MapConverter.toMap(key);
+    append(values);
+  } else {
+    var keyObj = StringConverter.toNullableString(key);
+    if (keyObj != null) {
+      _values[keyObj] = StringConverter.toNullableString(value);
+    }
+  }
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">pip_services4_commons</a></li>
+  <li><a href="../../file-___app_lib_src_data_StringValueMap/file-___app_lib_src_data_StringValueMap-library.html">StringValueMap</a></li>
+  <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap-class.html">StringValueMap</a></li>
+  <li class="self-crumb">setAsObject method</li>
+</ol>
+
+
+    <h5>StringValueMap class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap-class.html#constructors">Constructors</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/StringValueMap.html">StringValueMap</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/StringValueMap.fromJson.html">fromJson</a></li>
+
+
+        <li class="section-title">
+          <a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap-class.html#instance-properties">Properties</a>
+        </li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/MapBase/entries.html">entries</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object/hashCode.html">hashCode</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/MapBase/isEmpty.html">isEmpty</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/MapBase/isNotEmpty.html">isNotEmpty</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/keys.html">keys</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/MapBase/length.html">length</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object/runtimeType.html">runtimeType</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/MapBase/values.html">values</a></li>
+
+        <li class="section-title"><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap-class.html#instance-methods">Methods</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/MapBase/addAll.html">addAll</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/MapBase/addEntries.html">addEntries</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/append.html">append</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/MapBase/cast.html">cast</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/clear.html">clear</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/clone.html">clone</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/MapBase/containsKey.html">containsKey</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/MapBase/containsValue.html">containsValue</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/MapBase/forEach.html">forEach</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/fromJson.html">fromJson</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/get.html">get</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsArray.html">getAsArray</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsArrayWithDefault.html">getAsArrayWithDefault</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsBoolean.html">getAsBoolean</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsBooleanWithDefault.html">getAsBooleanWithDefault</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsDateTime.html">getAsDateTime</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsDateTimeWithDefault.html">getAsDateTimeWithDefault</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsDouble.html">getAsDouble</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsDoubleWithDefault.html">getAsDoubleWithDefault</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsDuration.html">getAsDuration</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsDurationWithDefault.html">getAsDurationWithDefault</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsFloat.html">getAsFloat</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsFloatWithDefault.html">getAsFloatWithDefault</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsInteger.html">getAsInteger</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsIntegerWithDefault.html">getAsIntegerWithDefault</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsLong.html">getAsLong</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsLongWithDefault.html">getAsLongWithDefault</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsMap.html">getAsMap</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsMapWithDefault.html">getAsMapWithDefault</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsNullableArray.html">getAsNullableArray</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsNullableBoolean.html">getAsNullableBoolean</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsNullableDateTime.html">getAsNullableDateTime</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsNullableDouble.html">getAsNullableDouble</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsNullableDuration.html">getAsNullableDuration</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsNullableFloat.html">getAsNullableFloat</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsNullableInteger.html">getAsNullableInteger</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsNullableLong.html">getAsNullableLong</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsNullableMap.html">getAsNullableMap</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsNullableString.html">getAsNullableString</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsNullableType.html">getAsNullableType</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsObject.html">getAsObject</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsString.html">getAsString</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsStringWithDefault.html">getAsStringWithDefault</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsType.html">getAsType</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsTypeWithDefault.html">getAsTypeWithDefault</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getAsValue.html">getAsValue</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getKeys.html">getKeys</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/getValue.html">getValue</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/innerValue.html">innerValue</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/MapBase/map.html">map</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/put.html">put</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/MapBase/putIfAbsent.html">putIfAbsent</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/remove.html">remove</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/MapBase/removeWhere.html">removeWhere</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/setAsObject.html">setAsObject</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/toJson.html">toJson</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/toString.html">toString</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/MapBase/update.html">update</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-collection/MapBase/updateAll.html">updateAll</a></li>
+
+        <li class="section-title"><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap-class.html#operators">Operators</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object/operator_equals.html">operator ==</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/operator_get.html">operator []</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/operator_put.html">operator []=</a></li>
+
+
+
+        <li class="section-title"><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap-class.html#static-methods">Static methods</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/fromMaps.html">fromMaps</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/fromString.html">fromString</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/fromTuples.html">fromTuples</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/fromTuplesArray.html">fromTuplesArray</a></li>
+          <li><a href="../../file-___app_lib_src_data_StringValueMap/StringValueMap/fromValue.html">fromValue</a></li>
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pip_services4_commons
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

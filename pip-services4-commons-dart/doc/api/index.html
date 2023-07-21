@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="generator" content="made with love by dartdoc 6.2.2">
+  <meta name="description" content="pip_services4_commons API docs, for the Dart programming language.">
+  <title>pip_services4_commons - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="https://github.com/pip-services4/pip-services4-dart/pip-services4-commons-dart">pip_services4_commons package</a></li>
+  </ol>
+  <div class="self-name">pip_services4_commons</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h1 id="img-srchttpsuploads-sslwebflowcom5ea5d3315186cf5ec60c3ee45edf1c94ce4c859f2b188094_logosvg-altpipservices-logo-width200-br-portable-core-abstractions-for-dart"><img src="https://uploads-ssl.webflow.com/5ea5d3315186cf5ec60c3ee4/5edf1c94ce4c859f2b188094_logo.svg" alt="Pip.Services Logo" width="200"> <br> Portable Core Abstractions for Dart</h1>
+<p>This module is a part of the <a href="http://pip.services.org">Pip.Services</a> polyglot microservices toolkit.
+It provides a set of basic patterns used in microservices or backend services.
+Also the module implemenets a reasonably thin abstraction layer over most fundamental functions across
+all languages supported by the toolkit to facilitate symmetric implementation.</p>
+<p>The module contains the following packages:</p>
+<p>The module contains the following packages:</p>
+<ul>
+<li><strong>Convert</strong> - portable value converters</li>
+<li><strong>Data</strong> - data patterns</li>
+<li><strong>Errors</strong>- application errors</li>
+<li><strong>Reflect</strong> - portable reflection utilities</li>
+</ul>
+<p><a name="links"></a> Quick links:</p>
+<ul>
+<li><a href="https://www.pipservices.org/recipies/configuration">Configuration Pattern</a></li>
+<li><a href="https://www.pipservices.org/recipies/references">Locator Pattern</a></li>
+<li><a href="https://www.pipservices.org/recipies/component-lifecycle">Component Lifecycle</a></li>
+<li><a href="https://www.pipservices.org/recipies/active-logic">Components with Active Logic</a></li>
+<li><a href="https://www.pipservices.org/recipies/memory-persistence">Data Patterns</a></li>
+<li><a href="https://pub.dev/documentation/pip_services4_commons/latest/pip_services4_commons/pip_services4_commons-library.html">API Reference</a></li>
+<li><a href="CHANGELOG.md">Change Log</a></li>
+<li><a href="https://www.pipservices.org/community/help">Get Help</a></li>
+<li><a href="https://www.pipservices.org/community/contribute">Contribute</a></li>
+</ul>
+<h2 id="use">Use</h2>
+<p>Add this to your package's pubspec.yaml file:</p>
+<pre class="language-yaml"><code class="language-yaml">dependencies:
+  pip_services4_commons: version
+</code></pre>
+<h2 id="develop">Develop</h2>
+<p>For development you shall install the following prerequisites:</p>
+<ul>
+<li>Dart SDK 3</li>
+<li>Visual Studio Code or another IDE of your choice</li>
+<li>Docker</li>
+</ul>
+<p>Install dependencies:</p>
+<pre class="language-bash"><code class="language-bash">pub get
+</code></pre>
+<p>Run automated tests:</p>
+<pre class="language-bash"><code class="language-bash">pub run test
+</code></pre>
+<p>Generate API documentation:</p>
+<pre class="language-bash"><code class="language-bash">./docgen.ps1
+</code></pre>
+<p>Before committing changes run dockerized build and test as:</p>
+<pre class="language-bash"><code class="language-bash">./build.ps1
+./test.ps1
+./clear.ps1
+</code></pre>
+<h2 id="contacts">Contacts</h2>
+<p>The library is created and maintained by <strong>Sergey Seroukhov</strong>, <strong>Levichev Dmitry</strong>, <strong>Alexey Dvoykin</strong>.</p>
+<p>The documentation is written by <strong>Egor Nuzhnykh</strong>, <strong>Alexey Dvoykin</strong>, <strong>Mark Makarychev</strong>, <strong>Levichev Dmitry</strong>.</p>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="AnyValue">
+  <span class="name"><a href="file-___app_lib_src_data_AnyValue/file-___app_lib_src_data_AnyValue-library.html">AnyValue</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="AnyValueArray">
+  <span class="name"><a href="file-___app_lib_src_data_AnyValueArray/file-___app_lib_src_data_AnyValueArray-library.html">AnyValueArray</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="AnyValueMap">
+  <span class="name"><a href="file-___app_lib_src_data_AnyValueMap/file-___app_lib_src_data_AnyValueMap-library.html">AnyValueMap</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="ApplicationException">
+  <span class="name"><a href="file-___app_lib_src_errors_ApplicationException/file-___app_lib_src_errors_ApplicationException-library.html">ApplicationException</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="ApplicationExceptionFactory">
+  <span class="name"><a href="file-___app_lib_src_errors_ApplicationExceptionFactory/file-___app_lib_src_errors_ApplicationExceptionFactory-library.html">ApplicationExceptionFactory</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="ArrayConverter">
+  <span class="name"><a href="file-___app_lib_src_convert_ArrayConverter/file-___app_lib_src_convert_ArrayConverter-library.html">ArrayConverter</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="BadRequestException">
+  <span class="name"><a href="file-___app_lib_src_errors_BadRequestException/file-___app_lib_src_errors_BadRequestException-library.html">BadRequestException</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="BooleanConverter">
+  <span class="name"><a href="file-___app_lib_src_convert_BooleanConverter/file-___app_lib_src_convert_BooleanConverter-library.html">BooleanConverter</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="ConfigException">
+  <span class="name"><a href="file-___app_lib_src_errors_ConfigException/file-___app_lib_src_errors_ConfigException-library.html">ConfigException</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="ConflictException">
+  <span class="name"><a href="file-___app_lib_src_errors_ConflictException/file-___app_lib_src_errors_ConflictException-library.html">ConflictException</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="ConnectionException">
+  <span class="name"><a href="file-___app_lib_src_errors_ConnectionException/file-___app_lib_src_errors_ConnectionException-library.html">ConnectionException</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="convert">
+  <span class="name"><a href="file-___app_lib_src_convert_convert/file-___app_lib_src_convert_convert-library.html">convert</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="data">
+  <span class="name"><a href="file-___app_lib_src_data_data/file-___app_lib_src_data_data-library.html">data</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="DateTimeConverter">
+  <span class="name"><a href="file-___app_lib_src_convert_DateTimeConverter/file-___app_lib_src_convert_DateTimeConverter-library.html">DateTimeConverter</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="DoubleConverter">
+  <span class="name"><a href="file-___app_lib_src_convert_DoubleConverter/file-___app_lib_src_convert_DoubleConverter-library.html">DoubleConverter</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="DurationConverter">
+  <span class="name"><a href="file-___app_lib_src_convert_DurationConverter/file-___app_lib_src_convert_DurationConverter-library.html">DurationConverter</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="ErrorCategory">
+  <span class="name"><a href="file-___app_lib_src_errors_ErrorCategory/file-___app_lib_src_errors_ErrorCategory-library.html">ErrorCategory</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="ErrorDescription">
+  <span class="name"><a href="file-___app_lib_src_errors_ErrorDescription/file-___app_lib_src_errors_ErrorDescription-library.html">ErrorDescription</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="ErrorDescriptionFactory">
+  <span class="name"><a href="file-___app_lib_src_errors_ErrorDescriptionFactory/file-___app_lib_src_errors_ErrorDescriptionFactory-library.html">ErrorDescriptionFactory</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="errors">
+  <span class="name"><a href="file-___app_lib_src_errors_errors/file-___app_lib_src_errors_errors-library.html">errors</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="FileException">
+  <span class="name"><a href="file-___app_lib_src_errors_FileException/file-___app_lib_src_errors_FileException-library.html">FileException</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="FloatConverter">
+  <span class="name"><a href="file-___app_lib_src_convert_FloatConverter/file-___app_lib_src_convert_FloatConverter-library.html">FloatConverter</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="ICloneable">
+  <span class="name"><a href="file-___app_lib_src_data_ICloneable/file-___app_lib_src_data_ICloneable-library.html">ICloneable</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="IntegerConverter">
+  <span class="name"><a href="file-___app_lib_src_convert_IntegerConverter/file-___app_lib_src_convert_IntegerConverter-library.html">IntegerConverter</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="InternalException">
+  <span class="name"><a href="file-___app_lib_src_errors_InternalException/file-___app_lib_src_errors_InternalException-library.html">InternalException</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="InvalidStateException">
+  <span class="name"><a href="file-___app_lib_src_errors_InvalidStateException/file-___app_lib_src_errors_InvalidStateException-library.html">InvalidStateException</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="InvocationException">
+  <span class="name"><a href="file-___app_lib_src_errors_InvocationException/file-___app_lib_src_errors_InvocationException-library.html">InvocationException</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="IValueWrapper">
+  <span class="name"><a href="file-___app_lib_src_reflect_IValueWrapper/file-___app_lib_src_reflect_IValueWrapper-library.html">IValueWrapper</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="JsonConverter">
+  <span class="name"><a href="file-___app_lib_src_convert_JsonConverter/file-___app_lib_src_convert_JsonConverter-library.html">JsonConverter</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="LongConverter">
+  <span class="name"><a href="file-___app_lib_src_convert_LongConverter/file-___app_lib_src_convert_LongConverter-library.html">LongConverter</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="MapConverter">
+  <span class="name"><a href="file-___app_lib_src_convert_MapConverter/file-___app_lib_src_convert_MapConverter-library.html">MapConverter</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="MethodReflector">
+  <span class="name"><a href="file-___app_lib_src_reflect_MethodReflector/file-___app_lib_src_reflect_MethodReflector-library.html">MethodReflector</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="NotFoundException">
+  <span class="name"><a href="file-___app_lib_src_errors_NotFoundException/file-___app_lib_src_errors_NotFoundException-library.html">NotFoundException</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="ObjectReader">
+  <span class="name"><a href="file-___app_lib_src_reflect_ObjectReader/file-___app_lib_src_reflect_ObjectReader-library.html">ObjectReader</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="ObjectWriter">
+  <span class="name"><a href="file-___app_lib_src_reflect_ObjectWriter/file-___app_lib_src_reflect_ObjectWriter-library.html">ObjectWriter</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="pip_services4_commons">
+  <span class="name"><a href="pip_services4_commons/pip_services4_commons-library.html">pip_services4_commons</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="PropertyReflector">
+  <span class="name"><a href="file-___app_lib_src_reflect_PropertyReflector/file-___app_lib_src_reflect_PropertyReflector-library.html">PropertyReflector</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="RecursiveMapConverter">
+  <span class="name"><a href="file-___app_lib_src_convert_RecursiveMapConverter/file-___app_lib_src_convert_RecursiveMapConverter-library.html">RecursiveMapConverter</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="RecursiveObjectReader">
+  <span class="name"><a href="file-___app_lib_src_reflect_RecursiveObjectReader/file-___app_lib_src_reflect_RecursiveObjectReader-library.html">RecursiveObjectReader</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="RecursiveObjectWriter">
+  <span class="name"><a href="file-___app_lib_src_reflect_RecursiveObjectWriter/file-___app_lib_src_reflect_RecursiveObjectWriter-library.html">RecursiveObjectWriter</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="reflect">
+  <span class="name"><a href="file-___app_lib_src_reflect_reflect/file-___app_lib_src_reflect_reflect-library.html">reflect</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="StringConverter">
+  <span class="name"><a href="file-___app_lib_src_convert_StringConverter/file-___app_lib_src_convert_StringConverter-library.html">StringConverter</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="StringValueMap">
+  <span class="name"><a href="file-___app_lib_src_data_StringValueMap/file-___app_lib_src_data_StringValueMap-library.html">StringValueMap</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="TypeCode">
+  <span class="name"><a href="file-___app_lib_src_convert_TypeCode/file-___app_lib_src_convert_TypeCode-library.html">TypeCode</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="TypeConverter">
+  <span class="name"><a href="file-___app_lib_src_convert_TypeConverter/file-___app_lib_src_convert_TypeConverter-library.html">TypeConverter</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="TypeDescriptor">
+  <span class="name"><a href="file-___app_lib_src_reflect_TypeDescriptor/file-___app_lib_src_reflect_TypeDescriptor-library.html">TypeDescriptor</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="TypeMatcher">
+  <span class="name"><a href="file-___app_lib_src_reflect_TypeMatcher/file-___app_lib_src_reflect_TypeMatcher-library.html">TypeMatcher</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="TypeReflector">
+  <span class="name"><a href="file-___app_lib_src_reflect_TypeReflector/file-___app_lib_src_reflect_TypeReflector-library.html">TypeReflector</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="UnauthorizedException">
+  <span class="name"><a href="file-___app_lib_src_errors_UnauthorizedException/file-___app_lib_src_errors_UnauthorizedException-library.html">UnauthorizedException</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="UnknownException">
+  <span class="name"><a href="file-___app_lib_src_errors_UnknownException/file-___app_lib_src_errors_UnknownException-library.html">UnknownException</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="UnsupportedException">
+  <span class="name"><a href="file-___app_lib_src_errors_UnsupportedException/file-___app_lib_src_errors_UnsupportedException-library.html">UnsupportedException</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="https://github.com/pip-services4/pip-services4-dart/pip-services4-commons-dart">pip_services4_commons package</a></li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">pip_services4_commons</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="file-___app_lib_src_data_AnyValue/file-___app_lib_src_data_AnyValue-library.html">AnyValue</a></li>
+      <li><a href="file-___app_lib_src_data_AnyValueArray/file-___app_lib_src_data_AnyValueArray-library.html">AnyValueArray</a></li>
+      <li><a href="file-___app_lib_src_data_AnyValueMap/file-___app_lib_src_data_AnyValueMap-library.html">AnyValueMap</a></li>
+      <li><a href="file-___app_lib_src_errors_ApplicationException/file-___app_lib_src_errors_ApplicationException-library.html">ApplicationException</a></li>
+      <li><a href="file-___app_lib_src_errors_ApplicationExceptionFactory/file-___app_lib_src_errors_ApplicationExceptionFactory-library.html">ApplicationExceptionFactory</a></li>
+      <li><a href="file-___app_lib_src_convert_ArrayConverter/file-___app_lib_src_convert_ArrayConverter-library.html">ArrayConverter</a></li>
+      <li><a href="file-___app_lib_src_errors_BadRequestException/file-___app_lib_src_errors_BadRequestException-library.html">BadRequestException</a></li>
+      <li><a href="file-___app_lib_src_convert_BooleanConverter/file-___app_lib_src_convert_BooleanConverter-library.html">BooleanConverter</a></li>
+      <li><a href="file-___app_lib_src_errors_ConfigException/file-___app_lib_src_errors_ConfigException-library.html">ConfigException</a></li>
+      <li><a href="file-___app_lib_src_errors_ConflictException/file-___app_lib_src_errors_ConflictException-library.html">ConflictException</a></li>
+      <li><a href="file-___app_lib_src_errors_ConnectionException/file-___app_lib_src_errors_ConnectionException-library.html">ConnectionException</a></li>
+      <li><a href="file-___app_lib_src_convert_convert/file-___app_lib_src_convert_convert-library.html">convert</a></li>
+      <li><a href="file-___app_lib_src_data_data/file-___app_lib_src_data_data-library.html">data</a></li>
+      <li><a href="file-___app_lib_src_convert_DateTimeConverter/file-___app_lib_src_convert_DateTimeConverter-library.html">DateTimeConverter</a></li>
+      <li><a href="file-___app_lib_src_convert_DoubleConverter/file-___app_lib_src_convert_DoubleConverter-library.html">DoubleConverter</a></li>
+      <li><a href="file-___app_lib_src_convert_DurationConverter/file-___app_lib_src_convert_DurationConverter-library.html">DurationConverter</a></li>
+      <li><a href="file-___app_lib_src_errors_ErrorCategory/file-___app_lib_src_errors_ErrorCategory-library.html">ErrorCategory</a></li>
+      <li><a href="file-___app_lib_src_errors_ErrorDescription/file-___app_lib_src_errors_ErrorDescription-library.html">ErrorDescription</a></li>
+      <li><a href="file-___app_lib_src_errors_ErrorDescriptionFactory/file-___app_lib_src_errors_ErrorDescriptionFactory-library.html">ErrorDescriptionFactory</a></li>
+      <li><a href="file-___app_lib_src_errors_errors/file-___app_lib_src_errors_errors-library.html">errors</a></li>
+      <li><a href="file-___app_lib_src_errors_FileException/file-___app_lib_src_errors_FileException-library.html">FileException</a></li>
+      <li><a href="file-___app_lib_src_convert_FloatConverter/file-___app_lib_src_convert_FloatConverter-library.html">FloatConverter</a></li>
+      <li><a href="file-___app_lib_src_data_ICloneable/file-___app_lib_src_data_ICloneable-library.html">ICloneable</a></li>
+      <li><a href="file-___app_lib_src_convert_IntegerConverter/file-___app_lib_src_convert_IntegerConverter-library.html">IntegerConverter</a></li>
+      <li><a href="file-___app_lib_src_errors_InternalException/file-___app_lib_src_errors_InternalException-library.html">InternalException</a></li>
+      <li><a href="file-___app_lib_src_errors_InvalidStateException/file-___app_lib_src_errors_InvalidStateException-library.html">InvalidStateException</a></li>
+      <li><a href="file-___app_lib_src_errors_InvocationException/file-___app_lib_src_errors_InvocationException-library.html">InvocationException</a></li>
+      <li><a href="file-___app_lib_src_reflect_IValueWrapper/file-___app_lib_src_reflect_IValueWrapper-library.html">IValueWrapper</a></li>
+      <li><a href="file-___app_lib_src_convert_JsonConverter/file-___app_lib_src_convert_JsonConverter-library.html">JsonConverter</a></li>
+      <li><a href="file-___app_lib_src_convert_LongConverter/file-___app_lib_src_convert_LongConverter-library.html">LongConverter</a></li>
+      <li><a href="file-___app_lib_src_convert_MapConverter/file-___app_lib_src_convert_MapConverter-library.html">MapConverter</a></li>
+      <li><a href="file-___app_lib_src_reflect_MethodReflector/file-___app_lib_src_reflect_MethodReflector-library.html">MethodReflector</a></li>
+      <li><a href="file-___app_lib_src_errors_NotFoundException/file-___app_lib_src_errors_NotFoundException-library.html">NotFoundException</a></li>
+      <li><a href="file-___app_lib_src_reflect_ObjectReader/file-___app_lib_src_reflect_ObjectReader-library.html">ObjectReader</a></li>
+      <li><a href="file-___app_lib_src_reflect_ObjectWriter/file-___app_lib_src_reflect_ObjectWriter-library.html">ObjectWriter</a></li>
+      <li><a href="pip_services4_commons/pip_services4_commons-library.html">pip_services4_commons</a></li>
+      <li><a href="file-___app_lib_src_reflect_PropertyReflector/file-___app_lib_src_reflect_PropertyReflector-library.html">PropertyReflector</a></li>
+      <li><a href="file-___app_lib_src_convert_RecursiveMapConverter/file-___app_lib_src_convert_RecursiveMapConverter-library.html">RecursiveMapConverter</a></li>
+      <li><a href="file-___app_lib_src_reflect_RecursiveObjectReader/file-___app_lib_src_reflect_RecursiveObjectReader-library.html">RecursiveObjectReader</a></li>
+      <li><a href="file-___app_lib_src_reflect_RecursiveObjectWriter/file-___app_lib_src_reflect_RecursiveObjectWriter-library.html">RecursiveObjectWriter</a></li>
+      <li><a href="file-___app_lib_src_reflect_reflect/file-___app_lib_src_reflect_reflect-library.html">reflect</a></li>
+      <li><a href="file-___app_lib_src_convert_StringConverter/file-___app_lib_src_convert_StringConverter-library.html">StringConverter</a></li>
+      <li><a href="file-___app_lib_src_data_StringValueMap/file-___app_lib_src_data_StringValueMap-library.html">StringValueMap</a></li>
+      <li><a href="file-___app_lib_src_convert_TypeCode/file-___app_lib_src_convert_TypeCode-library.html">TypeCode</a></li>
+      <li><a href="file-___app_lib_src_convert_TypeConverter/file-___app_lib_src_convert_TypeConverter-library.html">TypeConverter</a></li>
+      <li><a href="file-___app_lib_src_reflect_TypeDescriptor/file-___app_lib_src_reflect_TypeDescriptor-library.html">TypeDescriptor</a></li>
+      <li><a href="file-___app_lib_src_reflect_TypeMatcher/file-___app_lib_src_reflect_TypeMatcher-library.html">TypeMatcher</a></li>
+      <li><a href="file-___app_lib_src_reflect_TypeReflector/file-___app_lib_src_reflect_TypeReflector-library.html">TypeReflector</a></li>
+      <li><a href="file-___app_lib_src_errors_UnauthorizedException/file-___app_lib_src_errors_UnauthorizedException-library.html">UnauthorizedException</a></li>
+      <li><a href="file-___app_lib_src_errors_UnknownException/file-___app_lib_src_errors_UnknownException-library.html">UnknownException</a></li>
+      <li><a href="file-___app_lib_src_errors_UnsupportedException/file-___app_lib_src_errors_UnsupportedException-library.html">UnsupportedException</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pip_services4_commons
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

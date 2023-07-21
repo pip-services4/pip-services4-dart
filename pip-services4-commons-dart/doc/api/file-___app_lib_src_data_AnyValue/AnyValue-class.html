@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the AnyValue class from the AnyValue library, for the Dart programming language.">
+  <title>AnyValue class - AnyValue library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">pip_services4_commons</a></li>
+    <li><a href="../file-___app_lib_src_data_AnyValue/file-___app_lib_src_data_AnyValue-library.html">AnyValue</a></li>
+    <li class="self-crumb">AnyValue class</li>
+  </ol>
+  <div class="self-name">AnyValue</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-class">AnyValue</span> class 
+ 
+</h1></div>
+
+    
+<section class="desc markdown">
+  <p>Cross-language implementation of dynamic object what can hold value of any type.
+The stored value can be converted to different types using variety of accessor methods.</p>
+<h3 id="example">Example</h3>
+<pre class="language-dart"><code>var value1 =  AnyValue('123.456');
+
+value1.getAsInteger();   // Result: 123
+value1.getAsString();    // Result: '123.456'
+value1.getAsFloat();     // Result: 123.456
+</code></pre>
+<p>See <a href="../file-___app_lib_src_convert_StringConverter/StringConverter-class.html">StringConverter</a>
+See <a href="../file-___app_lib_src_convert_TypeConverter/TypeConverter-class.html">TypeConverter</a>
+See <a href="../file-___app_lib_src_convert_BooleanConverter/BooleanConverter-class.html">BooleanConverter</a>
+See <a href="../file-___app_lib_src_convert_IntegerConverter/IntegerConverter-class.html">IntegerConverter</a>
+See <a href="../file-___app_lib_src_convert_LongConverter/LongConverter-class.html">LongConverter</a>
+See <a href="../file-___app_lib_src_convert_DoubleConverter/DoubleConverter-class.html">DoubleConverter</a>
+See <a href="../file-___app_lib_src_convert_FloatConverter/FloatConverter-class.html">FloatConverter</a>
+See <a href="../file-___app_lib_src_convert_DateTimeConverter/DateTimeConverter-class.html">DateTimeConverter</a>
+See <a href="../file-___app_lib_src_data_ICloneable/ICloneable-class.html">ICloneable</a></p>
+</section>
+
+
+    <section>
+      <dl class="dl-horizontal">
+        
+
+        
+  <dt>Implemented types</dt>
+  <dd>
+    <ul class="comma-separated clazz-relationships">
+        <li><a href="../file-___app_lib_src_data_ICloneable/ICloneable-class.html">ICloneable</a></li>
+        <li><a href="../file-___app_lib_src_reflect_IValueWrapper/IValueWrapper-class.html">IValueWrapper</a></li>
+    </ul>
+  </dd>
+        
+
+
+
+        
+
+
+      </dl>
+    </section>
+
+    
+  <section class="summary offset-anchor" id="constructors">
+    <h2>Constructors</h2>
+
+    <dl class="constructor-summary-list">
+        <dt id="AnyValue" class="callable">
+          <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/AnyValue.html">AnyValue</a></span><span class="signature">(<span class="parameter" id="-param-value">[<span class="type-annotation">dynamic</span> <span class="parameter-name">value</span>]</span>)</span>
+        </dt>
+        <dd>
+          Creates a new instance of the object and assigns its value.
+        </dd>
+        <dt id="AnyValue.fromJson" class="callable">
+          <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/AnyValue.fromJson.html">AnyValue.fromJson</a></span><span class="signature">(<span class="parameter" id="fromJson-param-json"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.0.6/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">json</span></span>)</span>
+        </dt>
+        <dd>
+          Creates a new instance of the object from json.
+            <div class="constructor-modifier features">factory</div>
+        </dd>
+    </dl>
+  </section>
+
+    <section class="summary offset-anchor" id="instance-properties">
+      <h2>Properties</h2>
+
+      <dl class="properties">
+        <dt id="hashCode" class="property">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/hashCode.html">hashCode</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> 
+
+</dt>
+<dd>
+  Gets an object hash code which can be used to optimize storing and searching.
+  <div class="features"><span class="feature">read-only</span><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="runtimeType" class="property inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object/runtimeType.html">runtimeType</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Type-class.html">Type</a></span> 
+
+</dt>
+<dd class="inherited">
+  A representation of the runtime type of the object.
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+      </dl>
+    </section>
+
+    
+  <section
+      class="summary offset-anchor"
+      id="instance-methods">
+    <h2>Methods</h2>
+    <dl class="callables">
+        <dt id="clone" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/clone.html">clone</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Creates a binary clone of this object.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="equals" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/equals.html">equals</a></span><span class="signature">(<wbr><span class="parameter" id="equals-param-obj"><span class="type-annotation">dynamic</span> <span class="parameter-name">obj</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Compares this object value to specified specified value.
+When direct comparison gives negative results it tries
+to compare values as strings.
+  
+
+</dd>
+
+        <dt id="equalsAsType" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/equalsAsType.html">equalsAsType</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="equalsAsType-param-type"><span class="type-annotation"><a href="../file-___app_lib_src_convert_TypeCode/TypeCode.html">TypeCode</a></span> <span class="parameter-name">type</span>, </span><span class="parameter" id="equalsAsType-param-obj"><span class="type-annotation">dynamic</span> <span class="parameter-name">obj</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Compares this object value to specified specified value.
+When direct comparison gives negative results it converts
+values to type specified by type code and compare them again.
+  
+
+</dd>
+
+        <dt id="fromJson" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/fromJson.html">fromJson</a></span><span class="signature">(<wbr><span class="parameter" id="fromJson-param-json"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.0.6/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">json</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Initialize this object from JSON Map object
+  
+
+</dd>
+
+        <dt id="getAsArray" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsArray.html">getAsArray</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../file-___app_lib_src_data_AnyValueArray/AnyValueArray-class.html">AnyValueArray</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into an AnyArray or returns empty AnyArray if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsBoolean" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsBoolean.html">getAsBoolean</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a boolean or returns false if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsBooleanWithDefault" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsBooleanWithDefault.html">getAsBooleanWithDefault</a></span><span class="signature">(<wbr><span class="parameter" id="getAsBooleanWithDefault-param-defaultValue"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a boolean or returns default value if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsDateTime" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsDateTime.html">getAsDateTime</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/DateTime-class.html">DateTime</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a DateTime or returns current date if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsDateTimeWithDefault" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsDateTimeWithDefault.html">getAsDateTimeWithDefault</a></span><span class="signature">(<wbr><span class="parameter" id="getAsDateTimeWithDefault-param-defaultValue"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/DateTime-class.html">DateTime</a></span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/DateTime-class.html">DateTime</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a DateTime or returns default value if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsDouble" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsDouble.html">getAsDouble</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/double-class.html">double</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a double or returns 0 if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsDoubleWithDefault" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsDoubleWithDefault.html">getAsDoubleWithDefault</a></span><span class="signature">(<wbr><span class="parameter" id="getAsDoubleWithDefault-param-defaultValue"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/double-class.html">double</a></span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/double-class.html">double</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a double or returns default value if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsDuration" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsDuration.html">getAsDuration</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Duration-class.html">Duration</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a Duration or returns current date if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsDurationWithDefault" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsDurationWithDefault.html">getAsDurationWithDefault</a></span><span class="signature">(<wbr><span class="parameter" id="getAsDurationWithDefault-param-defaultValue"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Duration-class.html">Duration</a></span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Duration-class.html">Duration</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a Duration or returns default value if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsFloat" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsFloat.html">getAsFloat</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/double-class.html">double</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a float or returns 0 if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsFloatWithDefault" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsFloatWithDefault.html">getAsFloatWithDefault</a></span><span class="signature">(<wbr><span class="parameter" id="getAsFloatWithDefault-param-defaultValue"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/double-class.html">double</a></span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/double-class.html">double</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a float or returns default value if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsInteger" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsInteger.html">getAsInteger</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into an integer or returns 0 if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsIntegerWithDefault" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsIntegerWithDefault.html">getAsIntegerWithDefault</a></span><span class="signature">(<wbr><span class="parameter" id="getAsIntegerWithDefault-param-defaultValue"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a integer or returns default value if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsLong" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsLong.html">getAsLong</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a long or returns 0 if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsLongWithDefault" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsLongWithDefault.html">getAsLongWithDefault</a></span><span class="signature">(<wbr><span class="parameter" id="getAsLongWithDefault-param-defaultValue"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a long or returns default value if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsMap" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsMap.html">getAsMap</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../file-___app_lib_src_data_AnyValueMap/AnyValueMap-class.html">AnyValueMap</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into AnyMap or returns empty AnyMap if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsNullableBoolean" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsNullableBoolean.html">getAsNullableBoolean</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a boolean or returns null if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsNullableDateTime" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsNullableDateTime.html">getAsNullableDateTime</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/DateTime-class.html">DateTime</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a DateTime or returns null if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsNullableDouble" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsNullableDouble.html">getAsNullableDouble</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/double-class.html">double</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a double or returns null if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsNullableDuration" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsNullableDuration.html">getAsNullableDuration</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Duration-class.html">Duration</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a Duration or returns null if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsNullableFloat" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsNullableFloat.html">getAsNullableFloat</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/double-class.html">double</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a float or returns null if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsNullableInteger" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsNullableInteger.html">getAsNullableInteger</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into an integer or returns null if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsNullableLong" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsNullableLong.html">getAsNullableLong</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/int-class.html">int</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a long or returns null if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsNullableString" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsNullableString.html">getAsNullableString</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/String-class.html">String</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a string or returns null if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsNullableType" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsNullableType.html">getAsNullableType</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="getAsNullableType-param-type"><span class="type-annotation"><a href="../file-___app_lib_src_convert_TypeCode/TypeCode.html">TypeCode</a></span> <span class="parameter-name">type</span></span>)
+    <span class="returntype parameter">&#8594; T?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a value defined by specied typecode.
+If conversion is not possible it returns null.
+  
+
+</dd>
+
+        <dt id="getAsObject" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsObject.html">getAsObject</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Gets the value stored in this object without any conversions
+  
+
+</dd>
+
+        <dt id="getAsString" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsString.html">getAsString</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a string or returns '' if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsStringWithDefault" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsStringWithDefault.html">getAsStringWithDefault</a></span><span class="signature">(<wbr><span class="parameter" id="getAsStringWithDefault-param-defaultValue"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/String-class.html">String</a></span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a string or returns default value if conversion is not possible.
+  
+
+</dd>
+
+        <dt id="getAsType" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsType.html">getAsType</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="getAsType-param-typeCode"><span class="type-annotation"><a href="../file-___app_lib_src_convert_TypeCode/TypeCode.html">TypeCode</a></span> <span class="parameter-name">typeCode</span></span>)
+    <span class="returntype parameter">&#8594; T</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a value defined by specied typecode.
+If conversion is not possible it returns default value for the specified type.
+  
+
+</dd>
+
+        <dt id="getAsTypeWithDefault" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsTypeWithDefault.html">getAsTypeWithDefault</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="getAsTypeWithDefault-param-typeCode"><span class="type-annotation"><a href="../file-___app_lib_src_convert_TypeCode/TypeCode.html">TypeCode</a></span> <span class="parameter-name">typeCode</span>, </span><span class="parameter" id="getAsTypeWithDefault-param-defaultValue"><span class="type-annotation">T</span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; T</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts object value into a value defined by specied typecode.
+If conversion is not possible it returns default value.
+  
+
+</dd>
+
+        <dt id="getTypeCode" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getTypeCode.html">getTypeCode</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../file-___app_lib_src_convert_TypeCode/TypeCode.html">TypeCode</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Gets type code for the value stored in this object.
+  
+
+</dd>
+
+        <dt id="innerValue" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/innerValue.html">innerValue</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returned inner values in Map object
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="noSuchMethod" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Invoked when a nonexistent method or property is accessed.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="setAsObject" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/setAsObject.html">setAsObject</a></span><span class="signature">(<wbr><span class="parameter" id="setAsObject-param-value"><span class="type-annotation">dynamic</span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sets a new value for this object
+  
+
+</dd>
+
+        <dt id="toJson" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/toJson.html">toJson</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.0.6/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returned JSON Map object from values of this object
+  
+
+</dd>
+
+        <dt id="toString" class="callable">
+  <span class="name"><a href="../file-___app_lib_src_data_AnyValue/AnyValue/toString.html">toString</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Gets a string representation of the object.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor inherited"
+      id="operators">
+    <h2>Operators</h2>
+    <dl class="callables">
+        <dt id="operator ==" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.6/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The equality operator.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+    
+    
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">pip_services4_commons</a></li>
+  <li><a href="../file-___app_lib_src_data_AnyValue/file-___app_lib_src_data_AnyValue-library.html">AnyValue</a></li>
+  <li class="self-crumb">AnyValue class</li>
+</ol>
+
+
+    <h5>AnyValue library</h5>
+    <ol>
+      <li class="section-title"><a href="../file-___app_lib_src_data_AnyValue/file-___app_lib_src_data_AnyValue-library.html#classes">Classes</a></li>
+        <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue-class.html">AnyValue</a></li>
+
+
+
+
+
+
+
+
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <ol>
+
+        <li class="section-title"><a href="../file-___app_lib_src_data_AnyValue/AnyValue-class.html#constructors">Constructors</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/AnyValue.html">AnyValue</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/AnyValue.fromJson.html">fromJson</a></li>
+
+
+        <li class="section-title">
+          <a href="../file-___app_lib_src_data_AnyValue/AnyValue-class.html#instance-properties">Properties</a>
+        </li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/hashCode.html">hashCode</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object/runtimeType.html">runtimeType</a></li>
+
+        <li class="section-title"><a href="../file-___app_lib_src_data_AnyValue/AnyValue-class.html#instance-methods">Methods</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/clone.html">clone</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/equals.html">equals</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/equalsAsType.html">equalsAsType</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/fromJson.html">fromJson</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsArray.html">getAsArray</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsBoolean.html">getAsBoolean</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsBooleanWithDefault.html">getAsBooleanWithDefault</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsDateTime.html">getAsDateTime</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsDateTimeWithDefault.html">getAsDateTimeWithDefault</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsDouble.html">getAsDouble</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsDoubleWithDefault.html">getAsDoubleWithDefault</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsDuration.html">getAsDuration</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsDurationWithDefault.html">getAsDurationWithDefault</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsFloat.html">getAsFloat</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsFloatWithDefault.html">getAsFloatWithDefault</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsInteger.html">getAsInteger</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsIntegerWithDefault.html">getAsIntegerWithDefault</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsLong.html">getAsLong</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsLongWithDefault.html">getAsLongWithDefault</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsMap.html">getAsMap</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsNullableBoolean.html">getAsNullableBoolean</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsNullableDateTime.html">getAsNullableDateTime</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsNullableDouble.html">getAsNullableDouble</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsNullableDuration.html">getAsNullableDuration</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsNullableFloat.html">getAsNullableFloat</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsNullableInteger.html">getAsNullableInteger</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsNullableLong.html">getAsNullableLong</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsNullableString.html">getAsNullableString</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsNullableType.html">getAsNullableType</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsObject.html">getAsObject</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsString.html">getAsString</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsStringWithDefault.html">getAsStringWithDefault</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsType.html">getAsType</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getAsTypeWithDefault.html">getAsTypeWithDefault</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/getTypeCode.html">getTypeCode</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/innerValue.html">innerValue</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/setAsObject.html">setAsObject</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/toJson.html">toJson</a></li>
+          <li><a href="../file-___app_lib_src_data_AnyValue/AnyValue/toString.html">toString</a></li>
+
+        <li class="section-title inherited"><a href="../file-___app_lib_src_data_AnyValue/AnyValue-class.html#operators">Operators</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.6/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pip_services4_commons
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
