@@ -37,10 +37,7 @@ class MethodReflector {
     name = name.toLowerCase();
     var cm = reflectClass(obj.runtimeType);
     for (var dm in cm.instanceMembers.values) {
-      if (!dm.isGetter &&
-          !dm.isSetter &&
-          !dm.isStatic &&
-          !dm.isPrivate) {
+      if (!dm.isGetter && !dm.isSetter && !dm.isStatic && !dm.isPrivate) {
         if (_matchMethod(dm.simpleName, name)) return dm.simpleName;
       }
     }
@@ -97,10 +94,8 @@ class MethodReflector {
     for (var dm in cm.instanceMembers.values) {
       Symbol? foundName;
 
-      if (!dm.isGetter &&
-          !dm.isSetter &&
-          !dm.isStatic &&
-          !dm.isPrivate) foundName = dm.simpleName;
+      if (!dm.isGetter && !dm.isSetter && !dm.isStatic && !dm.isPrivate)
+        foundName = dm.simpleName;
 
       if (foundName != null) methods.add(_extractName(foundName));
     }

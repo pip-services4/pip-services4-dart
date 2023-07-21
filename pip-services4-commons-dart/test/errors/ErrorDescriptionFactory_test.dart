@@ -8,8 +8,7 @@ void main() {
       var key = 'key';
       var details = 'details';
 
-      var ex =
-          ApplicationException('category', 'traceId', 'code', 'message');
+      var ex = ApplicationException('category', 'traceId', 'code', 'message');
       ex.status = 777;
       ex.cause = 'cause';
       ex.stack_trace = 'stackTrace';
@@ -45,8 +44,7 @@ void main() {
       var key = 'key';
       var details = 'details';
 
-      var ex =
-          ApplicationException('category', 'traceId', 'code', 'message');
+      var ex = ApplicationException('category', 'traceId', 'code', 'message');
       ex.status = 777;
       ex.cause = 'cause';
       ex.stack_trace = 'stackTrace';

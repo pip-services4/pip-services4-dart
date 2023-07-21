@@ -90,7 +90,8 @@ class TypeReflector {
   /// See [TypeDescriptor]
 
   static Future<Type?> getTypeByDescriptor(TypeDescriptor descriptor) async {
-    return await TypeReflector.getType(descriptor.getName(), descriptor.getLibrary());
+    return await TypeReflector.getType(
+        descriptor.getName(), descriptor.getLibrary());
   }
 
   /// Creates an instance of an object type.
@@ -118,7 +119,8 @@ class TypeReflector {
   /// See [getType]
   /// See [createInstanceByType]
 
-  static Future<dynamic> createInstance(String name, String? library, List args) async {
+  static Future<dynamic> createInstance(
+      String name, String? library, List args) async {
     var type = await TypeReflector.getType(name, library);
     if (type == null) {
       throw NotFoundException(null, 'TYPE_NOT_FOUND',
