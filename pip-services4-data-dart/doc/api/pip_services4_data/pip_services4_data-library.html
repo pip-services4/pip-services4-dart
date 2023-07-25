@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="pip_services4_data library API docs, for the Dart programming language.">
+  <title>pip_services4_data library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">pip_services4_data</a></li>
+    <li class="self-crumb">pip_services4_data library</li>
+  </ol>
+  <div class="self-name">pip_services4_data</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+    
+      <div>
+<h1><span class="kind-library">pip_services4_data</span> library 
+ 
+</h1></div>
+
+    
+
+
+    <section class="summary offset-anchor" id="classes">
+      <h2>Classes</h2>
+
+      <dl>
+        <dt id="AndRule">
+  <span class="name "><a href="../pip_services4_data/AndRule-class.html">AndRule</a></span> 
+
+</dt>
+<dd>
+  Validation rule to combine rules with AND logical operation.
+When all rules returns no errors, than this rule also returns no errors.
+When one of the rules return errors, than the rules returns all errors.
+</dd>
+
+        <dt id="ArraySchema">
+  <span class="name "><a href="../pip_services4_data/ArraySchema-class.html">ArraySchema</a></span> 
+
+</dt>
+<dd>
+  Schema to validate arrays.
+</dd>
+
+        <dt id="AtLeastOneExistsRule">
+  <span class="name "><a href="../pip_services4_data/AtLeastOneExistsRule-class.html">AtLeastOneExistsRule</a></span> 
+
+</dt>
+<dd>
+  Validation rule that check that at least one of the object properties is not null.
+</dd>
+
+        <dt id="DataPage">
+  <span class="name "><a href="../pip_services4_data/DataPage-class.html">DataPage</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Data transfer object that is used to pass results of paginated queries.
+It contains items of retrieved page and optional total number of items.
+</dd>
+
+        <dt id="ExcludedRule">
+  <span class="name "><a href="../pip_services4_data/ExcludedRule-class.html">ExcludedRule</a></span> 
+
+</dt>
+<dd>
+  Validation rule to check that value is excluded from the list of constants.
+</dd>
+
+        <dt id="FilterParams">
+  <span class="name "><a href="../pip_services4_data/FilterParams-class.html">FilterParams</a></span> 
+
+</dt>
+<dd>
+  Data transfer object used to pass filter parameters as simple key-value pairs.
+</dd>
+
+        <dt id="FilterParamsSchema">
+  <span class="name "><a href="../pip_services4_data/FilterParamsSchema-class.html">FilterParamsSchema</a></span> 
+
+</dt>
+<dd>
+  Schema to validate <a href="../pip_services4_data/FilterParams-class.html">FilterParams</a>.
+</dd>
+
+        <dt id="IChangeable">
+  <span class="name "><a href="../pip_services4_data/IChangeable-class.html">IChangeable</a></span> 
+
+</dt>
+<dd>
+  Interface for data objects that contain their latest change time.
+</dd>
+
+        <dt id="IdGenerator">
+  <span class="name "><a href="../pip_services4_data/IdGenerator-class.html">IdGenerator</a></span> 
+
+</dt>
+<dd>
+  Helper class to generate unique object IDs.
+It supports two types of IDs: long and short.
+</dd>
+
+        <dt id="IIdentifiable">
+  <span class="name "><a href="../pip_services4_data/IIdentifiable-class.html">IIdentifiable</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Generic interface for data objects that can be uniquely identified by an id.
+</dd>
+
+        <dt id="INamed">
+  <span class="name "><a href="../pip_services4_data/INamed-class.html">INamed</a></span> 
+
+</dt>
+<dd>
+  Interface for data objects that have human-readable names.
+</dd>
+
+        <dt id="IncludedRule">
+  <span class="name "><a href="../pip_services4_data/IncludedRule-class.html">IncludedRule</a></span> 
+
+</dt>
+<dd>
+  Validation rule to check that value is included into the list of constants.
+</dd>
+
+        <dt id="IStringIdentifiable">
+  <span class="name "><a href="../pip_services4_data/IStringIdentifiable-class.html">IStringIdentifiable</a></span> 
+
+</dt>
+<dd>
+  Interface for data objects that can be uniquely identifed by a string id.
+</dd>
+
+        <dt id="ITrackable">
+  <span class="name "><a href="../pip_services4_data/ITrackable-class.html">ITrackable</a></span> 
+
+</dt>
+<dd>
+  Interface for data objects that can track their changes, including logical deletion.
+</dd>
+
+        <dt id="IValidationRule">
+  <span class="name "><a href="../pip_services4_data/IValidationRule-class.html">IValidationRule</a></span> 
+
+</dt>
+<dd>
+  Interface for validation rules.
+</dd>
+
+        <dt id="IVersioned">
+  <span class="name "><a href="../pip_services4_data/IVersioned-class.html">IVersioned</a></span> 
+
+</dt>
+<dd>
+  Interface for data objects that can be versioned.
+</dd>
+
+        <dt id="MapSchema">
+  <span class="name "><a href="../pip_services4_data/MapSchema-class.html">MapSchema</a></span> 
+
+</dt>
+<dd>
+  Schema to validate maps.
+</dd>
+
+        <dt id="MultiString">
+  <span class="name "><a href="../pip_services4_data/MultiString-class.html">MultiString</a></span> 
+
+</dt>
+<dd>
+  An object that contains string translations for multiple languages.
+Language keys use two-varter codes like: 'en', 'sp', 'de', 'ru', 'fr', 'pr'.
+When translation for specified language does not exists it defaults to English ('en').
+When English does not exists it falls back to the first defined language.
+</dd>
+
+        <dt id="NotRule">
+  <span class="name "><a href="../pip_services4_data/NotRule-class.html">NotRule</a></span> 
+
+</dt>
+<dd>
+  Validation rule negate another rule.
+When embedded rule returns no errors, than this rule return an error.
+When embedded rule return errors, than the rule returns no errors.
+</dd>
+
+        <dt id="ObjectComparator">
+  <span class="name "><a href="../pip_services4_data/ObjectComparator-class.html">ObjectComparator</a></span> 
+
+</dt>
+<dd>
+  Helper class to perform comparison operations over arbitrary values.
+</dd>
+
+        <dt id="ObjectSchema">
+  <span class="name "><a href="../pip_services4_data/ObjectSchema-class.html">ObjectSchema</a></span> 
+
+</dt>
+<dd>
+  Schema to validate user defined objects.
+</dd>
+
+        <dt id="OnlyOneExistsRule">
+  <span class="name "><a href="../pip_services4_data/OnlyOneExistsRule-class.html">OnlyOneExistsRule</a></span> 
+
+</dt>
+<dd>
+  Validation rule that check that at exactly one of the object properties is not null.
+</dd>
+
+        <dt id="OrRule">
+  <span class="name "><a href="../pip_services4_data/OrRule-class.html">OrRule</a></span> 
+
+</dt>
+<dd>
+  Validation rule to combine rules with OR logical operation.
+When one of rules returns no errors, than this rule also returns no errors.
+When all rules return errors, than the rule returns all errors.
+</dd>
+
+        <dt id="PagingParams">
+  <span class="name "><a href="../pip_services4_data/PagingParams-class.html">PagingParams</a></span> 
+
+</dt>
+<dd>
+  Data transfer object to pass paging parameters for queries.
+</dd>
+
+        <dt id="PagingParamsSchema">
+  <span class="name "><a href="../pip_services4_data/PagingParamsSchema-class.html">PagingParamsSchema</a></span> 
+
+</dt>
+<dd>
+  Schema to validate <a href="../pip_services4_data/PagingParams-class.html">PagingParams</a>.
+</dd>
+
+        <dt id="ProjectionParams">
+  <span class="name "><a href="../pip_services4_data/ProjectionParams-class.html">ProjectionParams</a></span> 
+
+</dt>
+<dd>
+  Defines projection parameters with list if fields to include into query results.
+</dd>
+
+        <dt id="ProjectionParamsSchema">
+  <span class="name "><a href="../pip_services4_data/ProjectionParamsSchema-class.html">ProjectionParamsSchema</a></span> 
+
+</dt>
+<dd>
+  Schema to validate <a href="../pip_services4_data/ProjectionParams-class.html">ProjectionParams</a>
+</dd>
+
+        <dt id="PropertiesComparisonRule">
+  <span class="name "><a href="../pip_services4_data/PropertiesComparisonRule-class.html">PropertiesComparisonRule</a></span> 
+
+</dt>
+<dd>
+  Validation rule that compares two object properties.
+</dd>
+
+        <dt id="PropertySchema">
+  <span class="name "><a href="../pip_services4_data/PropertySchema-class.html">PropertySchema</a></span> 
+
+</dt>
+<dd>
+  Schema to validate object properties
+</dd>
+
+        <dt id="RandomArray">
+  <span class="name "><a href="../pip_services4_data/RandomArray-class.html">RandomArray</a></span> 
+
+</dt>
+<dd>
+  Random generator for array objects.
+</dd>
+
+        <dt id="RandomBoolean">
+  <span class="name "><a href="../pip_services4_data/RandomBoolean-class.html">RandomBoolean</a></span> 
+
+</dt>
+<dd>
+  Random generator for boolean values.
+</dd>
+
+        <dt id="RandomDateTime">
+  <span class="name "><a href="../pip_services4_data/RandomDateTime-class.html">RandomDateTime</a></span> 
+
+</dt>
+<dd>
+  Random generator for Date time values.
+</dd>
+
+        <dt id="RandomDouble">
+  <span class="name "><a href="../pip_services4_data/RandomDouble-class.html">RandomDouble</a></span> 
+
+</dt>
+<dd>
+  Random generator for double values.
+</dd>
+
+        <dt id="RandomFloat">
+  <span class="name "><a href="../pip_services4_data/RandomFloat-class.html">RandomFloat</a></span> 
+
+</dt>
+<dd>
+  Random generator for float values.
+</dd>
+
+        <dt id="RandomInteger">
+  <span class="name "><a href="../pip_services4_data/RandomInteger-class.html">RandomInteger</a></span> 
+
+</dt>
+<dd>
+  Random generator for integer values.
+</dd>
+
+        <dt id="RandomString">
+  <span class="name "><a href="../pip_services4_data/RandomString-class.html">RandomString</a></span> 
+
+</dt>
+<dd>
+  Random generator for string values.
+</dd>
+
+        <dt id="RandomText">
+  <span class="name "><a href="../pip_services4_data/RandomText-class.html">RandomText</a></span> 
+
+</dt>
+<dd>
+  Random generator for various text values like names, addresses or phone numbers.
+</dd>
+
+        <dt id="Schema">
+  <span class="name "><a href="../pip_services4_data/Schema-class.html">Schema</a></span> 
+
+</dt>
+<dd>
+  Basic schema that validates values against a set of validation rules.
+</dd>
+
+        <dt id="SortField">
+  <span class="name "><a href="../pip_services4_data/SortField-class.html">SortField</a></span> 
+
+</dt>
+<dd>
+  Defines a field name and order used to sort query results.
+</dd>
+
+        <dt id="SortParams">
+  <span class="name "><a href="../pip_services4_data/SortParams-class.html">SortParams</a></span> 
+
+</dt>
+<dd>
+  Defines a field name and order used to sort query results.
+</dd>
+
+        <dt id="TagsProcessor">
+  <span class="name "><a href="../pip_services4_data/TagsProcessor-class.html">TagsProcessor</a></span> 
+
+</dt>
+<dd>
+  Helper class to extract and process search tags from objects.
+The search tags can be kept individually or embedded as hash tags inside text
+like 'This text has #hash_tag that can be used for search.'
+</dd>
+
+        <dt id="TokenizedDataPage">
+  <span class="name "><a href="../pip_services4_data/TokenizedDataPage-class.html">TokenizedDataPage</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Data transfer object that is used to pass results of paginated queries.
+It contains items of retrieved page and optional total number of items.
+</dd>
+
+        <dt id="TokenizedPagingParams">
+  <span class="name "><a href="../pip_services4_data/TokenizedPagingParams-class.html">TokenizedPagingParams</a></span> 
+
+</dt>
+<dd>
+  Data transfer object to pass tokenized paging parameters for queries.
+It can be used for complex paging scenarios, like paging across multiple databases
+where the previous state is encoded in a token. The token is usually retrieved from
+the previous response. The initial request shall go with token == <code>null</code>
+</dd>
+
+        <dt id="ValidationResult">
+  <span class="name "><a href="../pip_services4_data/ValidationResult-class.html">ValidationResult</a></span> 
+
+</dt>
+<dd>
+  Result generated by schema validation
+</dd>
+
+        <dt id="ValueComparisonRule">
+  <span class="name "><a href="../pip_services4_data/ValueComparisonRule-class.html">ValueComparisonRule</a></span> 
+
+</dt>
+<dd>
+  Validation rule that compares value to a constant.
+</dd>
+
+      </dl>
+    </section>
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="enums">
+      <h2>Enums</h2>
+
+      <dl>
+        <dt id="ValidationResultType">
+  <span class="name "><a href="../pip_services4_data/ValidationResultType.html">ValidationResultType</a></span> 
+
+</dt>
+<dd>
+  Types of validation results generated by validation schemas.
+</dd>
+
+      </dl>
+    </section>
+
+
+    <section class="summary offset-anchor" id="exceptions">
+      <h2>Exceptions / Errors</h2>
+
+      <dl>
+        <dt id="ValidationException">
+  <span class="name "><a href="../pip_services4_data/ValidationException-class.html">ValidationException</a></span> 
+
+</dt>
+<dd>
+  Errors in schema validation.
+</dd>
+
+      </dl>
+    </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">pip_services4_data</a></li>
+  <li class="self-crumb">pip_services4_data library</li>
+</ol>
+
+
+    <h5><span class="package-name">pip_services4_data</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../pip_services4_data/pip_services4_data-library.html">pip_services4_data</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>pip_services4_data library</h5>
+    <ol>
+      <li class="section-title"><a href="../pip_services4_data/pip_services4_data-library.html#classes">Classes</a></li>
+        <li><a href="../pip_services4_data/AndRule-class.html">AndRule</a></li>
+        <li><a href="../pip_services4_data/ArraySchema-class.html">ArraySchema</a></li>
+        <li><a href="../pip_services4_data/AtLeastOneExistsRule-class.html">AtLeastOneExistsRule</a></li>
+        <li><a href="../pip_services4_data/DataPage-class.html">DataPage</a></li>
+        <li><a href="../pip_services4_data/ExcludedRule-class.html">ExcludedRule</a></li>
+        <li><a href="../pip_services4_data/FilterParams-class.html">FilterParams</a></li>
+        <li><a href="../pip_services4_data/FilterParamsSchema-class.html">FilterParamsSchema</a></li>
+        <li><a href="../pip_services4_data/IChangeable-class.html">IChangeable</a></li>
+        <li><a href="../pip_services4_data/IdGenerator-class.html">IdGenerator</a></li>
+        <li><a href="../pip_services4_data/IIdentifiable-class.html">IIdentifiable</a></li>
+        <li><a href="../pip_services4_data/INamed-class.html">INamed</a></li>
+        <li><a href="../pip_services4_data/IncludedRule-class.html">IncludedRule</a></li>
+        <li><a href="../pip_services4_data/IStringIdentifiable-class.html">IStringIdentifiable</a></li>
+        <li><a href="../pip_services4_data/ITrackable-class.html">ITrackable</a></li>
+        <li><a href="../pip_services4_data/IValidationRule-class.html">IValidationRule</a></li>
+        <li><a href="../pip_services4_data/IVersioned-class.html">IVersioned</a></li>
+        <li><a href="../pip_services4_data/MapSchema-class.html">MapSchema</a></li>
+        <li><a href="../pip_services4_data/MultiString-class.html">MultiString</a></li>
+        <li><a href="../pip_services4_data/NotRule-class.html">NotRule</a></li>
+        <li><a href="../pip_services4_data/ObjectComparator-class.html">ObjectComparator</a></li>
+        <li><a href="../pip_services4_data/ObjectSchema-class.html">ObjectSchema</a></li>
+        <li><a href="../pip_services4_data/OnlyOneExistsRule-class.html">OnlyOneExistsRule</a></li>
+        <li><a href="../pip_services4_data/OrRule-class.html">OrRule</a></li>
+        <li><a href="../pip_services4_data/PagingParams-class.html">PagingParams</a></li>
+        <li><a href="../pip_services4_data/PagingParamsSchema-class.html">PagingParamsSchema</a></li>
+        <li><a href="../pip_services4_data/ProjectionParams-class.html">ProjectionParams</a></li>
+        <li><a href="../pip_services4_data/ProjectionParamsSchema-class.html">ProjectionParamsSchema</a></li>
+        <li><a href="../pip_services4_data/PropertiesComparisonRule-class.html">PropertiesComparisonRule</a></li>
+        <li><a href="../pip_services4_data/PropertySchema-class.html">PropertySchema</a></li>
+        <li><a href="../pip_services4_data/RandomArray-class.html">RandomArray</a></li>
+        <li><a href="../pip_services4_data/RandomBoolean-class.html">RandomBoolean</a></li>
+        <li><a href="../pip_services4_data/RandomDateTime-class.html">RandomDateTime</a></li>
+        <li><a href="../pip_services4_data/RandomDouble-class.html">RandomDouble</a></li>
+        <li><a href="../pip_services4_data/RandomFloat-class.html">RandomFloat</a></li>
+        <li><a href="../pip_services4_data/RandomInteger-class.html">RandomInteger</a></li>
+        <li><a href="../pip_services4_data/RandomString-class.html">RandomString</a></li>
+        <li><a href="../pip_services4_data/RandomText-class.html">RandomText</a></li>
+        <li><a href="../pip_services4_data/Schema-class.html">Schema</a></li>
+        <li><a href="../pip_services4_data/SortField-class.html">SortField</a></li>
+        <li><a href="../pip_services4_data/SortParams-class.html">SortParams</a></li>
+        <li><a href="../pip_services4_data/TagsProcessor-class.html">TagsProcessor</a></li>
+        <li><a href="../pip_services4_data/TokenizedDataPage-class.html">TokenizedDataPage</a></li>
+        <li><a href="../pip_services4_data/TokenizedPagingParams-class.html">TokenizedPagingParams</a></li>
+        <li><a href="../pip_services4_data/ValidationResult-class.html">ValidationResult</a></li>
+        <li><a href="../pip_services4_data/ValueComparisonRule-class.html">ValueComparisonRule</a></li>
+
+
+
+
+
+
+      <li class="section-title"><a href="../pip_services4_data/pip_services4_data-library.html#enums">Enums</a></li>
+        <li><a href="../pip_services4_data/ValidationResultType.html">ValidationResultType</a></li>
+
+
+      <li class="section-title"><a href="../pip_services4_data/pip_services4_data-library.html#exceptions">Exceptions</a></li>
+        <li><a href="../pip_services4_data/ValidationException-class.html">ValidationException</a></li>
+</ol>
+
+  </div><!--/sidebar-offcanvas-right-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pip_services4_data
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

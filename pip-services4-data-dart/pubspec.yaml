@@ -1,0 +1,18 @@
+name: pip_services4_data
+version: "0.0.1"
+description: Data Handling Components for Pip.Services in Dart. This framework is part of the [Pip.Services](https://github.com/pip-services/pip-services) project.
+homepage: https://github.com/pip-services4/pip-services4-dart/tree/main/pip-services4-data-dart
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  json_annotation: ^4.1.0
+  pip_services4_commons: ^0.0.2
+  pip_services4_components: ^0.0.1
+  sprintf: ^7.0.0
+  uuid: ^3.0.7
+
+dev_dependencies:
+  test: ^1.17.12
+  lints: ^2.1.1
