@@ -1,13 +1,13 @@
 name: pip_services4_components
-version: 0.0.1
+version: "0.0.1"
 description: Components patterns for Pip.Services in Dart. This framework is part of the [Pip.Services](https://github.com/pip-services/pip-services) project.
-homepage: https://github.com/pip-services4/pip-services4-dart/pip-services4-components-dart
+homepage: https://github.com/pip-services4/pip-services4-dart/tree/main/pip-services4-components-dart
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
-  pip_services4_commons: ^0.0.0
+  pip_services4_commons: ^0.0.1
   yaml: ^3.1.0
   sprintf: ^7.0.0
 

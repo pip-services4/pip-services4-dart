@@ -1,6 +1,6 @@
 # <img src="https://uploads-ssl.webflow.com/5ea5d3315186cf5ec60c3ee4/5edf1c94ce4c859f2b188094_logo.svg" alt="Pip.Services Logo" width="200"> <br/> Portable Component Model for Dart
 
-This module is a part of the [Pip.Services](http://pip.services.org) polyglot microservices toolkit.
+This module is a part of the [Pip.Services](https://pip.services.org) polyglot microservices toolkit.
 
 It defines a portable component model interfaces and provides utility classes to handle component lifecycle.
 

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="pip_services4_components library API docs, for the Dart programming language.">
+  <title>pip_services4_components library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">pip_services4_components</a></li>
+    <li class="self-crumb">pip_services4_components library</li>
+  </ol>
+  <div class="self-name">pip_services4_components</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+    
+      <div>
+<h1><span class="kind-library">pip_services4_components</span> library 
+ 
+</h1></div>
+
+    
+
+
+    <section class="summary offset-anchor" id="classes">
+      <h2>Classes</h2>
+
+      <dl>
+        <dt id="Cleaner">
+  <span class="name "><a href="../pip_services4_components/Cleaner-class.html">Cleaner</a></span> 
+
+</dt>
+<dd>
+  Helper class that cleans stored object state.
+</dd>
+
+        <dt id="Closer">
+  <span class="name "><a href="../pip_services4_components/Closer-class.html">Closer</a></span> 
+
+</dt>
+<dd>
+  Helper class that closes previously opened components.
+</dd>
+
+        <dt id="CompositeFactory">
+  <span class="name "><a href="../pip_services4_components/CompositeFactory-class.html">CompositeFactory</a></span> 
+
+</dt>
+<dd>
+  Aggregates multiple factories into a single factory component.
+When a new component is requested, it iterates through
+factories to locate the one able to create the requested component.
+</dd>
+
+        <dt id="ConfigParams">
+  <span class="name "><a href="../pip_services4_components/ConfigParams-class.html">ConfigParams</a></span> 
+
+</dt>
+<dd>
+  Contains a key-value map with configuration parameters.
+All values stored as strings and can be serialized as JSON or string forms.
+When retrieved the values can be automatically converted on read using GetAsXXX methods.
+The keys are case-sensitive, so it is recommended to use consistent C-style as: <code>'my_param'</code>
+</dd>
+
+        <dt id="Context">
+  <span class="name "><a href="../pip_services4_components/Context-class.html">Context</a></span> 
+
+</dt>
+<dd>
+  Basic implementation of an execution context.
+</dd>
+
+        <dt id="ContextInfo">
+  <span class="name "><a href="../pip_services4_components/ContextInfo-class.html">ContextInfo</a></span> 
+
+</dt>
+<dd>
+  Context information component that provides detail information
+about execution context: container or/and process.
+</dd>
+
+        <dt id="ContextResolver">
+  <span class="name "><a href="../pip_services4_components/ContextResolver-class.html">ContextResolver</a></span> 
+
+</dt>
+<dd>
+  Context resolver that processes context and extracts values from there.
+See <a href="../pip_services4_components/IContext-class.html">IContext</a>
+</dd>
+
+        <dt id="DefaultInfoFactory">
+  <span class="name "><a href="../pip_services4_components/DefaultInfoFactory-class.html">DefaultInfoFactory</a></span> 
+
+</dt>
+<dd>
+  Creates information components by their descriptors.
+</dd>
+
+        <dt id="DependencyResolver">
+  <span class="name "><a href="../pip_services4_components/DependencyResolver-class.html">DependencyResolver</a></span> 
+
+</dt>
+<dd>
+  Helper class for resolving component dependencies.
+</dd>
+
+        <dt id="Descriptor">
+  <span class="name "><a href="../pip_services4_components/Descriptor-class.html">Descriptor</a></span> 
+
+</dt>
+<dd>
+  Locator type that most often used in PipServices toolkit.
+It locates components using several fields:
+</dd>
+
+        <dt id="Executor">
+  <span class="name "><a href="../pip_services4_components/Executor-class.html">Executor</a></span> 
+
+</dt>
+<dd>
+  Helper class that executes components.
+</dd>
+
+        <dt id="Factory">
+  <span class="name "><a href="../pip_services4_components/Factory-class.html">Factory</a></span> 
+
+</dt>
+<dd>
+  Basic component factory that creates components using registered types and factory functions.
+</dd>
+
+        <dt id="FixedRateTimer">
+  <span class="name "><a href="../pip_services4_components/FixedRateTimer-class.html">FixedRateTimer</a></span> 
+
+</dt>
+<dd>
+  Timer that is triggered in equal time intervals.
+</dd>
+
+        <dt id="ICleanable">
+  <span class="name "><a href="../pip_services4_components/ICleanable-class.html">ICleanable</a></span> 
+
+</dt>
+<dd>
+  Interface for components that should clean their state.
+</dd>
+
+        <dt id="IClosable">
+  <span class="name "><a href="../pip_services4_components/IClosable-class.html">IClosable</a></span> 
+
+</dt>
+<dd>
+  Interface for components that require explicit closure.
+</dd>
+
+        <dt id="IConfigurable">
+  <span class="name "><a href="../pip_services4_components/IConfigurable-class.html">IConfigurable</a></span> 
+
+</dt>
+<dd>
+  An interface to set configuration parameters to an object.
+</dd>
+
+        <dt id="IContext">
+  <span class="name "><a href="../pip_services4_components/IContext-class.html">IContext</a></span> 
+
+</dt>
+<dd>
+  Interface to specify execution context.
+see <a href="../pip_services4_components/Context-class.html">Context</a>
+</dd>
+
+        <dt id="IExecutable">
+  <span class="name "><a href="../pip_services4_components/IExecutable-class.html">IExecutable</a></span> 
+
+</dt>
+<dd>
+  Interface for components that can be called to execute work.
+</dd>
+
+        <dt id="IFactory">
+  <span class="name "><a href="../pip_services4_components/IFactory-class.html">IFactory</a></span> 
+
+</dt>
+<dd>
+  Interface for component factories.
+</dd>
+
+        <dt id="INotifiable">
+  <span class="name "><a href="../pip_services4_components/INotifiable-class.html">INotifiable</a></span> 
+
+</dt>
+<dd>
+  Interface for components that can be asynchronously notified.
+The notification may include optional argument that describe
+the occured event.
+</dd>
+
+        <dt id="IOpenable">
+  <span class="name "><a href="../pip_services4_components/IOpenable-class.html">IOpenable</a></span> 
+
+</dt>
+<dd>
+  Interface for components that require explicit opening and closing.
+</dd>
+
+        <dt id="IParameterized">
+  <span class="name "><a href="../pip_services4_components/IParameterized-class.html">IParameterized</a></span> 
+
+</dt>
+<dd>
+  Interface for components that require execution parameters.
+</dd>
+
+        <dt id="IReconfigurable">
+  <span class="name "><a href="../pip_services4_components/IReconfigurable-class.html">IReconfigurable</a></span> 
+
+</dt>
+<dd>
+  An interface to set configuration parameters to an object.
+</dd>
+
+        <dt id="IReferenceable">
+  <span class="name "><a href="../pip_services4_components/IReferenceable-class.html">IReferenceable</a></span> 
+
+</dt>
+<dd>
+  Interface for components that depends on other components.
+</dd>
+
+        <dt id="IReferences">
+  <span class="name "><a href="../pip_services4_components/IReferences-class.html">IReferences</a></span> 
+
+</dt>
+<dd>
+  Interface for a map that holds component references and passes them to components
+to establish dependencies with each other.
+</dd>
+
+        <dt id="IUnreferenceable">
+  <span class="name "><a href="../pip_services4_components/IUnreferenceable-class.html">IUnreferenceable</a></span> 
+
+</dt>
+<dd>
+  Interface for components that require explicit clearing of references to dependent components.
+</dd>
+
+        <dt id="NameResolver">
+  <span class="name "><a href="../pip_services4_components/NameResolver-class.html">NameResolver</a></span> 
+
+</dt>
+<dd>
+  A helper class that allows to extract component name from configuration parameters.
+The name can be defined in 'id', 'name' parameters or inside a component descriptor.
+</dd>
+
+        <dt id="Notifier">
+  <span class="name "><a href="../pip_services4_components/Notifier-class.html">Notifier</a></span> 
+
+</dt>
+<dd>
+  Helper class that notifies components.
+</dd>
+
+        <dt id="Opener">
+  <span class="name "><a href="../pip_services4_components/Opener-class.html">Opener</a></span> 
+
+</dt>
+<dd>
+  Helper class that opens components.
+</dd>
+
+        <dt id="OptionResolver">
+  <span class="name "><a href="../pip_services4_components/OptionResolver-class.html">OptionResolver</a></span> 
+
+</dt>
+<dd>
+  A helper class to parameters from 'options' configuration section.
+</dd>
+
+        <dt id="Parameters">
+  <span class="name "><a href="../pip_services4_components/Parameters-class.html">Parameters</a></span> 
+
+</dt>
+<dd>
+  Contains map with execution parameters.
+</dd>
+
+        <dt id="Reference">
+  <span class="name "><a href="../pip_services4_components/Reference-class.html">Reference</a></span> 
+
+</dt>
+<dd>
+  Contains a reference to a component and locator to find it.
+It is used by <a href="../pip_services4_components/References-class.html">References</a> to store registered component references.
+</dd>
+
+        <dt id="Referencer">
+  <span class="name "><a href="../pip_services4_components/Referencer-class.html">Referencer</a></span> 
+
+</dt>
+<dd>
+  Helper class that sets and unsets references to components.
+</dd>
+
+        <dt id="References">
+  <span class="name "><a href="../pip_services4_components/References-class.html">References</a></span> 
+
+</dt>
+<dd>
+  The most basic implementation of <a href="../pip_services4_components/IReferences-class.html">IReferences</a> to store and locate component references.
+</dd>
+
+        <dt id="Registration">
+  <span class="name "><a href="../pip_services4_components/Registration-class.html">Registration</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+      </dl>
+    </section>
+
+
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="exceptions">
+      <h2>Exceptions / Errors</h2>
+
+      <dl>
+        <dt id="CreateException">
+  <span class="name "><a href="../pip_services4_components/CreateException-class.html">CreateException</a></span> 
+
+</dt>
+<dd>
+  Error raised when factory is not able to create requested component.
+</dd>
+
+        <dt id="ReferenceException">
+  <span class="name "><a href="../pip_services4_components/ReferenceException-class.html">ReferenceException</a></span> 
+
+</dt>
+<dd>
+  Error when required component dependency cannot be found.
+</dd>
+
+      </dl>
+    </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">pip_services4_components</a></li>
+  <li class="self-crumb">pip_services4_components library</li>
+</ol>
+
+
+    <h5><span class="package-name">pip_services4_components</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../pip_services4_components/pip_services4_components-library.html">pip_services4_components</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>pip_services4_components library</h5>
+    <ol>
+      <li class="section-title"><a href="../pip_services4_components/pip_services4_components-library.html#classes">Classes</a></li>
+        <li><a href="../pip_services4_components/Cleaner-class.html">Cleaner</a></li>
+        <li><a href="../pip_services4_components/Closer-class.html">Closer</a></li>
+        <li><a href="../pip_services4_components/CompositeFactory-class.html">CompositeFactory</a></li>
+        <li><a href="../pip_services4_components/ConfigParams-class.html">ConfigParams</a></li>
+        <li><a href="../pip_services4_components/Context-class.html">Context</a></li>
+        <li><a href="../pip_services4_components/ContextInfo-class.html">ContextInfo</a></li>
+        <li><a href="../pip_services4_components/ContextResolver-class.html">ContextResolver</a></li>
+        <li><a href="../pip_services4_components/DefaultInfoFactory-class.html">DefaultInfoFactory</a></li>
+        <li><a href="../pip_services4_components/DependencyResolver-class.html">DependencyResolver</a></li>
+        <li><a href="../pip_services4_components/Descriptor-class.html">Descriptor</a></li>
+        <li><a href="../pip_services4_components/Executor-class.html">Executor</a></li>
+        <li><a href="../pip_services4_components/Factory-class.html">Factory</a></li>
+        <li><a href="../pip_services4_components/FixedRateTimer-class.html">FixedRateTimer</a></li>
+        <li><a href="../pip_services4_components/ICleanable-class.html">ICleanable</a></li>
+        <li><a href="../pip_services4_components/IClosable-class.html">IClosable</a></li>
+        <li><a href="../pip_services4_components/IConfigurable-class.html">IConfigurable</a></li>
+        <li><a href="../pip_services4_components/IContext-class.html">IContext</a></li>
+        <li><a href="../pip_services4_components/IExecutable-class.html">IExecutable</a></li>
+        <li><a href="../pip_services4_components/IFactory-class.html">IFactory</a></li>
+        <li><a href="../pip_services4_components/INotifiable-class.html">INotifiable</a></li>
+        <li><a href="../pip_services4_components/IOpenable-class.html">IOpenable</a></li>
+        <li><a href="../pip_services4_components/IParameterized-class.html">IParameterized</a></li>
+        <li><a href="../pip_services4_components/IReconfigurable-class.html">IReconfigurable</a></li>
+        <li><a href="../pip_services4_components/IReferenceable-class.html">IReferenceable</a></li>
+        <li><a href="../pip_services4_components/IReferences-class.html">IReferences</a></li>
+        <li><a href="../pip_services4_components/IUnreferenceable-class.html">IUnreferenceable</a></li>
+        <li><a href="../pip_services4_components/NameResolver-class.html">NameResolver</a></li>
+        <li><a href="../pip_services4_components/Notifier-class.html">Notifier</a></li>
+        <li><a href="../pip_services4_components/Opener-class.html">Opener</a></li>
+        <li><a href="../pip_services4_components/OptionResolver-class.html">OptionResolver</a></li>
+        <li><a href="../pip_services4_components/Parameters-class.html">Parameters</a></li>
+        <li><a href="../pip_services4_components/Reference-class.html">Reference</a></li>
+        <li><a href="../pip_services4_components/Referencer-class.html">Referencer</a></li>
+        <li><a href="../pip_services4_components/References-class.html">References</a></li>
+        <li><a href="../pip_services4_components/Registration-class.html">Registration</a></li>
+
+
+
+
+
+
+
+
+      <li class="section-title"><a href="../pip_services4_components/pip_services4_components-library.html#exceptions">Exceptions</a></li>
+        <li><a href="../pip_services4_components/CreateException-class.html">CreateException</a></li>
+        <li><a href="../pip_services4_components/ReferenceException-class.html">ReferenceException</a></li>
+</ol>
+
+  </div><!--/sidebar-offcanvas-right-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pip_services4_components
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
