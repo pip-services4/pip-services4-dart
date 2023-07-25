@@ -3,3 +3,7 @@
 ## 0.0.1
 
 - Moved the code from PipService 3
+
+## 0.0.2
+
+- Fixed exports, fixed lints for release

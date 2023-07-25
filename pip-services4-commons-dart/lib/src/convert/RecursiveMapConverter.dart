@@ -39,7 +39,9 @@ class RecursiveMapConverter {
       return true;
     } else if (value is String) {
       return true;
-    } else if (value is bool) return true;
+    } else if (value is bool) {
+      return true;
+    }
 
     return false;
   }

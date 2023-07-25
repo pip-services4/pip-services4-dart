@@ -25,7 +25,7 @@ class LongConverter {
     if (value is bool) return value ? 1 : 0;
 
     var result = double.tryParse(value.toString());
-    return result == null ? null : result.truncate();
+    return result?.truncate();
   }
 
   /// Converts value into long or returns 0 when conversion is not possible.

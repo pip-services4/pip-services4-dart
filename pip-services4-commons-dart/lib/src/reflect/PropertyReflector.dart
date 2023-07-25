@@ -30,7 +30,7 @@ class PropertyReflector {
     if (expectedName == null) return true;
 
     var fieldName = field.toString().toLowerCase();
-    var matchName = 'symbol("' + expectedName + '")';
+    var matchName = 'symbol("$expectedName")';
     return fieldName == matchName;
   }
 
@@ -60,7 +60,7 @@ class PropertyReflector {
           dm.isSetter &&
           !dm.isStatic &&
           !dm.isPrivate) {
-        if (_matchField(dm.simpleName, name + '=')) return dm.simpleName;
+        if (_matchField(dm.simpleName, '$name=')) return dm.simpleName;
       }
     }
     return null;
@@ -121,7 +121,9 @@ class PropertyReflector {
       } else if (dm is MethodMirror &&
           dm.isGetter &&
           !dm.isStatic &&
-          !dm.isPrivate) foundName = dm.simpleName;
+          !dm.isPrivate) {
+        foundName = dm.simpleName;
+      }
 
       if (foundName != null) properties.add(_extractName(foundName));
     }
@@ -148,7 +150,9 @@ class PropertyReflector {
       } else if (dm is MethodMirror &&
           dm.isGetter &&
           !dm.isStatic &&
-          !dm.isPrivate) foundName = dm.simpleName;
+          !dm.isPrivate) {
+        foundName = dm.simpleName;
+      }
 
       if (foundName != null) {
         try {

@@ -89,7 +89,9 @@ class TypeConverter {
       value = DurationConverter.toNullableDuration(value);
     } else if (type == TypeCode.Array) {
       value = ArrayConverter.toNullableArray(value);
-    } else if (type == TypeCode.Map) value = MapConverter.toNullableMap(value);
+    } else if (type == TypeCode.Map) {
+      value = MapConverter.toNullableMap(value);
+    }
 
     return value;
   }
@@ -127,7 +129,9 @@ class TypeConverter {
       value = Duration();
     } else if (type == TypeCode.Map) {
       value = <String, dynamic>{};
-    } else if (type == TypeCode.Array) value = [];
+    } else if (type == TypeCode.Array) {
+      value = [];
+    }
 
     return value as T;
   }

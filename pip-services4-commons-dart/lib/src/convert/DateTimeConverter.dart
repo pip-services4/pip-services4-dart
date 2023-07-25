@@ -23,7 +23,7 @@ class DateTimeConverter {
     }
 
     var result = DateTime.tryParse(value.toString());
-    return result == null ? null : result.toUtc();
+    return result?.toUtc();
   }
 
   /// Converts value into Date or returns current date when conversion is not possible.

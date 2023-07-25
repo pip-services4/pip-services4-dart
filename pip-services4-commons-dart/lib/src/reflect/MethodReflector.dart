@@ -29,7 +29,7 @@ class MethodReflector {
     if (expectedName == null) return true;
 
     var fieldName = field.toString().toLowerCase();
-    var matchName = 'symbol("' + expectedName + '")';
+    var matchName = 'symbol("$expectedName")';
     return fieldName == matchName;
   }
 
@@ -94,8 +94,9 @@ class MethodReflector {
     for (var dm in cm.instanceMembers.values) {
       Symbol? foundName;
 
-      if (!dm.isGetter && !dm.isSetter && !dm.isStatic && !dm.isPrivate)
+      if (!dm.isGetter && !dm.isSetter && !dm.isStatic && !dm.isPrivate) {
         foundName = dm.simpleName;
+      }
 
       if (foundName != null) methods.add(_extractName(foundName));
     }

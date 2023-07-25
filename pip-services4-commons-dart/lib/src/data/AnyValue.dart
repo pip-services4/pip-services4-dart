@@ -28,7 +28,7 @@ import './AnyValueMap.dart';
 
 class AnyValue implements ICloneable, IValueWrapper {
   /// The value stored by this object.
-  var _value;
+  dynamic _value;
 
   /// Creates a new instance of the object and assigns its value.
   ///

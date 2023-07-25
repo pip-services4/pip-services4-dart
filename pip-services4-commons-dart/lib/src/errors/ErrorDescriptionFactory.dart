@@ -32,11 +32,11 @@ class ErrorDescriptionFactory {
       description.cause = ex.getCauseString();
       description.stack_trace = ex.getStackTraceString();
     } else {
-      description.type = error != null ? error.runtimeType.toString() : null;
+      description.type = error?.runtimeType.toString();
       description.category = ErrorCategory.Unknown;
       description.status = 500;
       description.code = 'UNKNOWN';
-      description.message = error != null ? error.toString() : null;
+      description.message = error?.toString();
       if (error is Error) description.stack_trace = error.stackTrace.toString();
     }
 

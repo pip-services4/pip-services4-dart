@@ -90,7 +90,7 @@ class ApplicationException implements Exception {
   /// Returns an original error message.
 
   String? getCauseString() {
-    return cause != null ? cause.toString() : null;
+    return cause?.toString();
   }
 
   /// Sets original error wrapped by this exception as a string message.

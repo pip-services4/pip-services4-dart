@@ -6,14 +6,14 @@ void main() {
   group('ApplicationExceptionFactory', () {
     ErrorDescription? _descr;
 
-    var checkProperties = (ApplicationException ex) {
+    checkProperties(ApplicationException ex) {
       expect(ex, isNotNull);
 
       expect(ex.cause, equals(_descr!.cause));
       expect(ex.stack_trace, equals(_descr!.stack_trace));
       //expect(ex.details, equals(_descr.details));
       expect(ex.category, equals(_descr!.category));
-    };
+    }
 
     setUp(() {
       _descr = ErrorDescription();

@@ -2,6 +2,18 @@
 # projects at Google. For details and rationale,
 # see https://github.com/dart-lang/pedantic#enabled-lints.
 # include: package:pedantic/analysis_options.yaml
+include: package:lints/recommended.yaml
+
+analyzer:
+  errors:
+    todo: ignore
+    file_names: ignore
+    constant_identifier_names: ignore
+    non_constant_identifier_names: ignore
+    prefer_initializing_formals: ignore
+    unnecessary_getters_setters: ignore
+    hash_and_equals: ignore
+    no_leading_underscores_for_local_identifiers: ignore
 
 # For lint rules and documentation, see http://dart-lang.github.io/linter/lints.
 # Uncomment to specify additional rules.

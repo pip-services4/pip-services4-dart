@@ -63,8 +63,8 @@ class TypeDescriptor {
 
   @override
   String toString() {
-    var builder = '' + _name;
-    if (_library != null) builder += ',' + _library!;
+    var builder = _name;
+    if (_library != null) builder += ',${_library!}';
     return builder.toString();
   }
 
@@ -86,7 +86,7 @@ class TypeDescriptor {
       return TypeDescriptor(tokens[0].trim(), tokens[1].trim());
     } else {
       throw ConfigException(null, 'BAD_DESCRIPTOR',
-              'Type descriptor ' + value + ' is in wrong format')
+              'Type descriptor $value is in wrong format')
           .withDetails('descriptor', value);
     }
   }

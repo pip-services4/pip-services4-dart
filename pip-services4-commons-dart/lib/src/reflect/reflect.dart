@@ -7,3 +7,4 @@ export './RecursiveObjectWriter.dart';
 export './TypeDescriptor.dart';
 export './TypeMatcher.dart';
 export './TypeReflector.dart';
+export './IValueWrapper.dart';

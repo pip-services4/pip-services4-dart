@@ -54,7 +54,7 @@ class ObjectWriter {
     if (obj is Map) {
       try {
         var targetKey = name.toLowerCase();
-        var foundKey;
+        dynamic foundKey;
         for (var key in obj.keys) {
           if (key.toString().toString() == targetKey) {
             foundKey = key;

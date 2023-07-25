@@ -626,7 +626,7 @@ class StringValueMap extends MapBase<String, String?> implements IValueWrapper {
       if (builder.isNotEmpty) builder += ';';
 
       if (value != null) {
-        builder += key + '=' + value;
+        builder += '$key=$value';
       } else {
         builder += key;
       }

@@ -66,7 +66,7 @@ class TypeReflector {
       else {
         // Add current directory to the relative path
         if (library.startsWith('.')) {
-          library = Directory.current.path + '/' + library;
+          library = '${Directory.current.path}/$library';
         }
         libraryUri = Uri.file(library);
       }
@@ -123,8 +123,8 @@ class TypeReflector {
       String name, String? library, List args) async {
     var type = await TypeReflector.getType(name, library);
     if (type == null) {
-      throw NotFoundException(null, 'TYPE_NOT_FOUND',
-              'Type ' + name + ',' + library.toString() + ' was not found')
+      throw NotFoundException(
+              null, 'TYPE_NOT_FOUND', 'Type $name,$library was not found')
           .withDetails('type', name)
           .withDetails('library', library);
     }

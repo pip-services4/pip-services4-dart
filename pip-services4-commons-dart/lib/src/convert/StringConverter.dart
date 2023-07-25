@@ -25,7 +25,7 @@ class StringConverter {
     if (value is List) {
       var result = StringBuffer();
       for (var i = 0; i < value.length - 1; i++) {
-        result.write(value[i].toString() + ',');
+        result.write('${value[i]},');
       }
       result.write(value[value.length - 1].toString());
       return result.toString();

@@ -17,7 +17,9 @@ class MapConverter {
   static Map<String, dynamic>? toNullableMap(value) {
     if (value == null) {
       return null;
-    } else if (value is Map<String, dynamic>) return value;
+    } else if (value is Map<String, dynamic>) {
+      return value;
+    }
 
     if (value is Map) {
       var result = <String, dynamic>{};

@@ -45,7 +45,7 @@ class RecursiveObjectReader {
     return RecursiveObjectReader._performHasProperty(obj, names, 0);
   }
 
-  static void _performGetProperty(obj, List<String> names, int nameIndex) {
+  static dynamic _performGetProperty(obj, List<String> names, int nameIndex) {
     if (nameIndex < names.length - 1) {
       var value = ObjectReader.getProperty(obj, names[nameIndex]);
       if (value != null) {
@@ -98,7 +98,7 @@ class RecursiveObjectReader {
           // Prevent cycles
           if (cycleDetect.contains(value)) continue;
 
-          var newPath = path != null ? path + '.' + key : key;
+          var newPath = path != null ? '$path.$key' : key;
 
           // Add simple values directly
           if (_isSimpleValue(value)) {
@@ -152,7 +152,7 @@ class RecursiveObjectReader {
           // Prevent cycles
           if (cycleDetect.contains(value)) continue;
 
-          var newPath = path != null ? path + '.' + key : key;
+          var newPath = path != null ? '$path.$key' : key;
 
           // Add simple values directly
           if (_isSimpleValue(value)) {
