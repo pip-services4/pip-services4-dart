@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="pip_services4_expressions library API docs, for the Dart programming language.">
+  <title>pip_services4_expressions library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">pip_services4_expressions</a></li>
+    <li class="self-crumb">pip_services4_expressions library</li>
+  </ol>
+  <div class="self-name">pip_services4_expressions</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+    
+      <div>
+<h1><span class="kind-library">pip_services4_expressions</span> library 
+ 
+</h1></div>
+
+    
+
+
+    <section class="summary offset-anchor" id="classes">
+      <h2>Classes</h2>
+
+      <dl>
+        <dt id="AbstractTokenizer">
+  <span class="name "><a href="../pip_services4_expressions/AbstractTokenizer-class.html">AbstractTokenizer</a></span> 
+
+</dt>
+<dd>
+  Implements an abstract tokenizer class.
+</dd>
+
+        <dt id="AbstractVariantOperations">
+  <span class="name "><a href="../pip_services4_expressions/AbstractVariantOperations-class.html">AbstractVariantOperations</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="CalculationStack">
+  <span class="name "><a href="../pip_services4_expressions/CalculationStack-class.html">CalculationStack</a></span> 
+
+</dt>
+<dd>
+  Implements a stack of Variant values.
+</dd>
+
+        <dt id="CCommentState">
+  <span class="name "><a href="../pip_services4_expressions/CCommentState-class.html">CCommentState</a></span> 
+
+</dt>
+<dd>
+  This state will either delegate to a comment-handling state, or return a token with just a slash in it.
+</dd>
+
+        <dt id="CharReferenceInterval">
+  <span class="name "><a href="../pip_services4_expressions/CharReferenceInterval-class.html">CharReferenceInterval</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Represents a character interval that keeps a reference.
+This class is internal and used by <a href="../pip_services4_expressions/CharReferenceMap-class.html">CharReferenceMap</a>.
+</dd>
+
+        <dt id="CharReferenceMap">
+  <span class="name "><a href="../pip_services4_expressions/CharReferenceMap-class.html">CharReferenceMap</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  This class keeps references associated with specific characters
+</dd>
+
+        <dt id="CharValidator">
+  <span class="name "><a href="../pip_services4_expressions/CharValidator-class.html">CharValidator</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="CppCommentState">
+  <span class="name "><a href="../pip_services4_expressions/CppCommentState-class.html">CppCommentState</a></span> 
+
+</dt>
+<dd>
+  This state will either delegate to a comment-handling state, or return a token with just a slash in it.
+</dd>
+
+        <dt id="CsvConstant">
+  <span class="name "><a href="../pip_services4_expressions/CsvConstant-class.html">CsvConstant</a></span> 
+
+</dt>
+<dd>
+  The CsvConstant class defines a set of constants, such as control return, line feed and null.
+</dd>
+
+        <dt id="CsvQuoteState">
+  <span class="name "><a href="../pip_services4_expressions/CsvQuoteState-class.html">CsvQuoteState</a></span> 
+
+</dt>
+<dd>
+  Implements a quote string state object for CSV streams.
+</dd>
+
+        <dt id="CsvSymbolState">
+  <span class="name "><a href="../pip_services4_expressions/CsvSymbolState-class.html">CsvSymbolState</a></span> 
+
+</dt>
+<dd>
+  Implements a symbol state to tokenize delimiters in CSV streams.
+</dd>
+
+        <dt id="CsvTokenizer">
+  <span class="name "><a href="../pip_services4_expressions/CsvTokenizer-class.html">CsvTokenizer</a></span> 
+
+</dt>
+<dd>
+  Implements a tokenizer class for CSV files.
+</dd>
+
+        <dt id="CsvWordState">
+  <span class="name "><a href="../pip_services4_expressions/CsvWordState-class.html">CsvWordState</a></span> 
+
+</dt>
+<dd>
+  Implements a word state to tokenize CSV stream.
+</dd>
+
+        <dt id="DefaultFunctionCollection">
+  <span class="name "><a href="../pip_services4_expressions/DefaultFunctionCollection-class.html">DefaultFunctionCollection</a></span> 
+
+</dt>
+<dd>
+  Implements a list filled with standard functions.
+</dd>
+
+        <dt id="DelegatedFunction">
+  <span class="name "><a href="../pip_services4_expressions/DelegatedFunction-class.html">DelegatedFunction</a></span> 
+
+</dt>
+<dd>
+  Defines an interface for expression function.
+</dd>
+
+        <dt id="ExpressionCalculator">
+  <span class="name "><a href="../pip_services4_expressions/ExpressionCalculator-class.html">ExpressionCalculator</a></span> 
+
+</dt>
+<dd>
+  Implements an expression calculator class.
+</dd>
+
+        <dt id="ExpressionNumberState">
+  <span class="name "><a href="../pip_services4_expressions/ExpressionNumberState-class.html">ExpressionNumberState</a></span> 
+
+</dt>
+<dd>
+  Implements an Expression-specific number state object.
+</dd>
+
+        <dt id="ExpressionParser">
+  <span class="name "><a href="../pip_services4_expressions/ExpressionParser-class.html">ExpressionParser</a></span> 
+
+</dt>
+<dd>
+  Implements an expression parser class.
+</dd>
+
+        <dt id="ExpressionQuoteState">
+  <span class="name "><a href="../pip_services4_expressions/ExpressionQuoteState-class.html">ExpressionQuoteState</a></span> 
+
+</dt>
+<dd>
+  Implements an Expression-specific quote string state object.
+</dd>
+
+        <dt id="ExpressionSymbolState">
+  <span class="name "><a href="../pip_services4_expressions/ExpressionSymbolState-class.html">ExpressionSymbolState</a></span> 
+
+</dt>
+<dd>
+  Implements a symbol state object.
+</dd>
+
+        <dt id="ExpressionToken">
+  <span class="name "><a href="../pip_services4_expressions/ExpressionToken-class.html">ExpressionToken</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="ExpressionTokenizer">
+  <span class="name "><a href="../pip_services4_expressions/ExpressionTokenizer-class.html">ExpressionTokenizer</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="ExpressionWordState">
+  <span class="name "><a href="../pip_services4_expressions/ExpressionWordState-class.html">ExpressionWordState</a></span> 
+
+</dt>
+<dd>
+  Implements a word state object.
+</dd>
+
+        <dt id="FunctionCollection">
+  <span class="name "><a href="../pip_services4_expressions/FunctionCollection-class.html">FunctionCollection</a></span> 
+
+</dt>
+<dd>
+  Implements a functions list.
+</dd>
+
+        <dt id="GenericCommentState">
+  <span class="name "><a href="../pip_services4_expressions/GenericCommentState-class.html">GenericCommentState</a></span> 
+
+</dt>
+<dd>
+  A CommentState object returns a comment from a scanner.
+</dd>
+
+        <dt id="GenericNumberState">
+  <span class="name "><a href="../pip_services4_expressions/GenericNumberState-class.html">GenericNumberState</a></span> 
+
+</dt>
+<dd>
+  A NumberState object returns a number from a scanner. This state's idea of a number allows
+an optional, initial minus sign, followed by one or more digits. A decimal point and another string
+of digits may follow these digits.
+</dd>
+
+        <dt id="GenericQuoteState">
+  <span class="name "><a href="../pip_services4_expressions/GenericQuoteState-class.html">GenericQuoteState</a></span> 
+
+</dt>
+<dd>
+  A quoteState returns a quoted string token from a scanner.
+</dd>
+
+        <dt id="GenericSymbolState">
+  <span class="name "><a href="../pip_services4_expressions/GenericSymbolState-class.html">GenericSymbolState</a></span> 
+
+</dt>
+<dd>
+  The idea of a symbol is a character that stands on its own, such as an ampersand or a parenthesis.
+</dd>
+
+        <dt id="GenericTokenizer">
+  <span class="name "><a href="../pip_services4_expressions/GenericTokenizer-class.html">GenericTokenizer</a></span> 
+
+</dt>
+<dd>
+  Implements a default tokenizer class.
+</dd>
+
+        <dt id="GenericWhitespaceState">
+  <span class="name "><a href="../pip_services4_expressions/GenericWhitespaceState-class.html">GenericWhitespaceState</a></span> 
+
+</dt>
+<dd>
+  A whitespace state ignores whitespace (such as blanks and tabs), and returns the tokenizer's
+next token. By default, all characters from 0 to 32 are whitespace.
+</dd>
+
+        <dt id="GenericWordState">
+  <span class="name "><a href="../pip_services4_expressions/GenericWordState-class.html">GenericWordState</a></span> 
+
+</dt>
+<dd>
+  A <code>wordState</code> returns a word from a scanner. Like other states, a tokenizer transfers the job
+of reading to this state, depending on an initial character. Thus, the tokenizer decides
+which characters may begin a word, and this state determines which characters may appear
+as a second or later character in a word. These are typically different sets of characters;
+in particular, it is typical for digits to appear as parts of a word, but not
+as the initial character of a word.
+</dd>
+
+        <dt id="ICommentState">
+  <span class="name "><a href="../pip_services4_expressions/ICommentState-class.html">ICommentState</a></span> 
+
+</dt>
+<dd>
+  Defines an interface for tokenizer state that processes comments.
+</dd>
+
+        <dt id="IFunction">
+  <span class="name "><a href="../pip_services4_expressions/IFunction-class.html">IFunction</a></span> 
+
+</dt>
+<dd>
+  Defines an interface for expression function.
+</dd>
+
+        <dt id="IFunctionCollection">
+  <span class="name "><a href="../pip_services4_expressions/IFunctionCollection-class.html">IFunctionCollection</a></span> 
+
+</dt>
+<dd>
+  Defines a functions list.
+</dd>
+
+        <dt id="INumberState">
+  <span class="name "><a href="../pip_services4_expressions/INumberState-class.html">INumberState</a></span> 
+
+</dt>
+<dd>
+  Defines interface for tokenizer state that processes numbers - Integers, Floats, HexDec..
+</dd>
+
+        <dt id="IQuoteState">
+  <span class="name "><a href="../pip_services4_expressions/IQuoteState-class.html">IQuoteState</a></span> 
+
+</dt>
+<dd>
+  Defines an interface for tokenizer state that processes quoted strings.
+</dd>
+
+        <dt id="IScanner">
+  <span class="name "><a href="../pip_services4_expressions/IScanner-class.html">IScanner</a></span> 
+
+</dt>
+<dd>
+  Defines scanner that can read and unread characters and count lines.
+This scanner is used by tokenizers to process input streams.
+</dd>
+
+        <dt id="ISymbolState">
+  <span class="name "><a href="../pip_services4_expressions/ISymbolState-class.html">ISymbolState</a></span> 
+
+</dt>
+<dd>
+  Defines an interface for tokenizer state that processes delimiters.
+</dd>
+
+        <dt id="ITokenizer">
+  <span class="name "><a href="../pip_services4_expressions/ITokenizer-class.html">ITokenizer</a></span> 
+
+</dt>
+<dd>
+  A tokenizer divides a string into tokens.
+</dd>
+
+        <dt id="ITokenizerState">
+  <span class="name "><a href="../pip_services4_expressions/ITokenizerState-class.html">ITokenizerState</a></span> 
+
+</dt>
+<dd>
+  A tokenizerState returns a token, given a scanner, an initial character read from the scanner,
+and a tokenizer that is conducting an overall tokenization of the scanner. The tokenizer will
+typically have a character state table that decides which state to use, depending on an initial
+character. If a single character is insufficient, a state such as SlashState
+will read a second character, and may delegate to another state, such as SlashStarState.
+This prospect of delegation is the reason that the <a href="../pip_services4_expressions/ITokenizerState/nextToken.html">nextToken()</a>
+method has a tokenizer argument.
+</dd>
+
+        <dt id="IVariable">
+  <span class="name "><a href="../pip_services4_expressions/IVariable-class.html">IVariable</a></span> 
+
+</dt>
+<dd>
+  Defines a variable interface.
+</dd>
+
+        <dt id="IVariableCollection">
+  <span class="name "><a href="../pip_services4_expressions/IVariableCollection-class.html">IVariableCollection</a></span> 
+
+</dt>
+<dd>
+  Defines a variables list.
+</dd>
+
+        <dt id="IVariantOperations">
+  <span class="name "><a href="../pip_services4_expressions/IVariantOperations-class.html">IVariantOperations</a></span> 
+
+</dt>
+<dd>
+  Defines an interface for variant operations manager.
+</dd>
+
+        <dt id="IWhitespaceState">
+  <span class="name "><a href="../pip_services4_expressions/IWhitespaceState-class.html">IWhitespaceState</a></span> 
+
+</dt>
+<dd>
+  Defines an interface for tokenizer state that processes whitespaces (' ', '\t')
+</dd>
+
+        <dt id="IWordState">
+  <span class="name "><a href="../pip_services4_expressions/IWordState-class.html">IWordState</a></span> 
+
+</dt>
+<dd>
+  Defines an interface for tokenizer state that processes words, identificators or keywords
+</dd>
+
+        <dt id="MustacheErrorCode">
+  <span class="name "><a href="../pip_services4_expressions/MustacheErrorCode-class.html">MustacheErrorCode</a></span> 
+
+</dt>
+<dd>
+  General syntax errors.
+</dd>
+
+        <dt id="MustacheParser">
+  <span class="name "><a href="../pip_services4_expressions/MustacheParser-class.html">MustacheParser</a></span> 
+
+</dt>
+<dd>
+  Implements an mustache parser class.
+</dd>
+
+        <dt id="MustacheSpecialState">
+  <span class="name "><a href="../pip_services4_expressions/MustacheSpecialState-class.html">MustacheSpecialState</a></span> 
+
+</dt>
+<dd>
+  Implements a quote string state object for Mustache templates.
+</dd>
+
+        <dt id="MustacheTemplate">
+  <span class="name "><a href="../pip_services4_expressions/MustacheTemplate-class.html">MustacheTemplate</a></span> 
+
+</dt>
+<dd>
+  Implements an mustache template class.
+</dd>
+
+        <dt id="MustacheToken">
+  <span class="name "><a href="../pip_services4_expressions/MustacheToken-class.html">MustacheToken</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="MustacheTokenizer">
+  <span class="name "><a href="../pip_services4_expressions/MustacheTokenizer-class.html">MustacheTokenizer</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="StringScanner">
+  <span class="name "><a href="../pip_services4_expressions/StringScanner-class.html">StringScanner</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="SymbolNode">
+  <span class="name "><a href="../pip_services4_expressions/SymbolNode-class.html">SymbolNode</a></span> 
+
+</dt>
+<dd>
+  A <a href="../pip_services4_expressions/SymbolNode-class.html">SymbolNode</a> object is a member of a tree that contains all possible prefixes
+of allowable symbols. Multi-character symbols appear in a <a href="../pip_services4_expressions/SymbolNode-class.html">SymbolNode</a> tree
+with one node for each character.
+</dd>
+
+        <dt id="SymbolRootNode">
+  <span class="name "><a href="../pip_services4_expressions/SymbolRootNode-class.html">SymbolRootNode</a></span> 
+
+</dt>
+<dd>
+  This class is a special case of a <a href="../pip_services4_expressions/SymbolNode-class.html">SymbolNode</a>. A <a href="../pip_services4_expressions/SymbolRootNode-class.html">SymbolRootNode</a>
+object has no symbol of its own, but has children that represent all possible symbols.
+</dd>
+
+        <dt id="SyntaxErrorCode">
+  <span class="name "><a href="../pip_services4_expressions/SyntaxErrorCode-class.html">SyntaxErrorCode</a></span> 
+
+</dt>
+<dd>
+  General syntax errors.
+</dd>
+
+        <dt id="Token">
+  <span class="name "><a href="../pip_services4_expressions/Token-class.html">Token</a></span> 
+
+</dt>
+<dd>
+  A token represents a logical chunk of a string. For example, a typical tokenizer would break
+the string "1.23 &lt;= 12.3" into three tokens: the number 1.23, a less-than-or-equal symbol,
+and the number 12.3. A token is a receptacle, and relies on a tokenizer to decide precisely how
+to divide a string into tokens.
+</dd>
+
+        <dt id="TypeSafeVariantOperations">
+  <span class="name "><a href="../pip_services4_expressions/TypeSafeVariantOperations-class.html">TypeSafeVariantOperations</a></span> 
+
+</dt>
+<dd>
+  Implements a strongly typed (type safe) variant operations manager object.
+</dd>
+
+        <dt id="TypeUnsafeVariantOperations">
+  <span class="name "><a href="../pip_services4_expressions/TypeUnsafeVariantOperations-class.html">TypeUnsafeVariantOperations</a></span> 
+
+</dt>
+<dd>
+  Implements a type unsafe variant operations manager object.
+</dd>
+
+        <dt id="Variable">
+  <span class="name "><a href="../pip_services4_expressions/Variable-class.html">Variable</a></span> 
+
+</dt>
+<dd>
+  Implements a variable holder object.
+</dd>
+
+        <dt id="VariableCollection">
+  <span class="name "><a href="../pip_services4_expressions/VariableCollection-class.html">VariableCollection</a></span> 
+
+</dt>
+<dd>
+  Implements a variables list.
+</dd>
+
+        <dt id="Variant">
+  <span class="name "><a href="../pip_services4_expressions/Variant-class.html">Variant</a></span> 
+
+</dt>
+<dd>
+  Defines container for variant values.
+</dd>
+
+      </dl>
+    </section>
+
+
+
+
+
+
+    <section class="summary offset-anchor" id="enums">
+      <h2>Enums</h2>
+
+      <dl>
+        <dt id="ExpressionTokenType">
+  <span class="name "><a href="../pip_services4_expressions/ExpressionTokenType.html">ExpressionTokenType</a></span> 
+
+</dt>
+<dd>
+  Define types of expression tokens.
+</dd>
+
+        <dt id="MustacheLexicalState">
+  <span class="name "><a href="../pip_services4_expressions/MustacheLexicalState.html">MustacheLexicalState</a></span> 
+
+</dt>
+<dd>
+  Define states in mustache lexical analysis.
+</dd>
+
+        <dt id="MustacheTokenType">
+  <span class="name "><a href="../pip_services4_expressions/MustacheTokenType.html">MustacheTokenType</a></span> 
+
+</dt>
+<dd>
+  Define types of mustache tokens.
+</dd>
+
+        <dt id="TokenType">
+  <span class="name "><a href="../pip_services4_expressions/TokenType.html">TokenType</a></span> 
+
+</dt>
+<dd>
+  Types (categories) of tokens such as "number", "symbol" or "word".
+</dd>
+
+        <dt id="VariantType">
+  <span class="name "><a href="../pip_services4_expressions/VariantType.html">VariantType</a></span> 
+
+</dt>
+<dd>
+  Defines supported types of variant values.
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="typedefs">
+      <h2>Typedefs</h2>
+
+      <dl>
+          
+  <dt id="FunctionCalculator" class="callable">
+    <span class="name"><a href="../pip_services4_expressions/FunctionCalculator.html">FunctionCalculator</a></span><span class="signature">
+      <span class="returntype parameter">= <a href="https://api.dart.dev/stable/3.0.5/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../pip_services4_expressions/Variant-class.html">Variant</a></span>&gt;</span> Function<span class="signature">(<span class="parameter" id="param-params"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../pip_services4_expressions/Variant-class.html">Variant</a></span>&gt;</span></span> <span class="parameter-name">params</span>, </span><span class="parameter" id="param-variantOperations"><span class="type-annotation"><a href="../pip_services4_expressions/IVariantOperations-class.html">IVariantOperations</a></span> <span class="parameter-name">variantOperations</span></span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Defines a delegate to implement a function
+    
+
+  </dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="exceptions">
+      <h2>Exceptions / Errors</h2>
+
+      <dl>
+        <dt id="ExpressionException">
+  <span class="name "><a href="../pip_services4_expressions/ExpressionException-class.html">ExpressionException</a></span> 
+
+</dt>
+<dd>
+  Exception that can be thrown by Expression Calculator.
+</dd>
+
+        <dt id="MustacheException">
+  <span class="name "><a href="../pip_services4_expressions/MustacheException-class.html">MustacheException</a></span> 
+
+</dt>
+<dd>
+  Exception that can be thrown by Mustache Template.
+</dd>
+
+        <dt id="SyntaxException">
+  <span class="name "><a href="../pip_services4_expressions/SyntaxException-class.html">SyntaxException</a></span> 
+
+</dt>
+<dd>
+  Exception that can be thrown by Expression Parser.
+</dd>
+
+      </dl>
+    </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">pip_services4_expressions</a></li>
+  <li class="self-crumb">pip_services4_expressions library</li>
+</ol>
+
+
+    <h5><span class="package-name">pip_services4_expressions</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../pip_services4_expressions/pip_services4_expressions-library.html">pip_services4_expressions</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>pip_services4_expressions library</h5>
+    <ol>
+      <li class="section-title"><a href="../pip_services4_expressions/pip_services4_expressions-library.html#classes">Classes</a></li>
+        <li><a href="../pip_services4_expressions/AbstractTokenizer-class.html">AbstractTokenizer</a></li>
+        <li><a href="../pip_services4_expressions/AbstractVariantOperations-class.html">AbstractVariantOperations</a></li>
+        <li><a href="../pip_services4_expressions/CalculationStack-class.html">CalculationStack</a></li>
+        <li><a href="../pip_services4_expressions/CCommentState-class.html">CCommentState</a></li>
+        <li><a href="../pip_services4_expressions/CharReferenceInterval-class.html">CharReferenceInterval</a></li>
+        <li><a href="../pip_services4_expressions/CharReferenceMap-class.html">CharReferenceMap</a></li>
+        <li><a href="../pip_services4_expressions/CharValidator-class.html">CharValidator</a></li>
+        <li><a href="../pip_services4_expressions/CppCommentState-class.html">CppCommentState</a></li>
+        <li><a href="../pip_services4_expressions/CsvConstant-class.html">CsvConstant</a></li>
+        <li><a href="../pip_services4_expressions/CsvQuoteState-class.html">CsvQuoteState</a></li>
+        <li><a href="../pip_services4_expressions/CsvSymbolState-class.html">CsvSymbolState</a></li>
+        <li><a href="../pip_services4_expressions/CsvTokenizer-class.html">CsvTokenizer</a></li>
+        <li><a href="../pip_services4_expressions/CsvWordState-class.html">CsvWordState</a></li>
+        <li><a href="../pip_services4_expressions/DefaultFunctionCollection-class.html">DefaultFunctionCollection</a></li>
+        <li><a href="../pip_services4_expressions/DelegatedFunction-class.html">DelegatedFunction</a></li>
+        <li><a href="../pip_services4_expressions/ExpressionCalculator-class.html">ExpressionCalculator</a></li>
+        <li><a href="../pip_services4_expressions/ExpressionNumberState-class.html">ExpressionNumberState</a></li>
+        <li><a href="../pip_services4_expressions/ExpressionParser-class.html">ExpressionParser</a></li>
+        <li><a href="../pip_services4_expressions/ExpressionQuoteState-class.html">ExpressionQuoteState</a></li>
+        <li><a href="../pip_services4_expressions/ExpressionSymbolState-class.html">ExpressionSymbolState</a></li>
+        <li><a href="../pip_services4_expressions/ExpressionToken-class.html">ExpressionToken</a></li>
+        <li><a href="../pip_services4_expressions/ExpressionTokenizer-class.html">ExpressionTokenizer</a></li>
+        <li><a href="../pip_services4_expressions/ExpressionWordState-class.html">ExpressionWordState</a></li>
+        <li><a href="../pip_services4_expressions/FunctionCollection-class.html">FunctionCollection</a></li>
+        <li><a href="../pip_services4_expressions/GenericCommentState-class.html">GenericCommentState</a></li>
+        <li><a href="../pip_services4_expressions/GenericNumberState-class.html">GenericNumberState</a></li>
+        <li><a href="../pip_services4_expressions/GenericQuoteState-class.html">GenericQuoteState</a></li>
+        <li><a href="../pip_services4_expressions/GenericSymbolState-class.html">GenericSymbolState</a></li>
+        <li><a href="../pip_services4_expressions/GenericTokenizer-class.html">GenericTokenizer</a></li>
+        <li><a href="../pip_services4_expressions/GenericWhitespaceState-class.html">GenericWhitespaceState</a></li>
+        <li><a href="../pip_services4_expressions/GenericWordState-class.html">GenericWordState</a></li>
+        <li><a href="../pip_services4_expressions/ICommentState-class.html">ICommentState</a></li>
+        <li><a href="../pip_services4_expressions/IFunction-class.html">IFunction</a></li>
+        <li><a href="../pip_services4_expressions/IFunctionCollection-class.html">IFunctionCollection</a></li>
+        <li><a href="../pip_services4_expressions/INumberState-class.html">INumberState</a></li>
+        <li><a href="../pip_services4_expressions/IQuoteState-class.html">IQuoteState</a></li>
+        <li><a href="../pip_services4_expressions/IScanner-class.html">IScanner</a></li>
+        <li><a href="../pip_services4_expressions/ISymbolState-class.html">ISymbolState</a></li>
+        <li><a href="../pip_services4_expressions/ITokenizer-class.html">ITokenizer</a></li>
+        <li><a href="../pip_services4_expressions/ITokenizerState-class.html">ITokenizerState</a></li>
+        <li><a href="../pip_services4_expressions/IVariable-class.html">IVariable</a></li>
+        <li><a href="../pip_services4_expressions/IVariableCollection-class.html">IVariableCollection</a></li>
+        <li><a href="../pip_services4_expressions/IVariantOperations-class.html">IVariantOperations</a></li>
+        <li><a href="../pip_services4_expressions/IWhitespaceState-class.html">IWhitespaceState</a></li>
+        <li><a href="../pip_services4_expressions/IWordState-class.html">IWordState</a></li>
+        <li><a href="../pip_services4_expressions/MustacheErrorCode-class.html">MustacheErrorCode</a></li>
+        <li><a href="../pip_services4_expressions/MustacheParser-class.html">MustacheParser</a></li>
+        <li><a href="../pip_services4_expressions/MustacheSpecialState-class.html">MustacheSpecialState</a></li>
+        <li><a href="../pip_services4_expressions/MustacheTemplate-class.html">MustacheTemplate</a></li>
+        <li><a href="../pip_services4_expressions/MustacheToken-class.html">MustacheToken</a></li>
+        <li><a href="../pip_services4_expressions/MustacheTokenizer-class.html">MustacheTokenizer</a></li>
+        <li><a href="../pip_services4_expressions/StringScanner-class.html">StringScanner</a></li>
+        <li><a href="../pip_services4_expressions/SymbolNode-class.html">SymbolNode</a></li>
+        <li><a href="../pip_services4_expressions/SymbolRootNode-class.html">SymbolRootNode</a></li>
+        <li><a href="../pip_services4_expressions/SyntaxErrorCode-class.html">SyntaxErrorCode</a></li>
+        <li><a href="../pip_services4_expressions/Token-class.html">Token</a></li>
+        <li><a href="../pip_services4_expressions/TypeSafeVariantOperations-class.html">TypeSafeVariantOperations</a></li>
+        <li><a href="../pip_services4_expressions/TypeUnsafeVariantOperations-class.html">TypeUnsafeVariantOperations</a></li>
+        <li><a href="../pip_services4_expressions/Variable-class.html">Variable</a></li>
+        <li><a href="../pip_services4_expressions/VariableCollection-class.html">VariableCollection</a></li>
+        <li><a href="../pip_services4_expressions/Variant-class.html">Variant</a></li>
+
+
+
+
+
+
+      <li class="section-title"><a href="../pip_services4_expressions/pip_services4_expressions-library.html#enums">Enums</a></li>
+        <li><a href="../pip_services4_expressions/ExpressionTokenType.html">ExpressionTokenType</a></li>
+        <li><a href="../pip_services4_expressions/MustacheLexicalState.html">MustacheLexicalState</a></li>
+        <li><a href="../pip_services4_expressions/MustacheTokenType.html">MustacheTokenType</a></li>
+        <li><a href="../pip_services4_expressions/TokenType.html">TokenType</a></li>
+        <li><a href="../pip_services4_expressions/VariantType.html">VariantType</a></li>
+
+      <li class="section-title"><a href="../pip_services4_expressions/pip_services4_expressions-library.html#typedefs">Typedefs</a></li>
+        <li><a href="../pip_services4_expressions/FunctionCalculator.html">FunctionCalculator</a></li>
+
+      <li class="section-title"><a href="../pip_services4_expressions/pip_services4_expressions-library.html#exceptions">Exceptions</a></li>
+        <li><a href="../pip_services4_expressions/ExpressionException-class.html">ExpressionException</a></li>
+        <li><a href="../pip_services4_expressions/MustacheException-class.html">MustacheException</a></li>
+        <li><a href="../pip_services4_expressions/SyntaxException-class.html">SyntaxException</a></li>
+</ol>
+
+  </div><!--/sidebar-offcanvas-right-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pip_services4_expressions
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

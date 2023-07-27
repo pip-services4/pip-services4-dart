@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the SymbolNode class from the pip_services4_expressions library, for the Dart programming language.">
+  <title>SymbolNode class - pip_services4_expressions library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">pip_services4_expressions</a></li>
+    <li><a href="../pip_services4_expressions/pip_services4_expressions-library.html">pip_services4_expressions</a></li>
+    <li class="self-crumb">SymbolNode class</li>
+  </ol>
+  <div class="self-name">SymbolNode</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-class">SymbolNode</span> class 
+ 
+</h1></div>
+
+    
+<section class="desc markdown">
+  <p>A <a href="../pip_services4_expressions/SymbolNode-class.html">SymbolNode</a> object is a member of a tree that contains all possible prefixes
+of allowable symbols. Multi-character symbols appear in a <a href="../pip_services4_expressions/SymbolNode-class.html">SymbolNode</a> tree
+with one node for each character.</p>
+<p>For example, the symbol <code>=:~</code> will appear in a tree as three nodes. The first
+node contains an equals sign, and has a child; that child contains a colon and has a child;
+this third child contains a tilde, and has no children of its own. If the colon node had
+another child for a dollar sign character, then the tree would contain the symbol <code>=:$</code>.</p>
+<p>A tree of <a href="../pip_services4_expressions/SymbolNode-class.html">SymbolNode</a> objects collaborate to read a (potentially multi-character)
+symbol from an input stream. A root node with no character of its own finds an initial node
+that represents the first character in the input. This node looks to see if the next character
+in the stream matches one of its children. If so, the node delegates its reading task to its child.
+This approach walks down the tree, pulling symbols from the input that match the path down the tree.</p>
+<p>When a node does not have a child that matches the next character, we will have read the longest
+possible symbol prefix. This prefix may or may not be a valid symbol.
+Consider a tree that has had <code>=:~</code> added and has not had <code>=:</code> added.
+In this tree, of the three nodes that contain <code>=:~</code>, only the first and third contain
+complete symbols. If, say, the input contains <code>=:a</code>, the colon node will not have
+a child that matches the 'a' and so it will stop reading. The colon node has to "unread": it must
+push back its character, and ask its parent to unread. Unreading continues until it reaches
+an ancestor that represents a valid symbol.</p>
+</section>
+
+
+    <section>
+      <dl class="dl-horizontal">
+        
+
+        
+        
+
+        <dt>Implementers</dt>
+        <dd><ul class="comma-separated clazz-relationships">
+          <li><a href="../pip_services4_expressions/SymbolRootNode-class.html">SymbolRootNode</a></li>
+        </ul></dd>
+
+
+        
+
+
+      </dl>
+    </section>
+
+    
+  <section class="summary offset-anchor" id="constructors">
+    <h2>Constructors</h2>
+
+    <dl class="constructor-summary-list">
+        <dt id="SymbolNode" class="callable">
+          <span class="name"><a href="../pip_services4_expressions/SymbolNode/SymbolNode.html">SymbolNode</a></span><span class="signature">(<span class="parameter" id="-param-parent"><span class="type-annotation"><a href="../pip_services4_expressions/SymbolNode-class.html">SymbolNode</a>?</span> <span class="parameter-name">parent</span>, </span><span class="parameter" id="-param-character"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/int-class.html">int</a></span> <span class="parameter-name">character</span></span>)</span>
+        </dt>
+        <dd>
+          Constructs a SymbolNode with the given parent, representing the given character.
+        </dd>
+    </dl>
+  </section>
+
+    <section class="summary offset-anchor" id="instance-properties">
+      <h2>Properties</h2>
+
+      <dl class="properties">
+        <dt id="hashCode" class="property inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/hashCode.html">hashCode</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.0.5/dart-core/int-class.html">int</a></span> 
+
+</dt>
+<dd class="inherited">
+  The hash code for this object.
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="runtimeType" class="property inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/runtimeType.html">runtimeType</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.0.5/dart-core/Type-class.html">Type</a></span> 
+
+</dt>
+<dd class="inherited">
+  A representation of the runtime type of the object.
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="tokenType" class="property">
+  <span class="name"><a href="../pip_services4_expressions/SymbolNode/tokenType.html">tokenType</a></span>
+  <span class="signature">&#8596; <a href="../pip_services4_expressions/TokenType.html">TokenType</a></span> 
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">read / write</span></div>
+
+</dd>
+
+        <dt id="valid" class="property">
+  <span class="name"><a href="../pip_services4_expressions/SymbolNode/valid.html">valid</a></span>
+  <span class="signature">&#8596; <a href="https://api.dart.dev/stable/3.0.5/dart-core/bool-class.html">bool</a></span> 
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">read / write</span></div>
+
+</dd>
+
+      </dl>
+    </section>
+
+    
+  <section
+      class="summary offset-anchor"
+      id="instance-methods">
+    <h2>Methods</h2>
+    <dl class="callables">
+        <dt id="addDescendantLine" class="callable">
+  <span class="name"><a href="../pip_services4_expressions/SymbolNode/addDescendantLine.html">addDescendantLine</a></span><span class="signature">(<wbr><span class="parameter" id="addDescendantLine-param-value"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/String-class.html">String</a></span> <span class="parameter-name">value</span>, </span><span class="parameter" id="addDescendantLine-param-tokenType"><span class="type-annotation"><a href="../pip_services4_expressions/TokenType.html">TokenType</a></span> <span class="parameter-name">tokenType</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Add a line of descendants that represent the characters in the given string.
+  
+
+</dd>
+
+        <dt id="ancestry" class="callable">
+  <span class="name"><a href="../pip_services4_expressions/SymbolNode/ancestry.html">ancestry</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.5/dart-core/String-class.html">String</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Show the symbol this node represents.
+Returns The symbol this node represents.
+  
+
+</dd>
+
+        <dt id="deepestRead" class="callable">
+  <span class="name"><a href="../pip_services4_expressions/SymbolNode/deepestRead.html">deepestRead</a></span><span class="signature">(<wbr><span class="parameter" id="deepestRead-param-scanner"><span class="type-annotation"><a href="../pip_services4_expressions/IScanner-class.html">IScanner</a></span> <span class="parameter-name">scanner</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../pip_services4_expressions/SymbolNode-class.html">SymbolNode</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Find the descendant that takes as many characters as possible from the input.
+  
+
+</dd>
+
+        <dt id="ensureChildWithChar" class="callable">
+  <span class="name"><a href="../pip_services4_expressions/SymbolNode/ensureChildWithChar.html">ensureChildWithChar</a></span><span class="signature">(<wbr><span class="parameter" id="ensureChildWithChar-param-value"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/int-class.html">int</a></span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../pip_services4_expressions/SymbolNode-class.html">SymbolNode</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Find or create a child for the given character.
+  
+
+</dd>
+
+        <dt id="findChildWithChar" class="callable">
+  <span class="name"><a href="../pip_services4_expressions/SymbolNode/findChildWithChar.html">findChildWithChar</a></span><span class="signature">(<wbr><span class="parameter" id="findChildWithChar-param-value"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/int-class.html">int</a></span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../pip_services4_expressions/SymbolNode-class.html">SymbolNode</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Find a child with the given character.
+  
+
+</dd>
+
+        <dt id="findDescendant" class="callable">
+  <span class="name"><a href="../pip_services4_expressions/SymbolNode/findDescendant.html">findDescendant</a></span><span class="signature">(<wbr><span class="parameter" id="findDescendant-param-value"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/String-class.html">String</a></span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../pip_services4_expressions/SymbolNode-class.html">SymbolNode</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Find a descendant which is down the path the given string indicates.
+  
+
+</dd>
+
+        <dt id="noSuchMethod" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Invoked when a nonexistent method or property is accessed.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="toString" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/toString.html">toString</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.5/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  A string representation of this object.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="unreadToValid" class="callable">
+  <span class="name"><a href="../pip_services4_expressions/SymbolNode/unreadToValid.html">unreadToValid</a></span><span class="signature">(<wbr><span class="parameter" id="unreadToValid-param-scanner"><span class="type-annotation"><a href="../pip_services4_expressions/IScanner-class.html">IScanner</a></span> <span class="parameter-name">scanner</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../pip_services4_expressions/SymbolNode-class.html">SymbolNode</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Unwind to a valid node; this node is "valid" if its ancestry represents a complete symbol.
+If this node is not valid, put back the character and ask the parent to unwind.
+  
+
+</dd>
+
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor inherited"
+      id="operators">
+    <h2>Operators</h2>
+    <dl class="callables">
+        <dt id="operator ==" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.5/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The equality operator.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+    
+    
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">pip_services4_expressions</a></li>
+  <li><a href="../pip_services4_expressions/pip_services4_expressions-library.html">pip_services4_expressions</a></li>
+  <li class="self-crumb">SymbolNode class</li>
+</ol>
+
+
+    <h5>pip_services4_expressions library</h5>
+    <ol>
+      <li class="section-title"><a href="../pip_services4_expressions/pip_services4_expressions-library.html#classes">Classes</a></li>
+        <li><a href="../pip_services4_expressions/AbstractTokenizer-class.html">AbstractTokenizer</a></li>
+        <li><a href="../pip_services4_expressions/AbstractVariantOperations-class.html">AbstractVariantOperations</a></li>
+        <li><a href="../pip_services4_expressions/CalculationStack-class.html">CalculationStack</a></li>
+        <li><a href="../pip_services4_expressions/CCommentState-class.html">CCommentState</a></li>
+        <li><a href="../pip_services4_expressions/CharReferenceInterval-class.html">CharReferenceInterval</a></li>
+        <li><a href="../pip_services4_expressions/CharReferenceMap-class.html">CharReferenceMap</a></li>
+        <li><a href="../pip_services4_expressions/CharValidator-class.html">CharValidator</a></li>
+        <li><a href="../pip_services4_expressions/CppCommentState-class.html">CppCommentState</a></li>
+        <li><a href="../pip_services4_expressions/CsvConstant-class.html">CsvConstant</a></li>
+        <li><a href="../pip_services4_expressions/CsvQuoteState-class.html">CsvQuoteState</a></li>
+        <li><a href="../pip_services4_expressions/CsvSymbolState-class.html">CsvSymbolState</a></li>
+        <li><a href="../pip_services4_expressions/CsvTokenizer-class.html">CsvTokenizer</a></li>
+        <li><a href="../pip_services4_expressions/CsvWordState-class.html">CsvWordState</a></li>
+        <li><a href="../pip_services4_expressions/DefaultFunctionCollection-class.html">DefaultFunctionCollection</a></li>
+        <li><a href="../pip_services4_expressions/DelegatedFunction-class.html">DelegatedFunction</a></li>
+        <li><a href="../pip_services4_expressions/ExpressionCalculator-class.html">ExpressionCalculator</a></li>
+        <li><a href="../pip_services4_expressions/ExpressionNumberState-class.html">ExpressionNumberState</a></li>
+        <li><a href="../pip_services4_expressions/ExpressionParser-class.html">ExpressionParser</a></li>
+        <li><a href="../pip_services4_expressions/ExpressionQuoteState-class.html">ExpressionQuoteState</a></li>
+        <li><a href="../pip_services4_expressions/ExpressionSymbolState-class.html">ExpressionSymbolState</a></li>
+        <li><a href="../pip_services4_expressions/ExpressionToken-class.html">ExpressionToken</a></li>
+        <li><a href="../pip_services4_expressions/ExpressionTokenizer-class.html">ExpressionTokenizer</a></li>
+        <li><a href="../pip_services4_expressions/ExpressionWordState-class.html">ExpressionWordState</a></li>
+        <li><a href="../pip_services4_expressions/FunctionCollection-class.html">FunctionCollection</a></li>
+        <li><a href="../pip_services4_expressions/GenericCommentState-class.html">GenericCommentState</a></li>
+        <li><a href="../pip_services4_expressions/GenericNumberState-class.html">GenericNumberState</a></li>
+        <li><a href="../pip_services4_expressions/GenericQuoteState-class.html">GenericQuoteState</a></li>
+        <li><a href="../pip_services4_expressions/GenericSymbolState-class.html">GenericSymbolState</a></li>
+        <li><a href="../pip_services4_expressions/GenericTokenizer-class.html">GenericTokenizer</a></li>
+        <li><a href="../pip_services4_expressions/GenericWhitespaceState-class.html">GenericWhitespaceState</a></li>
+        <li><a href="../pip_services4_expressions/GenericWordState-class.html">GenericWordState</a></li>
+        <li><a href="../pip_services4_expressions/ICommentState-class.html">ICommentState</a></li>
+        <li><a href="../pip_services4_expressions/IFunction-class.html">IFunction</a></li>
+        <li><a href="../pip_services4_expressions/IFunctionCollection-class.html">IFunctionCollection</a></li>
+        <li><a href="../pip_services4_expressions/INumberState-class.html">INumberState</a></li>
+        <li><a href="../pip_services4_expressions/IQuoteState-class.html">IQuoteState</a></li>
+        <li><a href="../pip_services4_expressions/IScanner-class.html">IScanner</a></li>
+        <li><a href="../pip_services4_expressions/ISymbolState-class.html">ISymbolState</a></li>
+        <li><a href="../pip_services4_expressions/ITokenizer-class.html">ITokenizer</a></li>
+        <li><a href="../pip_services4_expressions/ITokenizerState-class.html">ITokenizerState</a></li>
+        <li><a href="../pip_services4_expressions/IVariable-class.html">IVariable</a></li>
+        <li><a href="../pip_services4_expressions/IVariableCollection-class.html">IVariableCollection</a></li>
+        <li><a href="../pip_services4_expressions/IVariantOperations-class.html">IVariantOperations</a></li>
+        <li><a href="../pip_services4_expressions/IWhitespaceState-class.html">IWhitespaceState</a></li>
+        <li><a href="../pip_services4_expressions/IWordState-class.html">IWordState</a></li>
+        <li><a href="../pip_services4_expressions/MustacheErrorCode-class.html">MustacheErrorCode</a></li>
+        <li><a href="../pip_services4_expressions/MustacheParser-class.html">MustacheParser</a></li>
+        <li><a href="../pip_services4_expressions/MustacheSpecialState-class.html">MustacheSpecialState</a></li>
+        <li><a href="../pip_services4_expressions/MustacheTemplate-class.html">MustacheTemplate</a></li>
+        <li><a href="../pip_services4_expressions/MustacheToken-class.html">MustacheToken</a></li>
+        <li><a href="../pip_services4_expressions/MustacheTokenizer-class.html">MustacheTokenizer</a></li>
+        <li><a href="../pip_services4_expressions/StringScanner-class.html">StringScanner</a></li>
+        <li><a href="../pip_services4_expressions/SymbolNode-class.html">SymbolNode</a></li>
+        <li><a href="../pip_services4_expressions/SymbolRootNode-class.html">SymbolRootNode</a></li>
+        <li><a href="../pip_services4_expressions/SyntaxErrorCode-class.html">SyntaxErrorCode</a></li>
+        <li><a href="../pip_services4_expressions/Token-class.html">Token</a></li>
+        <li><a href="../pip_services4_expressions/TypeSafeVariantOperations-class.html">TypeSafeVariantOperations</a></li>
+        <li><a href="../pip_services4_expressions/TypeUnsafeVariantOperations-class.html">TypeUnsafeVariantOperations</a></li>
+        <li><a href="../pip_services4_expressions/Variable-class.html">Variable</a></li>
+        <li><a href="../pip_services4_expressions/VariableCollection-class.html">VariableCollection</a></li>
+        <li><a href="../pip_services4_expressions/Variant-class.html">Variant</a></li>
+
+
+
+
+
+
+      <li class="section-title"><a href="../pip_services4_expressions/pip_services4_expressions-library.html#enums">Enums</a></li>
+        <li><a href="../pip_services4_expressions/ExpressionTokenType.html">ExpressionTokenType</a></li>
+        <li><a href="../pip_services4_expressions/MustacheLexicalState.html">MustacheLexicalState</a></li>
+        <li><a href="../pip_services4_expressions/MustacheTokenType.html">MustacheTokenType</a></li>
+        <li><a href="../pip_services4_expressions/TokenType.html">TokenType</a></li>
+        <li><a href="../pip_services4_expressions/VariantType.html">VariantType</a></li>
+
+      <li class="section-title"><a href="../pip_services4_expressions/pip_services4_expressions-library.html#typedefs">Typedefs</a></li>
+        <li><a href="../pip_services4_expressions/FunctionCalculator.html">FunctionCalculator</a></li>
+
+      <li class="section-title"><a href="../pip_services4_expressions/pip_services4_expressions-library.html#exceptions">Exceptions</a></li>
+        <li><a href="../pip_services4_expressions/ExpressionException-class.html">ExpressionException</a></li>
+        <li><a href="../pip_services4_expressions/MustacheException-class.html">MustacheException</a></li>
+        <li><a href="../pip_services4_expressions/SyntaxException-class.html">SyntaxException</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <ol>
+
+        <li class="section-title"><a href="../pip_services4_expressions/SymbolNode-class.html#constructors">Constructors</a></li>
+          <li><a href="../pip_services4_expressions/SymbolNode/SymbolNode.html">SymbolNode</a></li>
+
+
+        <li class="section-title">
+          <a href="../pip_services4_expressions/SymbolNode-class.html#instance-properties">Properties</a>
+        </li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/hashCode.html">hashCode</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/runtimeType.html">runtimeType</a></li>
+          <li><a href="../pip_services4_expressions/SymbolNode/tokenType.html">tokenType</a></li>
+          <li><a href="../pip_services4_expressions/SymbolNode/valid.html">valid</a></li>
+
+        <li class="section-title"><a href="../pip_services4_expressions/SymbolNode-class.html#instance-methods">Methods</a></li>
+          <li><a href="../pip_services4_expressions/SymbolNode/addDescendantLine.html">addDescendantLine</a></li>
+          <li><a href="../pip_services4_expressions/SymbolNode/ancestry.html">ancestry</a></li>
+          <li><a href="../pip_services4_expressions/SymbolNode/deepestRead.html">deepestRead</a></li>
+          <li><a href="../pip_services4_expressions/SymbolNode/ensureChildWithChar.html">ensureChildWithChar</a></li>
+          <li><a href="../pip_services4_expressions/SymbolNode/findChildWithChar.html">findChildWithChar</a></li>
+          <li><a href="../pip_services4_expressions/SymbolNode/findDescendant.html">findDescendant</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/toString.html">toString</a></li>
+          <li><a href="../pip_services4_expressions/SymbolNode/unreadToValid.html">unreadToValid</a></li>
+
+        <li class="section-title inherited"><a href="../pip_services4_expressions/SymbolNode-class.html#operators">Operators</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pip_services4_expressions
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

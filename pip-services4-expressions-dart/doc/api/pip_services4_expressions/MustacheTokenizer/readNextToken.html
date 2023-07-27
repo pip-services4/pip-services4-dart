@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the readNextToken method from the MustacheTokenizer class, for the Dart programming language.">
+  <title>readNextToken method - MustacheTokenizer class - pip_services4_expressions library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">pip_services4_expressions</a></li>
+    <li><a href="../../pip_services4_expressions/pip_services4_expressions-library.html">pip_services4_expressions</a></li>
+    <li><a href="../../pip_services4_expressions/MustacheTokenizer-class.html">MustacheTokenizer</a></li>
+    <li class="self-crumb">readNextToken method</li>
+  </ol>
+  <div class="self-name">readNextToken</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-method">readNextToken</span> method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+  <div>
+    <ol class="annotation-list">
+        <li>@<a href="https://api.dart.dev/stable/3.0.5/dart-core/override-constant.html">override</a></li>
+    </ol>
+  </div>
+
+<span class="returntype"><a href="../../pip_services4_expressions/Token-class.html">Token</a>?</span>
+<span class="name ">readNextToken</span>(<wbr>)
+
+      <div class="features"><span class="feature">override</span></div>
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Reads the next token.
+Returns next token</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@override
+Token? readNextToken() {
+  if (scanner == null) {
+    return null;
+  }
+
+  &#47;&#47; Check for initial state
+  if (nextTokenValue == null &amp;&amp; lastTokenType == TokenType.Unknown) {
+    _special = true;
+  }
+
+  &#47;&#47; Process quotes
+  if (_special) {
+    var token = _specialState.nextToken(scanner!, this);
+    if (token != null &amp;&amp; token.value != &#39;&#39;) {
+      return token;
+    }
+  }
+
+  &#47;&#47; Proces other tokens
+  _special = false;
+  var token = super.readNextToken();
+  &#47;&#47; Switch to quote when &#39;{{&#39; or &#39;{{{&#39; symbols found
+  if (token != null &amp;&amp; (token.value == &#39;}}&#39; || token.value == &#39;}}}&#39;)) {
+    _special = true;
+  }
+  return token;
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">pip_services4_expressions</a></li>
+  <li><a href="../../pip_services4_expressions/pip_services4_expressions-library.html">pip_services4_expressions</a></li>
+  <li><a href="../../pip_services4_expressions/MustacheTokenizer-class.html">MustacheTokenizer</a></li>
+  <li class="self-crumb">readNextToken method</li>
+</ol>
+
+
+    <h5>MustacheTokenizer class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../pip_services4_expressions/MustacheTokenizer-class.html#constructors">Constructors</a></li>
+          <li><a href="../../pip_services4_expressions/MustacheTokenizer/MustacheTokenizer.html">MustacheTokenizer</a></li>
+
+
+        <li class="section-title inherited">
+          <a href="../../pip_services4_expressions/MustacheTokenizer-class.html#instance-properties">Properties</a>
+        </li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/commentState.html">commentState</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/decodeStrings.html">decodeStrings</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/hashCode.html">hashCode</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/lastTokenType.html">lastTokenType</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/mergeWhitespaces.html">mergeWhitespaces</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/nextTokenValue.html">nextTokenValue</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/numberState.html">numberState</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/quoteState.html">quoteState</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/runtimeType.html">runtimeType</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/scanner.html">scanner</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/skipComments.html">skipComments</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/skipEof.html">skipEof</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/skipUnknown.html">skipUnknown</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/skipWhitespaces.html">skipWhitespaces</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/symbolState.html">symbolState</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/unifyNumbers.html">unifyNumbers</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/whitespaceState.html">whitespaceState</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/wordState.html">wordState</a></li>
+
+        <li class="section-title"><a href="../../pip_services4_expressions/MustacheTokenizer-class.html#instance-methods">Methods</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/clearCharacterStates.html">clearCharacterStates</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/getCharacterState.html">getCharacterState</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/hasNextToken.html">hasNextToken</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/nextToken.html">nextToken</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+          <li><a href="../../pip_services4_expressions/MustacheTokenizer/readNextToken.html">readNextToken</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/setCharacterState.html">setCharacterState</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/tokenizeBuffer.html">tokenizeBuffer</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/tokenizeBufferToStrings.html">tokenizeBufferToStrings</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/tokenizeStream.html">tokenizeStream</a></li>
+          <li class="inherited"><a href="../../pip_services4_expressions/AbstractTokenizer/tokenizeStreamToStrings.html">tokenizeStreamToStrings</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/toString.html">toString</a></li>
+
+        <li class="section-title inherited"><a href="../../pip_services4_expressions/MustacheTokenizer-class.html#operators">Operators</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pip_services4_expressions
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
