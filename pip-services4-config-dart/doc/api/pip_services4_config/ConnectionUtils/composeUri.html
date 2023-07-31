@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the composeUri method from the ConnectionUtils class, for the Dart programming language.">
+  <title>composeUri method - ConnectionUtils class - pip_services4_config library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">pip_services4_config</a></li>
+    <li><a href="../../pip_services4_config/pip_services4_config-library.html">pip_services4_config</a></li>
+    <li><a href="../../pip_services4_config/ConnectionUtils-class.html">ConnectionUtils</a></li>
+    <li class="self-crumb">composeUri static method</li>
+  </ol>
+  <div class="self-name">composeUri</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-method">composeUri</span> static method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+
+<span class="returntype"><a href="https://api.dart.dev/stable/3.0.5/dart-core/String-class.html">String</a></span>
+<span class="name ">composeUri</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="composeUri-param-options"><span class="type-annotation"><a href="https://pub.dev/documentation/pip_services4_components/0.0.1/pip_services4_components/ConfigParams-class.html">ConfigParams</a></span> <span class="parameter-name">options</span>, </span></li>
+<li><span class="parameter" id="composeUri-param-defaultProtocol"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">defaultProtocol</span>, </span></li>
+<li><span class="parameter" id="composeUri-param-defaultPort"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">defaultPort</span></span></li>
+</ol>)
+
+      
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Composes URI from config parameters.
+The result URI will be in the following form:
+protocol://username@password@host1:port1,host2:port2,...?param1=abc&amp;param2=xyz&amp;...</p>
+<ul>
+<li><code>options</code> configuration parameters</li>
+<li><code>defaultProtocol</code> a default protocol</li>
+<li><code>defaultPort</code> a default port</li>
+</ul>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">static String composeUri(
+    ConfigParams options, String? defaultProtocol, int? defaultPort) {
+  var builder = &#39;&#39;;
+
+  var protocol =
+      options.getAsStringWithDefault(&#39;protocol&#39;, defaultProtocol ?? &#39;&#39;);
+  if (protocol != &#39;&#39;) {
+    builder = &#39;$protocol:&#47;&#47;$builder&#39;;
+  }
+
+  var username = options.getAsNullableString(&#39;username&#39;);
+  if (username != null) {
+    builder += username;
+    var password = options.getAsNullableString(&#39;password&#39;);
+    if (password != null) {
+      builder += &#39;:$password&#39;;
+    }
+    builder += &#39;@&#39;;
+  }
+
+  var servers = &#39;&#39;;
+  var defaultPortStr =
+      defaultPort != null &amp;&amp; defaultPort &gt; 0 ? defaultPort.toString() : &#39;&#39;;
+  var hosts = options.getAsStringWithDefault(&#39;host&#39;, &#39;???&#39;).split(&#39;,&#39;);
+  var ports =
+      options.getAsStringWithDefault(&#39;port&#39;, defaultPortStr).split(&#39;,&#39;);
+  for (var index = 0; index &lt; hosts.length; index++) {
+    if (servers.isNotEmpty) {
+      servers += &#39;,&#39;;
+    }
+
+    var host = hosts[index];
+    servers += host;
+
+    var port = ports.length &gt; index ? ports[index] : defaultPortStr;
+    port = port != &#39;&#39; ? port : defaultPortStr;
+    if (port != &#39;&#39;) {
+      servers += &#39;:$port&#39;;
+    }
+  }
+
+  builder += servers;
+
+  var path = options.getAsNullableString(&#39;path&#39;);
+
+  if (path != null) {
+    builder += &#39;&#47;$path&#39;;
+  }
+
+  var params = &#39;&#39;;
+  var reservedKeys = [
+    &#39;protocol&#39;,
+    &#39;host&#39;,
+    &#39;port&#39;,
+    &#39;username&#39;,
+    &#39;password&#39;,
+    &#39;servers&#39;,
+    &#39;path&#39;
+  ];
+  for (var key in options.getKeys()) {
+    if (reservedKeys.contains(key)) {
+      continue;
+    }
+
+    if (params.isNotEmpty) {
+      params += &#39;&amp;&#39;;
+    }
+    params += Uri.encodeComponent(key);
+
+    var value = options.getAsNullableString(key);
+    if (value != null &amp;&amp; value != &#39;&#39;) {
+      params += &#39;=${Uri.encodeComponent(value)}&#39;;
+    }
+  }
+
+  if (params.isNotEmpty) {
+    builder += &#39;?$params&#39;;
+  }
+
+  return builder.toString();
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">pip_services4_config</a></li>
+  <li><a href="../../pip_services4_config/pip_services4_config-library.html">pip_services4_config</a></li>
+  <li><a href="../../pip_services4_config/ConnectionUtils-class.html">ConnectionUtils</a></li>
+  <li class="self-crumb">composeUri static method</li>
+</ol>
+
+
+    <h5>ConnectionUtils class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../pip_services4_config/ConnectionUtils-class.html#constructors">Constructors</a></li>
+          <li><a href="../../pip_services4_config/ConnectionUtils/ConnectionUtils.html">ConnectionUtils</a></li>
+
+
+        <li class="section-title inherited">
+          <a href="../../pip_services4_config/ConnectionUtils-class.html#instance-properties">Properties</a>
+        </li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/hashCode.html">hashCode</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/runtimeType.html">runtimeType</a></li>
+
+        <li class="section-title inherited"><a href="../../pip_services4_config/ConnectionUtils-class.html#instance-methods">Methods</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/toString.html">toString</a></li>
+
+        <li class="section-title inherited"><a href="../../pip_services4_config/ConnectionUtils-class.html#operators">Operators</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+        <li class="section-title"><a href="../../pip_services4_config/ConnectionUtils-class.html#static-methods">Static methods</a></li>
+          <li><a href="../../pip_services4_config/ConnectionUtils/composeUri.html">composeUri</a></li>
+          <li><a href="../../pip_services4_config/ConnectionUtils/concat.html">concat</a></li>
+          <li><a href="../../pip_services4_config/ConnectionUtils/concatValues.html">concatValues</a></li>
+          <li><a href="../../pip_services4_config/ConnectionUtils/exclude.html">exclude</a></li>
+          <li><a href="../../pip_services4_config/ConnectionUtils/include.html">include</a></li>
+          <li><a href="../../pip_services4_config/ConnectionUtils/parseUri.html">parseUri</a></li>
+          <li><a href="../../pip_services4_config/ConnectionUtils/rename.html">rename</a></li>
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pip_services4_config
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
