@@ -1,0 +1,99 @@
+import 'package:pip_services4_commons/pip_services4_commons.dart';
+import 'package:pip_services4_components/pip_services4_components.dart';
+
+import '../../pip_services4_observability.dart';
+
+/// Performance counters that periodically dumps counters measurements to logger.
+///
+/// ### Configuration parameters ###
+///
+/// - __options:__
+///     - [interval]:          interval in milliseconds to save current counters measurements (default: 5 mins)
+///     - [reset_timeout]:     timeout in milliseconds to reset the counters. 0 disables the reset (default: 0)
+///
+/// ### References ###
+///
+/// - \*:logger:\*:\*:1.0           [ILogger] components to dump the captured counters
+/// - \*:context-info:\*:\*:1.0     (optional) [ContextInfo] to detect the context id and specify counters source
+///
+/// See [Counter]
+/// See [CachedCounters]
+/// See [CompositeLogger]
+///
+/// ### Example ###
+///
+///     var counters = LogCounters();
+///     counters.setReferences(References.fromTuples([
+///         Descriptor("pip-services", "logger", "console", "default", "1.0"), ConsoleLogger()
+///     ]));
+///
+///     counters.increment("mycomponent.mymethod.calls");
+///     var timing = counters.beginTiming("mycomponent.mymethod.exec_time");
+///     try {
+///         ...
+///     } finally {
+///         timing.endTiming();
+///     }
+///
+///     counters.dump();
+
+class LogCounters extends CachedCounters implements IReferenceable {
+  final CompositeLogger _logger = CompositeLogger();
+
+  /// Creates a new instance of the counters.
+  LogCounters();
+
+  /// Sets references to dependent components.
+  ///
+  /// - [references] 	references to locate the component dependencies.
+  ///
+  @override
+  void setReferences(IReferences references) {
+    _logger.setReferences(references);
+  }
+
+  String _counterToString(Counter counter) {
+    var result = 'Counter ${counter.name} { ';
+    result += '"type": ${counter.type}';
+    if (counter.last != null) {
+      result += ', "last": ${StringConverter.toString2(counter.last)}';
+    }
+    if (counter.count != null) {
+      result += ', "count": ${StringConverter.toString2(counter.count)}';
+    }
+    if (counter.min != null) {
+      result += ', "min": ${StringConverter.toString2(counter.min)}';
+    }
+    if (counter.max != null) {
+      result += ', "max": ${StringConverter.toString2(counter.max)}';
+    }
+    if (counter.average != null) {
+      result += ', "avg": ${StringConverter.toString2(counter.average)}';
+    }
+    if (counter.time != null) {
+      result += ', "time": ${StringConverter.toString2(counter.time)}';
+    }
+    result += ' }';
+    return result;
+  }
+
+  /// Saves the current counters measurements.
+  ///
+  /// - [counters]      current counters measurements to be saves.
+  @override
+  void save(List<Counter>? counters) {
+    if (counters == null) return;
+
+    if (counters.isEmpty) return;
+
+    counters.sort((c1, c2) {
+      if (c1.name.compareTo(c2.name) < 0) return -1;
+      if (c1.name.compareTo(c2.name) > 0) return 1;
+      return 0;
+    });
+
+    for (var i = 0; i < counters.length; i++) {
+      _logger.info(null, _counterToString(counters[i]), []);
+    }
+  }
+}
