@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="generator" content="made with love by dartdoc 6.2.2">
+  <meta name="description" content="pip_services4_persistence API docs, for the Dart programming language.">
+  <title>pip_services4_persistence - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="https://github.com/pip-services4/pip-services4-dart/tree/main/pip-services4-persistence-dart">pip_services4_persistence package</a></li>
+  </ol>
+  <div class="self-name">pip_services4_persistence</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h1 id="img-srchttpsuploads-sslwebflowcom5ea5d3315186cf5ec60c3ee45edf1c94ce4c859f2b188094_logosvg-altpipservices-logo-width200-br-persistence-components-for-dart"><img src="https://uploads-ssl.webflow.com/5ea5d3315186cf5ec60c3ee4/5edf1c94ce4c859f2b188094_logo.svg" alt="Pip.Services Logo" width="200"> <br> Persistence components for Dart</h1>
+<p>This module is a part of the <a href="https://pipservices.org">Pip.Services</a> polyglot microservices toolkit. It contains generic interfaces for data access components as well as abstract implementations for in-memory and file persistence.</p>
+<p>The persistence components come in two kinds. The first kind is a basic persistence that can work with any object types and provides only minimal set of operations.
+The second kind is so called "identifieable" persistence with works with "identifable" data objects, i.e. objects that have unique ID field. The identifiable persistence provides a full set or CRUD operations that covers most common cases.</p>
+<p>The module contains the following packages:</p>
+<ul>
+<li><strong>Read</strong> - generic data reading interfaces.</li>
+<li><strong>Write</strong> - generic data writing interfaces.</li>
+<li><strong>Persistence</strong> - in-memory and file persistence components, as well as JSON persister class.</li>
+</ul>
+<p><a name="links"></a> Quick links:</p>
+<ul>
+<li>
+<p><a href="https://www.pipservices.org/recipies/memory-persistence">Memory persistence</a></p>
+</li>
+<li>
+<p><a href="https://pub.dev/documentation/pip_services4_persistence/latest/pip_services4_persistence/pip_services4_persistence-library.html">API Reference</a></p>
+</li>
+<li>
+<p><a href="CHANGELOG.md">Change Log</a></p>
+</li>
+<li>
+<p><a href="https://www.pipservices.org/community/help">Get Help</a></p>
+</li>
+<li>
+<p><a href="https://www.pipservices.org/community/contribute">Contribute</a></p>
+</li>
+<li>
+<p>Warning! For the library to work correctly, the stored type must have a default costructor without parameters, as well as methods for converting from/to JSON.</p>
+</li>
+</ul>
+<h2 id="use">Use</h2>
+<p>Add this to your package's pubspec.yaml file:</p>
+<pre class="language-yaml"><code class="language-yaml">dependencies:
+  pip_services4_persistence: version
+</code></pre>
+<p>Now you can install package from the command line:</p>
+<pre class="language-bash"><code class="language-bash">pub get
+</code></pre>
+<p>For example, you need to implement persistence for a data object defined as following.</p>
+<pre class="language-dart"><code class="language-dart">import 'package:pip_services4_data/src/data/IIdentifiable.dart';
+
+class MyObject implements IIdentifiable&lt;String&gt; {
+  @override
+  String? id;
+  String key;
+  String value;
+
+  Dummy({String? id, String key, String value})
+      : id = id,
+        key = key,
+        content = content;
+
+  void fromJson(Map&lt;String, dynamic&gt; json) {
+    id = json['id'];
+    key = json['key'];
+    content = json['content'];
+  }
+}
+
+</code></pre>
+<p>Our persistence component shall implement the following interface with a basic set of CRUD operations.</p>
+<pre class="language-dart"><code class="language-dart">abstract class IMyPersistence {
+    void getPageByFilter(IContext? context, FilterParams filter, PagingParams paging);
+    
+    getOneById(IContext? context, String id);
+    
+    getOneByKey(IContext? context, String key;
+    
+    create(IContext? context, MyObject item);
+    
+    update(IContext? context, MyObject item);
+    
+    deleteById(IContext? context, String id);
+}
+</code></pre>
+<p>To implement in-memory persistence component you shall inherit <code>IdentifiableMemoryPersistence</code>.
+Most CRUD operations will come from the base class. You only need to override <code>getPageByFilter</code> method with a custom filter function.
+And implement a <code>getOneByKey</code> custom persistence method that doesn't exist in the base class.</p>
+<pre class="language-dart"><code class="language-dart">import 'package:pip_services4_persistence/src/persistence/IdentifiableMemoryPersistence.dart';
+import 'package:pip_services4_data/src/query/FilterParams.dart';
+import 'package:pip_services4_data/src/query/PagingParams.dart';
+
+class MyMemoryPersistence extends IdentifiableMemoryPersistence {
+  MyMemoryPersistence(): super() {}
+
+  composeFilter(FilterParams filter) {
+    filter = filter != null ? filter : FilterParams();
+    
+    String id = filter.getAsNullableString("id");
+    String tempIds = filter.getAsNullableString("ids");
+    List&lt;String&gt; ids = tempIds != null ? tempIds.split(",") : null;
+    String key = filter.getAsNullableString("key");
+
+    return (item) {
+      if (id != null &amp;&amp; item.id != id)
+        return false;
+      if (ids != null &amp;&amp; ids.indexOf(item.id) &lt; 0)
+        return false;
+      if (key != null &amp;&amp; item.key != key)
+            return false;
+      return true;
+    };
+  }
+  
+  Future&lt;DataPage&lt;MyData&gt;&gt; getPageByFilter(IContext? context, FilterParams filter, PagingParams paging){
+    return super.getPageByFilterEx(context, composeFilter(filter), paging, null);
+  }  
+  
+  Future&lt;String&gt; getOneByKey(IContext? context, String key) {
+    
+    final item =
+      this._items.firstWhere((item) =&gt;
+          item.name == item.key == key,
+          orElse: () {
+            return null;
+    });
+    
+    if (item != null) {
+      this._logger.trace(context, "Found object by key=%s", key);
+    } else {
+      this._logger.trace(context, "Cannot find by key=%s", key);
+    }
+  }
+}
+</code></pre>
+<p>It is easy to create file persistence by adding a persister object to the implemented in-memory persistence component.</p>
+<pre class="language-dart"><code class="language-dart">import 'package:pip_services4_data/src/query/ConfigParams.dart';
+import 'package:pip_services4_persistence/src/persistence/JsonFilePersister.dart';
+
+
+class MyFilePersistence extends MyMemoryPersistence {
+  JsonFilePersister&lt;MyObject&gt; _persister;
+
+  MyFilePersistence([String path]):super(){
+    this._persister = new JsonFilePersister&lt;MyObject&gt;(path);
+    this._loader = this._persister;
+    this._saver = this._persister;
+  }
+
+  configure(ConfigParams config) {
+      super.configure(config);
+      this._persister.configure(config);
+  }
+}
+</code></pre>
+<h2 id="develop">Develop</h2>
+<p>For development you shall install the following prerequisites:</p>
+<ul>
+<li>Dart SDK 3</li>
+<li>Visual Studio Code or another IDE of your choice</li>
+<li>Docker</li>
+</ul>
+<p>Install dependencies:</p>
+<pre class="language-bash"><code class="language-bash">pub get
+</code></pre>
+<p>Run automated tests:</p>
+<pre class="language-bash"><code class="language-bash">pub run test
+</code></pre>
+<p>Generate API documentation:</p>
+<pre class="language-bash"><code class="language-bash">./docgen.ps1
+</code></pre>
+<p>Before committing changes run dockerized build and test as:</p>
+<pre class="language-bash"><code class="language-bash">./build.ps1
+./test.ps1
+./clear.ps1
+</code></pre>
+<h2 id="contacts">Contacts</h2>
+<p>The Dart version of Pip.Services is created and maintained by:</p>
+<ul>
+<li><strong>Sergey Seroukhov</strong></li>
+<li><strong>Levichev Dmitry</strong></li>
+</ul>
+<p>The documentation is written by:</p>
+<ul>
+<li><strong>Levichev Dmitry</strong></li>
+</ul>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="pip_services4_persistence">
+  <span class="name"><a href="pip_services4_persistence/pip_services4_persistence-library.html">pip_services4_persistence</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="https://github.com/pip-services4/pip-services4-dart/tree/main/pip-services4-persistence-dart">pip_services4_persistence package</a></li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">pip_services4_persistence</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="pip_services4_persistence/pip_services4_persistence-library.html">pip_services4_persistence</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pip_services4_persistence
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

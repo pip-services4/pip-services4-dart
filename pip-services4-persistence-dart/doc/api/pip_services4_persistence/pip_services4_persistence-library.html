@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="pip_services4_persistence library API docs, for the Dart programming language.">
+  <title>pip_services4_persistence library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">pip_services4_persistence</a></li>
+    <li class="self-crumb">pip_services4_persistence library</li>
+  </ol>
+  <div class="self-name">pip_services4_persistence</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+    
+      <div>
+<h1><span class="kind-library">pip_services4_persistence</span> library 
+ 
+</h1></div>
+
+    
+
+
+    <section class="summary offset-anchor" id="classes">
+      <h2>Classes</h2>
+
+      <dl>
+        <dt id="FilePersistence">
+  <span class="name "><a href="../pip_services4_persistence/FilePersistence-class.html">FilePersistence</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Abstract persistence component that stores data in flat files
+and caches them in memory.
+</dd>
+
+        <dt id="IdentifiableFilePersistence">
+  <span class="name "><a href="../pip_services4_persistence/IdentifiableFilePersistence-class.html">IdentifiableFilePersistence</a><span class="signature">&lt;<wbr><span class="type-parameter">T extends <a href="https://pub.dev/documentation/pip_services4_data/0.0.2/pip_services4_data/IIdentifiable-class.html">IIdentifiable</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>&gt;</span></span>, <span class="type-parameter">K</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Abstract persistence component that stores data in flat files
+and implements a number of CRUD operations over data items with unique ids.
+The data items must implement <a href="https://pub.dev/documentation/pip_services4_data/latest/pip_services4_data/IIdentifiable-class.html">IIdentifiable interface</a>.
+</dd>
+
+        <dt id="IdentifiableMemoryPersistence">
+  <span class="name "><a href="../pip_services4_persistence/IdentifiableMemoryPersistence-class.html">IdentifiableMemoryPersistence</a><span class="signature">&lt;<wbr><span class="type-parameter">T extends <a href="https://pub.dev/documentation/pip_services4_data/0.0.2/pip_services4_data/IIdentifiable-class.html">IIdentifiable</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>&gt;</span></span>, <span class="type-parameter">K</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Abstract persistence component that stores data in memory
+and implements a number of CRUD operations over data items with unique ids.
+The data items must implement <a href="https://pub.dev/documentation/pip_services4_data/latest/pip_services4_data/IIdentifiable-class.html">IIdentifiable interface</a>.
+</dd>
+
+        <dt id="IFilteredPageReader">
+  <span class="name "><a href="../pip_services4_persistence/IFilteredPageReader-class.html">IFilteredPageReader</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Interface for data processing components that can retrieve a page of data items by a filter.
+</dd>
+
+        <dt id="IFilteredReader">
+  <span class="name "><a href="../pip_services4_persistence/IFilteredReader-class.html">IFilteredReader</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Interface for data processing components that can retrieve a list of data items by filter.
+</dd>
+
+        <dt id="IGetter">
+  <span class="name "><a href="../pip_services4_persistence/IGetter-class.html">IGetter</a><span class="signature">&lt;<wbr><span class="type-parameter">T extends <a href="https://pub.dev/documentation/pip_services4_data/0.0.2/pip_services4_data/IIdentifiable-class.html">IIdentifiable</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>&gt;</span></span>, <span class="type-parameter">K</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Interface for data processing components that can get data items.
+</dd>
+
+        <dt id="ILoader">
+  <span class="name "><a href="../pip_services4_persistence/ILoader-class.html">ILoader</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Interface for data processing components that load data items.
+</dd>
+
+        <dt id="IPartialUpdater">
+  <span class="name "><a href="../pip_services4_persistence/IPartialUpdater-class.html">IPartialUpdater</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>, <span class="type-parameter">K</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Interface for data processing components to update data items partially.
+</dd>
+
+        <dt id="IQuerablePageReader">
+  <span class="name "><a href="../pip_services4_persistence/IQuerablePageReader-class.html">IQuerablePageReader</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Interface for data processing components that can query a page of data items.
+</dd>
+
+        <dt id="IQuerableReader">
+  <span class="name "><a href="../pip_services4_persistence/IQuerableReader-class.html">IQuerableReader</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Interface for data processing components that can query a list of data items.
+</dd>
+
+        <dt id="ISaver">
+  <span class="name "><a href="../pip_services4_persistence/ISaver-class.html">ISaver</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Interface for data processing components that save data items.
+</dd>
+
+        <dt id="ISetter">
+  <span class="name "><a href="../pip_services4_persistence/ISetter-class.html">ISetter</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Interface for data processing components that can set (create or update) data items.
+</dd>
+
+        <dt id="IWriter">
+  <span class="name "><a href="../pip_services4_persistence/IWriter-class.html">IWriter</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>, <span class="type-parameter">K</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Interface for data processing components that can create, update and delete data items.
+</dd>
+
+        <dt id="JsonFilePersister">
+  <span class="name "><a href="../pip_services4_persistence/JsonFilePersister-class.html">JsonFilePersister</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Persistence component that loads and saves data from/to flat file.
+</dd>
+
+        <dt id="LineRange">
+  <span class="name "><a href="../pip_services4_persistence/LineRange-class.html">LineRange</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="MemoryPersistence">
+  <span class="name "><a href="../pip_services4_persistence/MemoryPersistence-class.html">MemoryPersistence</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Abstract persistence component that stores data in memory.
+</dd>
+
+      </dl>
+    </section>
+
+
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+
+      <dl class="callables">
+        <dt id="getFileExtension" class="callable">
+  <span class="name"><a href="../pip_services4_persistence/getFileExtension.html">getFileExtension</a></span><span class="signature">(<wbr><span class="parameter" id="getFileExtension-param-filename"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/String-class.html">String</a></span> <span class="parameter-name">filename</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.5/dart-core/String-class.html">String</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="getLineRange" class="callable">
+  <span class="name"><a href="../pip_services4_persistence/getLineRange.html">getLineRange</a></span><span class="signature">(<wbr><span class="parameter" id="getLineRange-param-file"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/String-class.html">String</a></span> <span class="parameter-name">file</span>, </span><span class="parameter" id="getLineRange-param-searchingText"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/String-class.html">String</a></span> <span class="parameter-name">searchingText</span>, </span><span class="parameter" id="getLineRange-param-postition">[<span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/int-class.html">int</a></span> <span class="parameter-name">postition</span> = <span class="default-value">0</span>]</span>)
+    <span class="returntype parameter">&#8594; <a href="../pip_services4_persistence/LineRange-class.html">LineRange</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Given a file and a string, find the line number of the string in the file.
+  
+
+</dd>
+
+        <dt id="getLinesUpToIndex" class="callable">
+  <span class="name"><a href="../pip_services4_persistence/getLinesUpToIndex.html">getLinesUpToIndex</a></span><span class="signature">(<wbr><span class="parameter" id="getLinesUpToIndex-param-file"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/String-class.html">String</a></span> <span class="parameter-name">file</span>, </span><span class="parameter" id="getLinesUpToIndex-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.5/dart-core/int-class.html">int</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">pip_services4_persistence</a></li>
+  <li class="self-crumb">pip_services4_persistence library</li>
+</ol>
+
+
+    <h5><span class="package-name">pip_services4_persistence</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../pip_services4_persistence/pip_services4_persistence-library.html">pip_services4_persistence</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>pip_services4_persistence library</h5>
+    <ol>
+      <li class="section-title"><a href="../pip_services4_persistence/pip_services4_persistence-library.html#classes">Classes</a></li>
+        <li><a href="../pip_services4_persistence/FilePersistence-class.html">FilePersistence</a></li>
+        <li><a href="../pip_services4_persistence/IdentifiableFilePersistence-class.html">IdentifiableFilePersistence</a></li>
+        <li><a href="../pip_services4_persistence/IdentifiableMemoryPersistence-class.html">IdentifiableMemoryPersistence</a></li>
+        <li><a href="../pip_services4_persistence/IFilteredPageReader-class.html">IFilteredPageReader</a></li>
+        <li><a href="../pip_services4_persistence/IFilteredReader-class.html">IFilteredReader</a></li>
+        <li><a href="../pip_services4_persistence/IGetter-class.html">IGetter</a></li>
+        <li><a href="../pip_services4_persistence/ILoader-class.html">ILoader</a></li>
+        <li><a href="../pip_services4_persistence/IPartialUpdater-class.html">IPartialUpdater</a></li>
+        <li><a href="../pip_services4_persistence/IQuerablePageReader-class.html">IQuerablePageReader</a></li>
+        <li><a href="../pip_services4_persistence/IQuerableReader-class.html">IQuerableReader</a></li>
+        <li><a href="../pip_services4_persistence/ISaver-class.html">ISaver</a></li>
+        <li><a href="../pip_services4_persistence/ISetter-class.html">ISetter</a></li>
+        <li><a href="../pip_services4_persistence/IWriter-class.html">IWriter</a></li>
+        <li><a href="../pip_services4_persistence/JsonFilePersister-class.html">JsonFilePersister</a></li>
+        <li><a href="../pip_services4_persistence/LineRange-class.html">LineRange</a></li>
+        <li><a href="../pip_services4_persistence/MemoryPersistence-class.html">MemoryPersistence</a></li>
+
+
+
+
+
+      <li class="section-title"><a href="../pip_services4_persistence/pip_services4_persistence-library.html#functions">Functions</a></li>
+        <li><a href="../pip_services4_persistence/getFileExtension.html">getFileExtension</a></li>
+        <li><a href="../pip_services4_persistence/getLineRange.html">getLineRange</a></li>
+        <li><a href="../pip_services4_persistence/getLinesUpToIndex.html">getLinesUpToIndex</a></li>
+
+
+
+</ol>
+
+  </div><!--/sidebar-offcanvas-right-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pip_services4_persistence
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

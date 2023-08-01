@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the getListByIds method from the IdentifiableMemoryPersistence class, for the Dart programming language.">
+  <title>getListByIds method - IdentifiableMemoryPersistence class - pip_services4_persistence library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">pip_services4_persistence</a></li>
+    <li><a href="../../pip_services4_persistence/pip_services4_persistence-library.html">pip_services4_persistence</a></li>
+    <li><a href="../../pip_services4_persistence/IdentifiableMemoryPersistence-class.html">IdentifiableMemoryPersistence<span class="signature">&lt;<wbr><span class="type-parameter">T extends IIdentifiable&lt;<wbr><span class="type-parameter">K</span>&gt;</span>, <span class="type-parameter">K</span>&gt;</span></a></li>
+    <li class="self-crumb">getListByIds method</li>
+  </ol>
+  <div class="self-name">getListByIds</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-method">getListByIds</span> method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+
+<span class="returntype"><a href="https://api.dart.dev/stable/3.0.5/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.0.5/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span>
+<span class="name ">getListByIds</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="getListByIds-param-context"><span class="type-annotation"><a href="https://pub.dev/documentation/pip_services4_components/0.0.1/pip_services4_components/IContext-class.html">IContext</a>?</span> <span class="parameter-name">context</span>, </span></li>
+<li><span class="parameter" id="getListByIds-param-ids"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>&gt;</span></span> <span class="parameter-name">ids</span></span></li>
+</ol>)
+
+      
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Gets a list of data items retrieved by given unique ids.</p>
+<ul>
+<li><code>context</code>     (optional) a context to trace execution through call chain.</li>
+<li><code>ids</code>               ids of data items to be retrieved
+Return                Future that receives a data list
+Throw error.</li>
+</ul>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">Future&lt;List&lt;T&gt;&gt; getListByIds(IContext? context, List&lt;K&gt; ids) {
+  filter(T item) {
+    return ids.contains(item.id);
+  }
+
+  return getListByFilterEx(context, filter, null, null);
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">pip_services4_persistence</a></li>
+  <li><a href="../../pip_services4_persistence/pip_services4_persistence-library.html">pip_services4_persistence</a></li>
+  <li><a href="../../pip_services4_persistence/IdentifiableMemoryPersistence-class.html">IdentifiableMemoryPersistence<span class="signature">&lt;<wbr><span class="type-parameter">T extends IIdentifiable&lt;<wbr><span class="type-parameter">K</span>&gt;</span>, <span class="type-parameter">K</span>&gt;</span></a></li>
+  <li class="self-crumb">getListByIds method</li>
+</ol>
+
+
+    <h5>IdentifiableMemoryPersistence class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../pip_services4_persistence/IdentifiableMemoryPersistence-class.html#constructors">Constructors</a></li>
+          <li><a href="../../pip_services4_persistence/IdentifiableMemoryPersistence/IdentifiableMemoryPersistence.html">IdentifiableMemoryPersistence</a></li>
+
+
+        <li class="section-title inherited">
+          <a href="../../pip_services4_persistence/IdentifiableMemoryPersistence-class.html#instance-properties">Properties</a>
+        </li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/hashCode.html">hashCode</a></li>
+          <li class="inherited"><a href="../../pip_services4_persistence/MemoryPersistence/items.html">items</a></li>
+          <li class="inherited"><a href="../../pip_services4_persistence/MemoryPersistence/loader.html">loader</a></li>
+          <li class="inherited"><a href="../../pip_services4_persistence/MemoryPersistence/logger.html">logger</a></li>
+          <li class="inherited"><a href="../../pip_services4_persistence/MemoryPersistence/maxPageSize.html">maxPageSize</a></li>
+          <li class="inherited"><a href="../../pip_services4_persistence/MemoryPersistence/opened.html">opened</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/runtimeType.html">runtimeType</a></li>
+          <li class="inherited"><a href="../../pip_services4_persistence/MemoryPersistence/saver.html">saver</a></li>
+
+        <li class="section-title"><a href="../../pip_services4_persistence/IdentifiableMemoryPersistence-class.html#instance-methods">Methods</a></li>
+          <li class="inherited"><a href="../../pip_services4_persistence/MemoryPersistence/clear.html">clear</a></li>
+          <li class="inherited"><a href="../../pip_services4_persistence/MemoryPersistence/close.html">close</a></li>
+          <li><a href="../../pip_services4_persistence/IdentifiableMemoryPersistence/configure.html">configure</a></li>
+          <li><a href="../../pip_services4_persistence/IdentifiableMemoryPersistence/create.html">create</a></li>
+          <li class="inherited"><a href="../../pip_services4_persistence/MemoryPersistence/deleteByFilterEx.html">deleteByFilterEx</a></li>
+          <li><a href="../../pip_services4_persistence/IdentifiableMemoryPersistence/deleteById.html">deleteById</a></li>
+          <li><a href="../../pip_services4_persistence/IdentifiableMemoryPersistence/deleteByIds.html">deleteByIds</a></li>
+          <li class="inherited"><a href="../../pip_services4_persistence/MemoryPersistence/getCountByFilterEx.html">getCountByFilterEx</a></li>
+          <li class="inherited"><a href="../../pip_services4_persistence/MemoryPersistence/getListByFilterEx.html">getListByFilterEx</a></li>
+          <li><a href="../../pip_services4_persistence/IdentifiableMemoryPersistence/getListByIds.html">getListByIds</a></li>
+          <li><a href="../../pip_services4_persistence/IdentifiableMemoryPersistence/getOneById.html">getOneById</a></li>
+          <li class="inherited"><a href="../../pip_services4_persistence/MemoryPersistence/getOneRandom.html">getOneRandom</a></li>
+          <li class="inherited"><a href="../../pip_services4_persistence/MemoryPersistence/getPageByFilterEx.html">getPageByFilterEx</a></li>
+          <li class="inherited"><a href="../../pip_services4_persistence/MemoryPersistence/isOpen.html">isOpen</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+          <li class="inherited"><a href="../../pip_services4_persistence/MemoryPersistence/open.html">open</a></li>
+          <li class="inherited"><a href="../../pip_services4_persistence/MemoryPersistence/save.html">save</a></li>
+          <li><a href="../../pip_services4_persistence/IdentifiableMemoryPersistence/set.html">set</a></li>
+          <li class="inherited"><a href="../../pip_services4_persistence/MemoryPersistence/setReferences.html">setReferences</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/toString.html">toString</a></li>
+          <li><a href="../../pip_services4_persistence/IdentifiableMemoryPersistence/update.html">update</a></li>
+          <li><a href="../../pip_services4_persistence/IdentifiableMemoryPersistence/updatePartially.html">updatePartially</a></li>
+
+        <li class="section-title inherited"><a href="../../pip_services4_persistence/IdentifiableMemoryPersistence-class.html#operators">Operators</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pip_services4_persistence
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
