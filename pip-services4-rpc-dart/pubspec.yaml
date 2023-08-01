@@ -1,0 +1,17 @@
+name: pip_services4_rpc
+version: "0.0.1"
+description: This framework is a part of the [Pip.Services] project. It provides the following synchronous communication components
+homepage: https://github.com/pip-services4/pip-services4-dart/tree/main/pip-services4-rpc-dart
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  pip_services4_commons: ^0.0.2
+  pip_services4_components: ^0.0.1
+  pip_services4_observability: ^0.0.1
+  pip_services4_data: ^0.0.2
+
+dev_dependencies:
+  test: ^1.17.12
+  lints: ^2.1.1
