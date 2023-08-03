@@ -266,9 +266,8 @@ class MemoryPersistence<T> implements IReferenceable, IOpenable, ICleanable {
   /// - [filter]            (optional) a filter function to filter items.
   /// Return                Future that receives null for success.
   /// Throws error
-  Future deleteByFilterEx(IContext? context, Function filter) async {
+  Future deleteByFilterEx(IContext? context, Function? filter) async {
     var deleted = 0;
-    // ignore: unnecessary_type_check
     if (filter is! Function) {
       throw Exception('Filter parameter must be a function.');
     }
