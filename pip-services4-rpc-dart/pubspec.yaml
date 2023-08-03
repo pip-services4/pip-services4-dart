@@ -1,5 +1,5 @@
 name: pip_services4_rpc
-version: "0.0.1"
+version: "0.0.2"
 description: This framework is a part of the [Pip.Services] project. It provides the following synchronous communication components
 homepage: https://github.com/pip-services4/pip-services4-dart/tree/main/pip-services4-rpc-dart
 

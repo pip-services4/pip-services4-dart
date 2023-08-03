@@ -12,10 +12,10 @@ The module contains the following packages:
 <a name="links"></a> Quick links:
 
 * [Your first microservice in Dart](https://www.pipservices.org/docs/quickstart/dart) 
-* [Data Microservice. Step 5](http://docs.pipservices.org/toolkit/tutorials/data_microservice/step5/)
-* [Microservice Facade](http://docs.pipservices.org/toolkit/tutorials/microservice_facade/) 
-* [Client Library. Step 3](http://docs.pipservices.org/toolkit/tutorials/client_library/step2/)
-* [Client Library. Step 4](http://docs.pipservices.org/toolkit/tutorials/client_library/step3/)
+* [Data Microservice. Step 5](https://docs.pipservices.org/toolkit/tutorials/data_microservice/step5/)
+* [Microservice Facade](https://docs.pipservices.org/toolkit/tutorials/microservice_facade/) 
+* [Client Library. Step 3](https://docs.pipservices.org/toolkit/tutorials/client_library/step2/)
+* [Client Library. Step 4](https://docs.pipservices.org/toolkit/tutorials/client_library/step3/)
 * [API Reference](https://pub.dev/documentation/pip_services4_rpc/latest/pip_services4_rpc/pip_services4_rpc-library.html)
 * [Change Log](CHANGELOG.md)
 * [Get Help](https://www.pipservices.org/community/help)

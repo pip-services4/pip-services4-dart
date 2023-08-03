@@ -51,9 +51,9 @@ class Command implements ICommand {
         _function = func is IExecutable ? func.execute : func {
     if (func == null) throw Exception('Function cannot be null');
 
-    if (_function is! Function) {
-      throw Exception('Function doesn\'t have function type');
-    }
+    // if (_function is! Function) {
+    //   throw Exception('Function doesn\'t have function type');
+    // }
   }
 
   /// Gets the command name.
