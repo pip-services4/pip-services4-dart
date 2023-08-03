@@ -171,7 +171,7 @@ class MemoryPersistence<T> implements IReferenceable, IOpenable, ICleanable {
     var skip = paging.getSkip(-1);
     var take = paging.getTake(maxPageSize);
 
-    var total;
+    int? total;
     if (paging.total) {
       total = items.length;
     }
@@ -268,6 +268,7 @@ class MemoryPersistence<T> implements IReferenceable, IOpenable, ICleanable {
   /// Throws error
   Future deleteByFilterEx(IContext? context, Function filter) async {
     var deleted = 0;
+    // ignore: unnecessary_type_check
     if (filter is! Function) {
       throw Exception('Filter parameter must be a function.');
     }
@@ -294,7 +295,7 @@ class MemoryPersistence<T> implements IReferenceable, IOpenable, ICleanable {
   /// - [item]              an item to be created.
   /// Return         (optional) Future that receives created item or error.
   Future<T?> create(IContext? context, T item) async {
-    var clone_item;
+    dynamic clone_item;
     if (item is ICloneable) {
       clone_item = (item).clone();
     } else {
