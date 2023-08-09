@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the setReferences method from the StatusOperations class, for the Dart programming language.">
+  <title>setReferences method - StatusOperations class - pip_services4_http library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">pip_services4_http</a></li>
+    <li><a href="../../pip_services4_http/pip_services4_http-library.html">pip_services4_http</a></li>
+    <li><a href="../../pip_services4_http/StatusOperations-class.html">StatusOperations</a></li>
+    <li class="self-crumb">setReferences method</li>
+  </ol>
+  <div class="self-name">setReferences</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-method">setReferences</span> method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+  <div>
+    <ol class="annotation-list">
+        <li>@<a href="https://api.dart.dev/stable/3.0.5/dart-core/override-constant.html">override</a></li>
+    </ol>
+  </div>
+
+<span class="returntype">void</span>
+<span class="name ">setReferences</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="setReferences-param-references"><span class="type-annotation"><a href="https://pub.dev/documentation/pip_services4_components/0.0.1/pip_services4_components/IReferences-class.html">IReferences</a></span> <span class="parameter-name">references</span></span></li>
+</ol>)
+
+      <div class="features"><span class="feature">override</span></div>
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Sets references to dependent components.</p>
+<ul>
+<li><code>references</code> 	references to locate the component dependencies.</li>
+</ul>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@override
+void setReferences(IReferences references) {
+  _references2 = references;
+  super.setReferences(references);
+
+  _contextInfo =
+      dependencyResolver.getOneOptional&lt;ContextInfo&gt;(&#39;context-info&#39;);
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">pip_services4_http</a></li>
+  <li><a href="../../pip_services4_http/pip_services4_http-library.html">pip_services4_http</a></li>
+  <li><a href="../../pip_services4_http/StatusOperations-class.html">StatusOperations</a></li>
+  <li class="self-crumb">setReferences method</li>
+</ol>
+
+
+    <h5>StatusOperations class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../pip_services4_http/StatusOperations-class.html#constructors">Constructors</a></li>
+          <li><a href="../../pip_services4_http/StatusOperations/StatusOperations.html">StatusOperations</a></li>
+
+
+        <li class="section-title inherited">
+          <a href="../../pip_services4_http/StatusOperations-class.html#instance-properties">Properties</a>
+        </li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/componentName.html">componentName</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/counters.html">counters</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/dependencyResolver.html">dependencyResolver</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/hashCode.html">hashCode</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/logger.html">logger</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/runtimeType.html">runtimeType</a></li>
+
+        <li class="section-title"><a href="../../pip_services4_http/StatusOperations-class.html#instance-methods">Methods</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/configure.html">configure</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/getFilterParams.html">getFilterParams</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/getPagingParams.html">getPagingParams</a></li>
+          <li><a href="../../pip_services4_http/StatusOperations/getStatusOperation.html">getStatusOperation</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/getTraceId.html">getTraceId</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/instrument.html">instrument</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/instrumentError.html">instrumentError</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/invoke.html">invoke</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/safeInvoke.html">safeInvoke</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/sendBadRequest.html">sendBadRequest</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/sendConflict.html">sendConflict</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/sendCreatedResult.html">sendCreatedResult</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/sendDeletedResult.html">sendDeletedResult</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/sendEmptyResult.html">sendEmptyResult</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/sendError.html">sendError</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/sendInternalError.html">sendInternalError</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/sendNotFound.html">sendNotFound</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/sendResult.html">sendResult</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/sendServerUnavailable.html">sendServerUnavailable</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/sendSessionExpired.html">sendSessionExpired</a></li>
+          <li class="inherited"><a href="../../pip_services4_http/RestOperations/sendUnauthorized.html">sendUnauthorized</a></li>
+          <li><a href="../../pip_services4_http/StatusOperations/setReferences.html">setReferences</a></li>
+          <li><a href="../../pip_services4_http/StatusOperations/status.html">status</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/toString.html">toString</a></li>
+
+        <li class="section-title inherited"><a href="../../pip_services4_http/StatusOperations-class.html#operators">Operators</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pip_services4_http
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

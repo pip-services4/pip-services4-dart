@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the detectPlatform method from the HttpRequestDetector class, for the Dart programming language.">
+  <title>detectPlatform method - HttpRequestDetector class - pip_services4_http library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">pip_services4_http</a></li>
+    <li><a href="../../pip_services4_http/pip_services4_http-library.html">pip_services4_http</a></li>
+    <li><a href="../../pip_services4_http/HttpRequestDetector-class.html">HttpRequestDetector</a></li>
+    <li class="self-crumb">detectPlatform static method</li>
+  </ol>
+  <div class="self-name">detectPlatform</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-method">detectPlatform</span> static method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+
+<span class="returntype"><a href="https://api.dart.dev/stable/3.0.5/dart-core/String-class.html">String</a></span>
+<span class="name ">detectPlatform</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="detectPlatform-param-req"><span class="type-annotation"><a href="https://pub.dev/documentation/shelf/1.4.1/shelf/Request-class.html">Request</a></span> <span class="parameter-name">req</span></span></li>
+</ol>)
+
+      
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Detects the platform (using "user-agent") from which the given HTTP request was made.</p>
+<ul>
+<li><code>req</code>   an HTTP RequestContext request to process.
+Returns the detected platform and version. Detectable platforms: "mobile", "iphone",
+"ipad",  "macosx", "android",  "webos", "mac", "windows". Otherwise - "unknown" will
+be returned.</li>
+</ul>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">static String detectPlatform(Request req) {
+  var ua = req.headersAll[&#39;user-agent&#39;]?[0] ?? &#39;&#39;;
+  dynamic version;
+
+  if (RegExp(r&#39;mobile&#39;).hasMatch(ua)) {
+    return &#39;mobile&#39;;
+  }
+  if (RegExp(r&#39;like Mac OS X&#39;).hasMatch(ua)) {
+    version = RegExp(r&#39;CPU( iPhone)? OS ([0-9\._]+) like Mac OS X&#39;)
+        .firstMatch(ua)
+        ?.group(1)
+        ?.replaceAll(&#39;_&#39;, &#39;.&#39;); &#47;&#47;exec(ua)[2].replace(&#47;_&#47;g, &#39;.&#39;);
+    if (RegExp(r&#39;iPhone&#39;).hasMatch(ua)) {
+      return &#39;iphone $version&#39;;
+    }
+    if (RegExp(r&#39;iPad&#39;).hasMatch(ua)) {
+      return &#39;ipad $version&#39;;
+    }
+    return &#39;macosx $version&#39;;
+  }
+  if (RegExp(r&#39;Android&#39;).hasMatch(ua)) {
+    version = RegExp(r&#39;Android ([0-9\.]+)[\);]&#39;)
+        .firstMatch(ua)
+        ?.group(0); &#47;&#47; exec(ua)[1];
+    return &#39;android $version&#39;;
+  }
+  if (RegExp(r&#39;webOS&#47;&#39;).hasMatch(ua)) {
+    version = RegExp(r&#39;webOS\&#47;([0-9\.]+)[\);]&#39;)
+        .firstMatch(ua)
+        ?.group(0); &#47;&#47; exec(ua)[1];
+    return &#39;webos $version&#39;;
+  }
+  if (RegExp(r&#39;(Intel|PPC) Mac OS X&#39;).hasMatch(ua)) {
+    version = RegExp(r&#39;(Intel|PPC) Mac OS X ?([0-9\._]*)[\)\;]&#39;)
+        .firstMatch(ua)
+        ?.group(1)
+        ?.replaceAll(&#39;_&#39;, &#39;.&#39;); &#47;&#47;exec(ua)[2].replace(&#47;_&#47;g, &#39;.&#39;);
+    return &#39;mac $version&#39;;
+  }
+
+  if (RegExp(r&#39;Windows NT&#39;).hasMatch(ua)) {
+    try {
+      version = RegExp(r&#39;Windows NT ([0-9\._]+)[\);]&#39;)
+          .firstMatch(ua)
+          ?.group(0); &#47;&#47;exec(ua)[1];
+      return &#39;windows $version&#39;;
+    } catch (ex) {
+      return &#39;unknown&#39;;
+    }
+  }
+  return &#39;unknown&#39;;
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">pip_services4_http</a></li>
+  <li><a href="../../pip_services4_http/pip_services4_http-library.html">pip_services4_http</a></li>
+  <li><a href="../../pip_services4_http/HttpRequestDetector-class.html">HttpRequestDetector</a></li>
+  <li class="self-crumb">detectPlatform static method</li>
+</ol>
+
+
+    <h5>HttpRequestDetector class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../pip_services4_http/HttpRequestDetector-class.html#constructors">Constructors</a></li>
+          <li><a href="../../pip_services4_http/HttpRequestDetector/HttpRequestDetector.html">HttpRequestDetector</a></li>
+
+
+        <li class="section-title inherited">
+          <a href="../../pip_services4_http/HttpRequestDetector-class.html#instance-properties">Properties</a>
+        </li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/hashCode.html">hashCode</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/runtimeType.html">runtimeType</a></li>
+
+        <li class="section-title inherited"><a href="../../pip_services4_http/HttpRequestDetector-class.html#instance-methods">Methods</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/toString.html">toString</a></li>
+
+        <li class="section-title inherited"><a href="../../pip_services4_http/HttpRequestDetector-class.html#operators">Operators</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+        <li class="section-title"><a href="../../pip_services4_http/HttpRequestDetector-class.html#static-methods">Static methods</a></li>
+          <li><a href="../../pip_services4_http/HttpRequestDetector/detectAddress.html">detectAddress</a></li>
+          <li><a href="../../pip_services4_http/HttpRequestDetector/detectBrowser.html">detectBrowser</a></li>
+          <li><a href="../../pip_services4_http/HttpRequestDetector/detectPlatform.html">detectPlatform</a></li>
+          <li><a href="../../pip_services4_http/HttpRequestDetector/detectServerHost.html">detectServerHost</a></li>
+          <li><a href="../../pip_services4_http/HttpRequestDetector/detectServerPort.html">detectServerPort</a></li>
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pip_services4_http
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
