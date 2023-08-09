@@ -197,9 +197,9 @@ class HttpConnectionResolver implements IReferenceable, IConfigurable {
   /// Registers the given connection in all referenced discovery services.
   /// This method can be used for dynamic service discovery.
   ///
-  /// context     (optional) a context to trace execution through call chain.
+  /// [context]     (optional) a context to trace execution through call chain.
   /// connection        a connection to register.
-  Future<void> register(IContext context) async {
+  Future<void> register(IContext? context) async {
     final connection = await _connectionResolver.resolve(context);
     final credential = await _credentialResolver.lookup(context);
 

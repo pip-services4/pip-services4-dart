@@ -60,7 +60,7 @@
       
 
 <span class="returntype"><a href="https://api.dart.dev/stable/3.0.5/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
-<span class="name ">register</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="register-param-context"><span class="type-annotation"><a href="https://pub.dev/documentation/pip_services4_components/0.0.1/pip_services4_components/IContext-class.html">IContext</a></span> <span class="parameter-name">context</span></span></li>
+<span class="name ">register</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="register-param-context"><span class="type-annotation"><a href="https://pub.dev/documentation/pip_services4_components/0.0.1/pip_services4_components/IContext-class.html">IContext</a>?</span> <span class="parameter-name">context</span></span></li>
 </ol>)
 
       
@@ -70,7 +70,7 @@
 <section class="desc markdown">
   <p>Registers the given connection in all referenced discovery services.
 This method can be used for dynamic service discovery.</p>
-<p>context     (optional) a context to trace execution through call chain.
+<p><code>context</code>     (optional) a context to trace execution through call chain.
 connection        a connection to register.</p>
 </section>
 
@@ -78,7 +78,7 @@ connection        a connection to register.</p>
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; register(IContext context) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; register(IContext? context) async {
   final connection = await _connectionResolver.resolve(context);
   final credential = await _credentialResolver.lookup(context);
 
@@ -147,7 +147,7 @@ connection        a connection to register.</p>
 <footer>
   <span class="no-break">
     pip_services4_config
-      0.0.1
+      0.0.2
   </span>
 
   
