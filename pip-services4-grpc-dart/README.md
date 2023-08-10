@@ -13,7 +13,7 @@ The module contains the following packages:
 <a name="links"></a> Quick links:
 
 * [Configuration](https://www.pipservices.org/recipies/configuration)
-* [Protocol buffer](https://github.com/pip-services4-dart/pip-services4-grpc-dart/blob/master/lib/src/protos/commandable.proto)
+* [Protocol buffer](https://github.com/pip-services4/pip-services4-dart/blob/main/pip-services4-grpc-dart/lib/src/protos/commandable.proto)
 * [gRPC Dart Quick Start](https://grpc.io/docs/quickstart/dart/)
 * [Protocol Buffer Basics: Dart](https://developers.google.com/protocol-buffers/docs/darttutorial)
 * [API Reference](https://pub.dev/documentation/pip_services4_grpc/latest/pip_services4_grpc/pip_services4_grpc-library.html)
