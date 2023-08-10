@@ -1,5 +1,5 @@
 name: pip_services4_grpc
-version: "0.0.1"
+version: "0.0.2"
 description: This component library is a part of the [Pip.Services](https://github.com/pip-services/pip-services) project.It provides the following GRPC Communication components.
 homepage: https://github.com/pip-services4/pip-services4-dart/tree/main/pip-services4-grpc-dart
 
@@ -13,9 +13,9 @@ dependencies:
   pip_services4_data: ^0.0.2
   pip_services4_rpc: ^0.0.2
   pip_services4_config: ^0.0.2
-  grpc: ^3.0.2
-  protobuf: ^2.0.0
-  fixnum: ^1.0.0
+  grpc: ^3.2.3
+  protobuf: ^3.0.0
+  fixnum: ^1.1.0
 
 dev_dependencies:
   test: ^1.17.12
