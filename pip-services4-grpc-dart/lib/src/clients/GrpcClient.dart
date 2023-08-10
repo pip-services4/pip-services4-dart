@@ -192,7 +192,7 @@ abstract class GrpcClient implements IOpenable, IConfigurable, IReferenceable {
 
     try {
       var connection = await _connectionResolver.resolve(context);
-      _uri = connection!.getAsString('uri');
+      _uri = connection.getAsString('uri');
 
       grpc.ChannelCredentials credentials;
       if (connection.getAsString('uri') == 'https') {
