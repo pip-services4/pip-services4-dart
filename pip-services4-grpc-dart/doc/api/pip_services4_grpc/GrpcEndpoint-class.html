@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the GrpcEndpoint class from the pip_services4_grpc library, for the Dart programming language.">
+  <title>GrpcEndpoint class - pip_services4_grpc library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">pip_services4_grpc</a></li>
+    <li><a href="../pip_services4_grpc/pip_services4_grpc-library.html">pip_services4_grpc</a></li>
+    <li class="self-crumb">GrpcEndpoint class</li>
+  </ol>
+  <div class="self-name">GrpcEndpoint</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-class">GrpcEndpoint</span> class 
+ 
+</h1></div>
+
+    
+<section class="desc markdown">
+  <p>Used for creating GRPC endpoints. An endpoint is a URL, at which a given service can be accessed by a client.</p>
+<h3 id="configuration-parameters">Configuration parameters</h3>
+<p>Parameters to pass to the <a href="../pip_services4_grpc/GrpcEndpoint/configure.html">configure</a> method for component configuration:</p>
+<ul>
+<li><code>connection(s)</code> - the connection resolver's connections:
+<ul>
+<li>'<code>connection.discovery_key</code>' - the key to use for connection resolving in a discovery service;</li>
+<li>'<code>connection.protocol</code>' - the connection's protocol;</li>
+<li>'<code>connection.host</code>' - the target host;</li>
+<li>'<code>connection.port</code>' - the target port;</li>
+<li>'<code>connection.uri</code>' - the target URI.</li>
+</ul>
+</li>
+<li>credential - the HTTPS credentials:
+<ul>
+<li>'<code>credential.ssl_key_file</code>' - the SSL key private in PEM</li>
+<li>'<code>credential.ssl_crt_file</code>' - the SSL certificate in PEM</li>
+<li>'<code>credential.ssl_ca_file</code>' - the certificate authorities (root cerfiticates) in PEM</li>
+</ul>
+</li>
+</ul>
+<h3 id="references">References</h3>
+<p>A logger, counters, and a connection resolver can be referenced by passing the
+following references to the object's <a href="../pip_services4_grpc/GrpcEndpoint/setReferences.html">setReferences</a> method:</p>
+<ul>
+<li>logger: '*:logger:*:*:1.0';</li>
+<li>counters: '*:counters:*:*:1.0';</li>
+<li>discovery: '*:discovery:*:*:1.0' (for the connection resolver).</li>
+</ul>
+<h3 id="examples">Examples</h3>
+<pre class="language-dart"><code>void MyMethod(ConfigParams _config, IReferences _references) async {
+    var endpoint = new GrpcEndpoint();
+    if (_config != null)
+        endpoint.configure(_config);
+    if (_references 1= null)
+        endpoint.setReferences(_references);
+    ...
+    _opened = false;
+
+    await endpoint.open(context);
+    _opened = true;
+
+    ...
+}
+</code></pre>
+</section>
+
+
+    <section>
+      <dl class="dl-horizontal">
+        
+
+        
+  <dt>Implemented types</dt>
+  <dd>
+    <ul class="comma-separated clazz-relationships">
+        <li><a href="https://pub.dev/documentation/pip_services4_components/0.0.1/pip_services4_components/IOpenable-class.html">IOpenable</a></li>
+        <li><a href="https://pub.dev/documentation/pip_services4_components/0.0.1/pip_services4_components/IConfigurable-class.html">IConfigurable</a></li>
+        <li><a href="https://pub.dev/documentation/pip_services4_components/0.0.1/pip_services4_components/IReferenceable-class.html">IReferenceable</a></li>
+    </ul>
+  </dd>
+        
+
+
+
+        
+
+
+      </dl>
+    </section>
+
+    
+  <section class="summary offset-anchor" id="constructors">
+    <h2>Constructors</h2>
+
+    <dl class="constructor-summary-list">
+        <dt id="GrpcEndpoint" class="callable">
+          <span class="name"><a href="../pip_services4_grpc/GrpcEndpoint/GrpcEndpoint.html">GrpcEndpoint</a></span><span class="signature">()</span>
+        </dt>
+        <dd>
+          
+        </dd>
+    </dl>
+  </section>
+
+    <section class="summary offset-anchor inherited" id="instance-properties">
+      <h2>Properties</h2>
+
+      <dl class="properties">
+        <dt id="hashCode" class="property inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/hashCode.html">hashCode</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.0.5/dart-core/int-class.html">int</a></span> 
+
+</dt>
+<dd class="inherited">
+  The hash code for this object.
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="runtimeType" class="property inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/runtimeType.html">runtimeType</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.0.5/dart-core/Type-class.html">Type</a></span> 
+
+</dt>
+<dd class="inherited">
+  A representation of the runtime type of the object.
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+      </dl>
+    </section>
+
+    
+  <section
+      class="summary offset-anchor"
+      id="instance-methods">
+    <h2>Methods</h2>
+    <dl class="callables">
+        <dt id="close" class="callable">
+  <span class="name"><a href="../pip_services4_grpc/GrpcEndpoint/close.html">close</a></span><span class="signature">(<wbr><span class="parameter" id="close-param-context"><span class="type-annotation"><a href="https://pub.dev/documentation/pip_services4_components/0.0.1/pip_services4_components/IContext-class.html">IContext</a>?</span> <span class="parameter-name">context</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.5/dart-async/Future-class.html">Future</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Closes this endpoint and the GRPC server (service) that was opened earlier.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="configure" class="callable">
+  <span class="name"><a href="../pip_services4_grpc/GrpcEndpoint/configure.html">configure</a></span><span class="signature">(<wbr><span class="parameter" id="configure-param-config"><span class="type-annotation"><a href="https://pub.dev/documentation/pip_services4_components/0.0.1/pip_services4_components/ConfigParams-class.html">ConfigParams</a></span> <span class="parameter-name">config</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Configures this GrpcEndpoint using the given configuration parameters.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="isOpen" class="callable">
+  <span class="name"><a href="../pip_services4_grpc/GrpcEndpoint/isOpen.html">isOpen</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.5/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns whether or not this endpoint is open with an actively listening GRPC server.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="noSuchMethod" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Invoked when a nonexistent method or property is accessed.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="open" class="callable">
+  <span class="name"><a href="../pip_services4_grpc/GrpcEndpoint/open.html">open</a></span><span class="signature">(<wbr><span class="parameter" id="open-param-context"><span class="type-annotation"><a href="https://pub.dev/documentation/pip_services4_components/0.0.1/pip_services4_components/IContext-class.html">IContext</a>?</span> <span class="parameter-name">context</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.5/dart-async/Future-class.html">Future</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Opens a connection using the parameters resolved by the referenced connection
+resolver and creates a GRPC server (service) using the set options and parameters.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="register" class="callable">
+  <span class="name"><a href="../pip_services4_grpc/GrpcEndpoint/register.html">register</a></span><span class="signature">(<wbr><span class="parameter" id="register-param-registration"><span class="type-annotation"><a href="../pip_services4_grpc/IRegisterable-class.html">IRegisterable</a></span> <span class="parameter-name">registration</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Registers a registerable object for dynamic endpoint discovery.
+  
+
+</dd>
+
+        <dt id="registerCommadableMethod" class="callable">
+  <span class="name"><a href="../pip_services4_grpc/GrpcEndpoint/registerCommadableMethod.html">registerCommadableMethod</a></span><span class="signature">(<wbr><span class="parameter" id="registerCommadableMethod-param-method"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/String-class.html">String</a></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="registerCommadableMethod-param-schema"><span class="type-annotation"><a href="https://pub.dev/documentation/pip_services4_data/0.0.2/pip_services4_data/Schema-class.html">Schema</a>?</span> <span class="parameter-name">schema</span>, </span><span class="parameter" id="registerCommadableMethod-param-action"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-async/Future-class.html">Future</a></span> <span class="parameter-name">action</span>(<span class="parameter" id="param-context"><span class="type-annotation"><a href="https://pub.dev/documentation/pip_services4_components/0.0.1/pip_services4_components/IContext-class.html">IContext</a>?</span> <span class="parameter-name">context</span>, </span><span class="parameter" id="param-args"><span class="type-annotation"><a href="https://pub.dev/documentation/pip_services4_components/0.0.1/pip_services4_components/Parameters-class.html">Parameters</a></span> <span class="parameter-name">args</span></span>)</span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Registers a commandable method in this objects GRPC server (service) by the given name.,
+  
+
+</dd>
+
+        <dt id="registerInterceptor" class="callable">
+  <span class="name"><a href="../pip_services4_grpc/GrpcEndpoint/registerInterceptor.html">registerInterceptor</a></span><span class="signature">(<wbr><span class="parameter" id="registerInterceptor-param-action"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.3/grpc/Interceptor.html">Interceptor</a></span> <span class="parameter-name">action</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Registers a interceptor in this objects GRPC server (service)
+  
+
+</dd>
+
+        <dt id="registerService" class="callable">
+  <span class="name"><a href="../pip_services4_grpc/GrpcEndpoint/registerService.html">registerService</a></span><span class="signature">(<wbr><span class="parameter" id="registerService-param-implementation"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.3/service_api/Service-class.html">Service</a></span> <span class="parameter-name">implementation</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Registers a service with related implementation
+  
+
+</dd>
+
+        <dt id="setReferences" class="callable">
+  <span class="name"><a href="../pip_services4_grpc/GrpcEndpoint/setReferences.html">setReferences</a></span><span class="signature">(<wbr><span class="parameter" id="setReferences-param-references"><span class="type-annotation"><a href="https://pub.dev/documentation/pip_services4_components/0.0.1/pip_services4_components/IReferences-class.html">IReferences</a></span> <span class="parameter-name">references</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sets references to this endpoint's logger, counters, and connection resolver.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="toString" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/toString.html">toString</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.5/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  A string representation of this object.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="unregister" class="callable">
+  <span class="name"><a href="../pip_services4_grpc/GrpcEndpoint/unregister.html">unregister</a></span><span class="signature">(<wbr><span class="parameter" id="unregister-param-registration"><span class="type-annotation"><a href="../pip_services4_grpc/IRegisterable-class.html">IRegisterable</a></span> <span class="parameter-name">registration</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Unregisters a registerable object, so that it is no longer used in dynamic
+endpoint discovery.
+  
+
+</dd>
+
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor inherited"
+      id="operators">
+    <h2>Operators</h2>
+    <dl class="callables">
+        <dt id="operator ==" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.5/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The equality operator.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+    
+    
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">pip_services4_grpc</a></li>
+  <li><a href="../pip_services4_grpc/pip_services4_grpc-library.html">pip_services4_grpc</a></li>
+  <li class="self-crumb">GrpcEndpoint class</li>
+</ol>
+
+
+    <h5>pip_services4_grpc library</h5>
+    <ol>
+      <li class="section-title"><a href="../pip_services4_grpc/pip_services4_grpc-library.html#classes">Classes</a></li>
+        <li><a href="../pip_services4_grpc/CommandableGrpcClient-class.html">CommandableGrpcClient</a></li>
+        <li><a href="../pip_services4_grpc/CommandableGrpcController-class.html">CommandableGrpcController</a></li>
+        <li><a href="../pip_services4_grpc/DefaultGrpcFactory-class.html">DefaultGrpcFactory</a></li>
+        <li><a href="../pip_services4_grpc/GrpcClient-class.html">GrpcClient</a></li>
+        <li><a href="../pip_services4_grpc/GrpcEndpoint-class.html">GrpcEndpoint</a></li>
+        <li><a href="../pip_services4_grpc/IRegisterable-class.html">IRegisterable</a></li>
+        <li><a href="../pip_services4_grpc/TestCommandableGrpcClient-class.html">TestCommandableGrpcClient</a></li>
+        <li><a href="../pip_services4_grpc/TestGrpcClient-class.html">TestGrpcClient</a></li>
+
+
+      <li class="section-title"><a href="../pip_services4_grpc/pip_services4_grpc-library.html#mixins">Mixins</a></li>
+        <li><a href="../pip_services4_grpc/GrpcController-mixin.html">GrpcController</a></li>
+
+
+
+
+
+
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <ol>
+
+        <li class="section-title"><a href="../pip_services4_grpc/GrpcEndpoint-class.html#constructors">Constructors</a></li>
+          <li><a href="../pip_services4_grpc/GrpcEndpoint/GrpcEndpoint.html">GrpcEndpoint</a></li>
+
+
+        <li class="section-title inherited">
+          <a href="../pip_services4_grpc/GrpcEndpoint-class.html#instance-properties">Properties</a>
+        </li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/hashCode.html">hashCode</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/runtimeType.html">runtimeType</a></li>
+
+        <li class="section-title"><a href="../pip_services4_grpc/GrpcEndpoint-class.html#instance-methods">Methods</a></li>
+          <li><a href="../pip_services4_grpc/GrpcEndpoint/close.html">close</a></li>
+          <li><a href="../pip_services4_grpc/GrpcEndpoint/configure.html">configure</a></li>
+          <li><a href="../pip_services4_grpc/GrpcEndpoint/isOpen.html">isOpen</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+          <li><a href="../pip_services4_grpc/GrpcEndpoint/open.html">open</a></li>
+          <li><a href="../pip_services4_grpc/GrpcEndpoint/register.html">register</a></li>
+          <li><a href="../pip_services4_grpc/GrpcEndpoint/registerCommadableMethod.html">registerCommadableMethod</a></li>
+          <li><a href="../pip_services4_grpc/GrpcEndpoint/registerInterceptor.html">registerInterceptor</a></li>
+          <li><a href="../pip_services4_grpc/GrpcEndpoint/registerService.html">registerService</a></li>
+          <li><a href="../pip_services4_grpc/GrpcEndpoint/setReferences.html">setReferences</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/toString.html">toString</a></li>
+          <li><a href="../pip_services4_grpc/GrpcEndpoint/unregister.html">unregister</a></li>
+
+        <li class="section-title inherited"><a href="../pip_services4_grpc/GrpcEndpoint-class.html#operators">Operators</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pip_services4_grpc
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
