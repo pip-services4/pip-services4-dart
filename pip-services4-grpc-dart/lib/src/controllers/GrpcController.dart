@@ -120,6 +120,7 @@ mixin GrpcController
   /// - [name]  name of service
   set serviceName(String name) {
     _serviceName = name;
+    print(_serviceName);
   }
 
   /// Configures component by passing configuration parameters.
