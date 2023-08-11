@@ -13,12 +13,8 @@ dependencies:
   pip_services4_config: ^0.0.2
   pip_services4_data: ^0.0.2
   pip_services4_rpc: ^0.0.2
-  pip_services4_http: ^0.0.1
   elastic_client: ^0.3.12
-  intl: ^0.18.1
-
-dependency_overrides:
-  http: any  
+  intl: ^0.18.1  
 
 dev_dependencies:
   test: ^1.17.12
