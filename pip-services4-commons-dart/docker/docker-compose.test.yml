@@ -1,10 +1,8 @@
-version: '3.0'
+version: '3.3'
 
 services:
   test:
     build:
       context: ..
       dockerfile: docker/Dockerfile.test
-    image: ${IMAGE:-pipdevs/test}
-
-          
+    image: ${IMAGE:-pipservices/test}

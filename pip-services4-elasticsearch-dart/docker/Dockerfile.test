@@ -1,4 +1,4 @@
-FROM dart
+FROM google/dart
 
 # set working directory
 WORKDIR /app
@@ -7,8 +7,8 @@ WORKDIR /app
 COPY . .
 
 # Install all dependencies
-RUN dart pub get
-RUN dart pub get --offline
+RUN pub get
+RUN pub get --offline
 
 # Specify the command from running tests
-CMD dart pub run test
+CMD sleep 30 && pub run test

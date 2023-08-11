@@ -1,0 +1,35 @@
+# Build stage
+FROM ubuntu:18.04
+
+# set working directory
+WORKDIR /app
+
+COPY . .
+
+# Get Ubuntu tools
+RUN apt-get update && \ 
+    apt install -y wget && \
+    apt-get install -y apt-transport-https && \
+    apt-get install -y gnupg2
+
+# Get Dart
+RUN sh -c 'wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -' && \
+    sh -c 'wget -qO- https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list'
+
+# Install Dart
+RUN apt-get update && \
+    apt-get install dart
+
+# Link on pub command
+RUN ln -s /usr/lib/dart/bin/pub /usr/bin/pub
+
+# Install Dart
+RUN apt-get update && \
+    apt-get install -y protobuf-compiler
+
+# Get proto plugin for Dart
+RUN pub global activate protoc_plugin
+
+# Generate
+RUN protoc -I lib/src/protos/ lib/src/protos/commandable.proto --dart_out=grpc:lib/src/generated --plugin=protoc-gen-dart=$HOME/.pub-cache/bin/protoc-gen-dart
+RUN protoc -I test/protos/ test/protos/dummies.proto --dart_out=grpc:test/generated --plugin=protoc-gen-dart=$HOME/.pub-cache/bin/protoc-gen-dart
