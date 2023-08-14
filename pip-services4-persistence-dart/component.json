@@ -1,6 +1,14 @@
 {
-    "name": "pip_services4_persistence",
-    "registry": "pipdevs",
+    "name": "pip-services4-persistence",
+    "type": "module",
+    "language": "dart",
     "version": "0.0.2",
-    "build": "0"
+    "build": 0,
+    "registry": "pipservices",
+    "artifacts": [
+        {
+            "name":  "<name>",
+            "type": "dart"
+        }
+    ]
 }

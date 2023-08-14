@@ -1,6 +1,14 @@
 {
-    "name": "pip_services4_config",
-    "registry": "pipdevs",
+    "name": "pip-services4-config",
+    "type": "module",
+    "language": "dart",
     "version": "0.0.2",
-    "build": "0"
+    "build": 0,
+    "registry": "pipservices",
+    "artifacts": [
+        {
+            "name":  "<name>",
+            "type": "dart"
+        }
+    ]
 }
