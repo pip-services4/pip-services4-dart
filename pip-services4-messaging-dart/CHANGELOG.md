@@ -3,3 +3,7 @@
 ## 0.0.1
 
 - Moved code from commons module in PipService 3
+
+## 0.0.2
+
+- Fixed example
