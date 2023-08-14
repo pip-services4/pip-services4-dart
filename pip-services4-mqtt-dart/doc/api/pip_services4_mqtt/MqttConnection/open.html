@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the open method from the MqttConnection class, for the Dart programming language.">
+  <title>open method - MqttConnection class - pip_services4_mqtt library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">pip_services4_mqtt</a></li>
+    <li><a href="../../pip_services4_mqtt/pip_services4_mqtt-library.html">pip_services4_mqtt</a></li>
+    <li><a href="../../pip_services4_mqtt/MqttConnection-class.html">MqttConnection</a></li>
+    <li class="self-crumb">open method</li>
+  </ol>
+  <div class="self-name">open</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-method">open</span> method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+  <div>
+    <ol class="annotation-list">
+        <li>@<a href="https://api.dart.dev/stable/3.0.5/dart-core/override-constant.html">override</a></li>
+    </ol>
+  </div>
+
+<span class="returntype"><a href="https://api.dart.dev/stable/3.0.5/dart-async/Future-class.html">Future</a></span>
+<span class="name ">open</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="open-param-context"><span class="type-annotation"><a href="https://pub.dev/documentation/pip_services4_components/0.0.1/pip_services4_components/IContext-class.html">IContext</a>?</span> <span class="parameter-name">context</span></span></li>
+</ol>)
+
+      <div class="features"><span class="feature">override</span></div>
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Opens the component.</p>
+<ul>
+<li><code>context</code>     (optional) a context to trace execution through call chain.</li>
+</ul>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@override
+Future open(IContext? context) async {
+  if (connection_ != null) {
+    return;
+  }
+
+  var options = await connectionResolver_.resolve(context);
+
+  &#47;&#47; todo
+  &#47;&#47; options[&#39;reconnectPeriod&#39;] = reconnectTimeout_.toString();
+
+  var client = mqtt.MqttServerClient.withPort(
+      options.getAsString(&#39;host&#39;), clientId_, options.getAsInteger(&#39;port&#39;));
+  client.keepAlivePeriod = keepAliveTimeout_ ~&#47; 1000;
+  client.autoReconnect = retryConnect_;
+  client.resubscribeOnAutoReconnect = retryConnect_;
+  client.setProtocolV311();
+
+  client.onConnected = () {
+    connection_ = client;
+    logger_.debug(
+        context, &#39;Connected to MQTT broker at ${options.getAsString(&#39;uri&#39;)}&#39;);
+  };
+
+  var username = options[&#39;username&#39;];
+  var password = options[&#39;password&#39;];
+
+  try {
+    await client
+        .connect(username, password)
+        .timeout(Duration(milliseconds: connectTimeout_));
+  } catch (ex) {
+    logger_.error(context, ex as Exception,
+        &#39;Failed to connect to MQTT broker at ${options.getAsString(&#39;uri&#39;)}&#39;);
+    var err = ConnectionException(
+            context != null ? ContextResolver.getTraceId(context) : null,
+            &#39;CONNECT_FAILED&#39;,
+            &#39;Connection to MQTT broker failed&#39;)
+        .withCause(ex);
+    throw err;
+  }
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">pip_services4_mqtt</a></li>
+  <li><a href="../../pip_services4_mqtt/pip_services4_mqtt-library.html">pip_services4_mqtt</a></li>
+  <li><a href="../../pip_services4_mqtt/MqttConnection-class.html">MqttConnection</a></li>
+  <li class="self-crumb">open method</li>
+</ol>
+
+
+    <h5>MqttConnection class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../pip_services4_mqtt/MqttConnection-class.html#constructors">Constructors</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/MqttConnection.html">MqttConnection</a></li>
+
+
+        <li class="section-title">
+          <a href="../../pip_services4_mqtt/MqttConnection-class.html#instance-properties">Properties</a>
+        </li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/clientId_.html">clientId_</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/connection_.html">connection_</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/connectionResolver_.html">connectionResolver_</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/connectTimeout_.html">connectTimeout_</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/hashCode.html">hashCode</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/keepAliveTimeout_.html">keepAliveTimeout_</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/logger_.html">logger_</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/options_.html">options_</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/reconnectTimeout_.html">reconnectTimeout_</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/retryConnect_.html">retryConnect_</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/runtimeType.html">runtimeType</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/subscriptions_.html">subscriptions_</a></li>
+
+        <li class="section-title"><a href="../../pip_services4_mqtt/MqttConnection-class.html#instance-methods">Methods</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/checkOpen.html">checkOpen</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/close.html">close</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/configure.html">configure</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/createQueue.html">createQueue</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/deleteQueue.html">deleteQueue</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/getConnection.html">getConnection</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/isOpen.html">isOpen</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/open.html">open</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/publish.html">publish</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/readQueueNames.html">readQueueNames</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/setReferences.html">setReferences</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/subscribe.html">subscribe</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/toString.html">toString</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttConnection/unsubscribe.html">unsubscribe</a></li>
+
+        <li class="section-title inherited"><a href="../../pip_services4_mqtt/MqttConnection-class.html#operators">Operators</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pip_services4_mqtt
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

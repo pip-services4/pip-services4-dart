@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the renewLock method from the MqttMessageQueue class, for the Dart programming language.">
+  <title>renewLock method - MqttMessageQueue class - pip_services4_mqtt library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">pip_services4_mqtt</a></li>
+    <li><a href="../../pip_services4_mqtt/pip_services4_mqtt-library.html">pip_services4_mqtt</a></li>
+    <li><a href="../../pip_services4_mqtt/MqttMessageQueue-class.html">MqttMessageQueue</a></li>
+    <li class="self-crumb">renewLock method</li>
+  </ol>
+  <div class="self-name">renewLock</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-method">renewLock</span> method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+  <div>
+    <ol class="annotation-list">
+        <li>@<a href="https://api.dart.dev/stable/3.0.5/dart-core/override-constant.html">override</a></li>
+    </ol>
+  </div>
+
+<span class="returntype"><a href="https://api.dart.dev/stable/3.0.5/dart-async/Future-class.html">Future</a></span>
+<span class="name ">renewLock</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="renewLock-param-message"><span class="type-annotation"><a href="https://pub.dev/documentation/pip_services4_messaging/0.0.2/pip_services4_messaging/MessageEnvelope-class.html">MessageEnvelope</a></span> <span class="parameter-name">message</span>, </span></li>
+<li><span class="parameter" id="renewLock-param-lockTimeout"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/int-class.html">int</a></span> <span class="parameter-name">lockTimeout</span></span></li>
+</ol>)
+
+      <div class="features"><span class="feature">override</span></div>
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Renews a lock on a message that makes it invisible from other receivers in the queue.
+This method is usually used to extend the message processing time.</p>
+<p>Important: This method is not supported by MQTT.</p>
+<ul>
+<li><code>message</code>       a message to extend its lock.</li>
+<li><code>lockTimeout</code>   a locking timeout in milliseconds.
+Returns      (optional) Future that receives an null for success.
+Throws error</li>
+</ul>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@override
+Future renewLock(MessageEnvelope message, int lockTimeout) async {
+  &#47;&#47; Not supported
+  return null;
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">pip_services4_mqtt</a></li>
+  <li><a href="../../pip_services4_mqtt/pip_services4_mqtt-library.html">pip_services4_mqtt</a></li>
+  <li><a href="../../pip_services4_mqtt/MqttMessageQueue-class.html">MqttMessageQueue</a></li>
+  <li class="self-crumb">renewLock method</li>
+</ol>
+
+
+    <h5>MqttMessageQueue class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../pip_services4_mqtt/MqttMessageQueue-class.html#constructors">Constructors</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/MqttMessageQueue.html">MqttMessageQueue</a></li>
+
+
+        <li class="section-title inherited">
+          <a href="../../pip_services4_mqtt/MqttMessageQueue-class.html#instance-properties">Properties</a>
+        </li>
+          <li class="inherited"><a href="https://pub.dev/documentation/pip_services4_messaging/0.0.2/pip_services4_messaging/MessageQueue/capabilities.html">capabilities</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/pip_services4_messaging/0.0.2/pip_services4_messaging/MessageQueue/connectionResolver.html">connectionResolver</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/pip_services4_messaging/0.0.2/pip_services4_messaging/MessageQueue/counters.html">counters</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/pip_services4_messaging/0.0.2/pip_services4_messaging/MessageQueue/credentialResolver.html">credentialResolver</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/hashCode.html">hashCode</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/pip_services4_messaging/0.0.2/pip_services4_messaging/MessageQueue/logger.html">logger</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/pip_services4_messaging/0.0.2/pip_services4_messaging/MessageQueue/name.html">name</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/runtimeType.html">runtimeType</a></li>
+
+        <li class="section-title"><a href="../../pip_services4_mqtt/MqttMessageQueue-class.html#instance-methods">Methods</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/abandon.html">abandon</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/pip_services4_messaging/0.0.2/pip_services4_messaging/MessageQueue/beginListen.html">beginListen</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/pip_services4_messaging/0.0.2/pip_services4_messaging/MessageQueue/checkOpen.html">checkOpen</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/clear.html">clear</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/close.html">close</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/complete.html">complete</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/configure.html">configure</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/endListen.html">endListen</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/fromMessage.html">fromMessage</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/pip_services4_messaging/0.0.2/pip_services4_messaging/MessageQueue/getCapabilities.html">getCapabilities</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/pip_services4_messaging/0.0.2/pip_services4_messaging/MessageQueue/getName.html">getName</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/getTopic.html">getTopic</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/isOpen.html">isOpen</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/listen.html">listen</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/moveToDeadLetter.html">moveToDeadLetter</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/onMessage.html">onMessage</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/open.html">open</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/openWithParams.html">openWithParams</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/peek.html">peek</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/peekBatch.html">peekBatch</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/readMessageCount.html">readMessageCount</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/receive.html">receive</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/renewLock.html">renewLock</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/send.html">send</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/pip_services4_messaging/0.0.2/pip_services4_messaging/MessageQueue/sendAsObject.html">sendAsObject</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/sendMessageToReceiver.html">sendMessageToReceiver</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/setReferences.html">setReferences</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/subscribe.html">subscribe</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/pip_services4_messaging/0.0.2/pip_services4_messaging/MessageQueue/toString.html">toString</a></li>
+          <li><a href="../../pip_services4_mqtt/MqttMessageQueue/unsetReferences.html">unsetReferences</a></li>
+
+        <li class="section-title inherited"><a href="../../pip_services4_mqtt/MqttMessageQueue-class.html#operators">Operators</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pip_services4_mqtt
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
