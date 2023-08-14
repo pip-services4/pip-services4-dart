@@ -1,0 +1,51 @@
+import 'dart:io';
+import 'package:pip_services4_components/pip_services4_components.dart';
+import 'package:test/test.dart';
+import '../fixtures/DummyPersistenceFixture.dart';
+import './DummyMongoDbPersistence.dart';
+
+void main() {
+  group('DummyMongoDbPersistence', () {
+    late DummyMongoDbPersistence persistence;
+    late DummyPersistenceFixture fixture;
+
+    var mongoUri = Platform.environment['MONGO_SERVICE_URI'];
+    var mongoHost = Platform.environment['MONGO_SERVICE_HOST'] ?? 'localhost';
+    var mongoPort = Platform.environment['MONGO_SERVICE_PORT'] ?? '27017';
+    var mongoDatabase = Platform.environment['MONGO_DB'] ?? 'test';
+    if (mongoUri == null && mongoHost == null) {
+      return;
+    }
+
+    setUp(() async {
+      var dbConfig = ConfigParams.fromTuples([
+        'connection.uri',
+        mongoUri,
+        'connection.host',
+        mongoHost,
+        'connection.port',
+        mongoPort,
+        'connection.database',
+        mongoDatabase
+      ]);
+
+      persistence = DummyMongoDbPersistence();
+      persistence.configure(dbConfig);
+      fixture = DummyPersistenceFixture(persistence);
+      await persistence.open(null);
+      await persistence.clear(null);
+    });
+
+    tearDown(() async {
+      await persistence.close(null);
+    });
+
+    test('Crud Operations', () async {
+      await fixture.testCrudOperations();
+    });
+
+    test('Batch Operations', () async {
+      await fixture.testBatchOperations();
+    });
+  });
+}

@@ -1,0 +1,22 @@
+name: pip_services4_mongodb
+version: "0.0.1"
+description: This framework is part of the [Pip.Services](https://github.com/pip-services/pip-services) project. It contains the following MongoDB components.
+homepage: https://github.com/pip-services4/pip-services4-dart/tree/main/pip-services4-mongodb-dart
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  pip_services4_commons: ^0.0.2
+  pip_services4_components: ^0.0.1
+  pip_services4_data: ^0.0.2
+  pip_services4_config: ^0.0.2
+  pip_services4_observability: ^0.0.1
+  pip_services4_persistence: ^0.0.2
+  mongo_dart: ^0.9.1
+  mongo_dart_query: ^4.0.1
+
+ 
+dev_dependencies:
+  test: ^1.17.12
+  lints: ^2.1.1
