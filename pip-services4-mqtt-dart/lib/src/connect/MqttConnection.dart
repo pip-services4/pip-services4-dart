@@ -7,7 +7,7 @@ import 'package:pip_services4_commons/pip_services4_commons.dart';
 import 'package:pip_services4_components/pip_services4_components.dart';
 import 'package:pip_services4_observability/pip_services4_observability.dart';
 
-import '../../pip_service4_mqtt.dart';
+import '../../pip_services4_mqtt.dart';
 import 'IMqttMessageListener.dart';
 import 'MqttSubscription.dart';
 

@@ -1,7 +1,7 @@
 import 'package:pip_services4_components/pip_services4_components.dart';
 import 'package:pip_services4_messaging/pip_services4_messaging.dart';
 
-import '../../pip_service4_mqtt.dart';
+import '../../pip_services4_mqtt.dart';
 
 /// Creates [MqttMessageQueue] components by their descriptors.
 /// Name of created message queue is taken from its descriptor.

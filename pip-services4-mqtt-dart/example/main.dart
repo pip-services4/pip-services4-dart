@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:io';
 import 'package:pip_services4_components/pip_services4_components.dart';
 import 'package:pip_services4_messaging/pip_services4_messaging.dart';
-import 'package:pip_services4_mqtt/pip_service4_mqtt.dart';
+import 'package:pip_services4_mqtt/pip_services4_mqtt.dart';
 
 class TestMessageReciver implements IMessageReceiver {
   MessageEnvelope? message;
