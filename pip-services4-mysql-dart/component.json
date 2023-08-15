@@ -1,5 +1,5 @@
 {
-    "name": "pip-services4-mongodb",
+    "name": "pip-services4-mysql",
     "type": "module",
     "language": "dart",
     "version": "0.0.1",
