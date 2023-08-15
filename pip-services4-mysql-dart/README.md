@@ -14,7 +14,7 @@ The module contains the following packages:
 * [API Reference](https://pub.dev/documentation/pip_services4_mysql/latest/pip_services4_mysql/pip_services4_mysql-library.html)
 * [Change Log](CHANGELOG.md)
 * [Get Help](https://docs.pipservices.org/get_help/)
-* [Contribute](http://docs.pipservices.org/toolkit/contribute/)
+* [Contribute](https://docs.pipservices.org/toolkit/contribute/)
 
 ## Use
 
