@@ -4,7 +4,7 @@ description: This framework is part of the [Pip.Services](https://github.com/pip
 homepage: https://github.com/pip-services4/pip-services4-dart/tree/main/pip-services4-prometheus-dart
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   pip_services4_commons: ^0.0.2
