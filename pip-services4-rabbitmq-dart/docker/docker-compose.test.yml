@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+  test:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.test
+    image: ${IMAGE:-pipservices/test}
+    depends_on:
+      - rabbitmq
+    environment:
+      - RABBITMQ_ENABLED=true
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=5672
+      - RABBITMQ_USER=user
+      - RABBITMQ_PASS=pass123
+
+  rabbitmq:
+    image: bitnami/rabbitmq:latest
+    environment:
+      - RABBITMQ_USERNAME=user
+      - RABBITMQ_PASSWORD=pass123
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    expose:
+      - "5672"
+      - "15672"
