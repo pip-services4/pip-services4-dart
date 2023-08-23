@@ -1,0 +1,25 @@
+name: pip_services4_aws
+version: "0.0.1"
+description: This framework is part of the [Pip.Services](https://github.com/pip-services/pip-services) project. It contains components for AWS cloud platform.
+homepage: https://github.com/pip-services4/pip-services4-dart/tree/main/pip-services4-aws-dart
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  pip_services4_commons: ^0.0.2
+  pip_services4_components: ^0.0.1
+  pip_services4_config: ^0.0.2
+  pip_services4_data: ^0.0.2
+  pip_services4_observability: ^0.0.1
+  pip_services4_container: ^0.0.1
+  pip_services4_rpc: ^0.0.2
+  aws_client: ^0.4.1
+  aws_lambda_dart_runtime: ^1.1.0
+  aws_cloudwatch_api: ^2.0.0
+  aws_logs_api: ^2.0.0
+  http_client: ^1.5.2
+ 
+dev_dependencies:
+  test: ^1.17.12
+  lints: ^2.1.1
