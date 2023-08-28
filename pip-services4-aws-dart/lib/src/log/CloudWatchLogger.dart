@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:aws_logs_api/logs-2014-03-28.dart';
 
-// ignore: depend_on_referenced_packages
 import 'package:http/http.dart' as http;
 
 import 'package:pip_services4_commons/pip_services4_commons.dart';

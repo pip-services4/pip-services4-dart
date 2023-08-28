@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:aws_client/lambda_2015_03_31.dart';
-import 'package:http_client/console.dart';
+//import 'package:http_client/console.dart';
 import 'package:pip_services4_commons/pip_services4_commons.dart';
 import 'package:pip_services4_components/pip_services4_components.dart';
 import 'package:pip_services4_data/pip_services4_data.dart';
@@ -71,9 +71,6 @@ abstract class LambdaClient
     implements IOpenable, IConfigurable, IReferenceable {
   /// The reference to AWS Lambda Function.
   Lambda? lambda;
-
-  Client? _httpClient;
-  //Aws _aws;
 
   /// The opened flag.
   bool opened = false;
@@ -156,15 +153,11 @@ abstract class LambdaClient
 
     connection = await connectionResolver.resolve(context);
 
-    //final Client httpClient = ConsoleClient(idleTimeout: Duration(milliseconds: _connectTimeout));
-    _httpClient = ConsoleClient();
     final credentials = AwsClientCredentials(
         accessKey: connection!.getAccessId() ?? '',
         secretKey: connection!.getAccessKey() ?? '');
     //
     try {
-      //_aws = Aws(credentials: credentials, httpClient: _httpClient);
-      //lambda = _aws.lambda(connection.getRegion());
       lambda = Lambda(
           region: connection!.getRegion() ?? '', credentials: credentials);
 
@@ -174,7 +167,6 @@ abstract class LambdaClient
     } catch (ex) {
       logger.error(context, ApplicationException().wrap(ex),
           'Error while open AWS client');
-      await _httpClient?.close();
       return ex;
     }
   }
@@ -185,9 +177,6 @@ abstract class LambdaClient
   ///  Return 			Future that receives error or null no errors occured.
   @override
   Future close(IContext? context) async {
-    if (_httpClient != null) {
-      await _httpClient?.close();
-    }
     opened = false;
   }
 

@@ -18,7 +18,7 @@ dependencies:
   aws_lambda_dart_runtime: ^1.1.0
   aws_cloudwatch_api: ^2.0.0
   aws_logs_api: ^2.0.0
-  http_client: ^1.5.2
+  http: ^0.13.0
  
 dev_dependencies:
   test: ^1.17.12
