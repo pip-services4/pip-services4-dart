@@ -1,6 +1,8 @@
 import 'package:pip_services4_components/pip_services4_components.dart';
 
 import 'DummyService.dart';
+import 'controllers/DummyCommandableLambdaController.dart';
+import 'controllers/DummyLambdaController.dart';
 
 class DummyFactory extends Factory {
   static final descriptor = Descriptor(
@@ -18,5 +20,9 @@ class DummyFactory extends Factory {
 
   DummyFactory() : super() {
     registerAsType(DummyFactory.ServiceDescriptor, DummyService);
+    registerAsType(
+        DummyFactory.LambdaControllerDescriptor, DummyLambdaController);
+    registerAsType(DummyFactory.CmdLambdaControllerDescriptor,
+        DummyCommandableLambdaController);
   }
 }

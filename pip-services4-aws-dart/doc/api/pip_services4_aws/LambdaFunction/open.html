@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the act method from the LambdaFunction class, for the Dart programming language.">
-  <title>act method - LambdaFunction class - pip_services4_aws library - Dart API</title>
+  <meta name="description" content="API docs for the open method from the LambdaFunction class, for the Dart programming language.">
+  <title>open method - LambdaFunction class - pip_services4_aws library - Dart API</title>
 
 
   
@@ -31,9 +31,9 @@
     <li><a href="../../index.html">pip_services4_aws</a></li>
     <li><a href="../../pip_services4_aws/pip_services4_aws-library.html">pip_services4_aws</a></li>
     <li><a href="../../pip_services4_aws/LambdaFunction-class.html">LambdaFunction</a></li>
-    <li class="self-crumb">act method</li>
+    <li class="self-crumb">open method</li>
   </ol>
-  <div class="self-name">act</div>
+  <div class="self-name">open</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -53,29 +53,29 @@
 
   <div id="dartdoc-main-content" class="main-content">
       <div>
-<h1><span class="kind-method">act</span> method 
+<h1><span class="kind-method">open</span> method 
 </h1></div>
 
     <section class="multi-line-signature">
       
+  <div>
+    <ol class="annotation-list">
+        <li>@<a href="https://api.dart.dev/stable/3.0.5/dart-core/override-constant.html">override</a></li>
+    </ol>
+  </div>
 
 <span class="returntype"><a href="https://api.dart.dev/stable/3.0.5/dart-async/Future-class.html">Future</a></span>
-<span class="name ">act</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="act-param-params"><span class="type-annotation">dynamic</span> <span class="parameter-name">params</span></span></li>
+<span class="name ">open</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="open-param-context"><span class="type-annotation"><a href="https://pub.dev/documentation/pip_services4_components/0.0.1/pip_services4_components/IContext-class.html">IContext</a>?</span> <span class="parameter-name">context</span></span></li>
 </ol>)
 
-      
+      <div class="features"><span class="feature">override</span></div>
 
     </section>
     
 <section class="desc markdown">
-  <p>Calls registered action in this lambda function.
-'cmd' parameter in the action parameters determin
-what action shall be called.</p>
-<p>This method shall only be used in testing.</p>
+  <p>Opens the component.</p>
 <ul>
-<li><code>params</code> action parameters.</li>
-<li>Return  Future that receives action result
-Throws error.</li>
+<li><code>context</code> 	(optional) execution context to trace execution through call chain.</li>
 </ul>
 </section>
 
@@ -83,13 +83,12 @@ Throws error.</li>
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future act(params) async {
-  var context =
-      awsctx.Context(requestId: IdGenerator.nextLong(), handler: &#39;&#39;);
-  var event = aws.AwsApiGatewayEvent(body: json.encode(params));
+  <pre class="language-dart"><code class="language-dart">@override
+Future open(IContext? context) async {
+  if (isOpen()) return;
 
-  var result = await getHandler()(context, event);
-  return result.body.body;
+  await super.open(context);
+  registerControllers();
 }</code></pre>
 </section>
 
@@ -107,7 +106,7 @@ Throws error.</li>
   <li><a href="../../index.html">pip_services4_aws</a></li>
   <li><a href="../../pip_services4_aws/pip_services4_aws-library.html">pip_services4_aws</a></li>
   <li><a href="../../pip_services4_aws/LambdaFunction-class.html">LambdaFunction</a></li>
-  <li class="self-crumb">act method</li>
+  <li class="self-crumb">open method</li>
 </ol>
 
 

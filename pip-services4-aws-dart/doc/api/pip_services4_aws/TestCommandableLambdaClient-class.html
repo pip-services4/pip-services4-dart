@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the CommandableLambdaClient class from the pip_services4_aws library, for the Dart programming language.">
-  <title>CommandableLambdaClient class - pip_services4_aws library - Dart API</title>
+  <meta name="description" content="API docs for the TestCommandableLambdaClient class from the pip_services4_aws library, for the Dart programming language.">
+  <title>TestCommandableLambdaClient class - pip_services4_aws library - Dart API</title>
 
 
   
@@ -30,9 +30,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">pip_services4_aws</a></li>
     <li><a href="../pip_services4_aws/pip_services4_aws-library.html">pip_services4_aws</a></li>
-    <li class="self-crumb">CommandableLambdaClient class</li>
+    <li class="self-crumb">TestCommandableLambdaClient class</li>
   </ol>
-  <div class="self-name">CommandableLambdaClient</div>
+  <div class="self-name">TestCommandableLambdaClient</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -52,69 +52,11 @@
 
   <div id="dartdoc-main-content" class="main-content">
       <div>
-<h1><span class="kind-class">CommandableLambdaClient</span> class 
+<h1><span class="kind-class">TestCommandableLambdaClient</span> class 
  
 </h1></div>
 
     
-<section class="desc markdown">
-  <p>Abstract client that calls commandable AWS Lambda Functions.</p>
-<p>Commandable services are generated automatically for <a href="https://pub.dev/documentation/pip_services4_rpc/latest/pip_services4_rpc/ICommandable-class.html">ICommandable</a>.
-Each command is exposed as action determined by "cmd" parameter.</p>
-<h3 id="configuration-parameters">Configuration parameters</h3>
-<ul>
-<li><code>connections</code>:
-<ul>
-<li><code>discovery_key</code>:               (optional) a key to retrieve the connection from <a href="https://pub.dev/documentation/pip_services4_config/latest/pip_services4_config/IDiscovery-class.html">IDiscovery</a></li>
-<li><code>region</code>:                      (optional) AWS region</li>
-</ul>
-</li>
-<li><code>credentials</code>:
-<ul>
-<li><code>store_key</code>:                   (optional) a key to retrieve the credentials from <a href="https://pub.dev/documentation/pip_services4_config/latest/pip_services4_config/ICredentialStore-class.html">ICredentialStore</a></li>
-<li><code>access_id</code>:                   AWS access/client id</li>
-<li><code>access_key</code>:                  AWS access/client id</li>
-</ul>
-</li>
-<li><code>options</code>:
-<ul>
-<li><code>connect_timeout</code>:             (optional) connection timeout in milliseconds (default: 10 sec)</li>
-</ul>
-</li>
-</ul>
-<h3 id="references">References</h3>
-<ul>
-<li>*:logger:*:*:1.0            (optional) <a href="https://pub.dev/documentation/pip_services4_observability/latest/pip_services4_observability/ILogger-class.html">ILogger</a> components to pass log messages</li>
-<li>*:counters:*:*:1.0          (optional) <a href="https://pub.dev/documentation/pip_services4_observability/latest/pip_services4_observability/ICounters-class.html">ICounters</a> components to pass collected measurements</li>
-<li>*:discovery:*:*:1.0         (optional) <a href="https://pub.dev/documentation/pip_services4_config/latest/pip_services4_config/IDiscovery-class.html">IDiscovery</a> services to resolve connection</li>
-<li>*:credential-store:*:*:1.0  (optional) Credential stores to resolve credentials</li>
-</ul>
-<p>See <a href="../pip_services4_aws/LambdaFunction-class.html">LambdaFunction</a></p>
-<h3 id="example">Example</h3>
-<pre class="language-dart"><code>class MyLambdaClient extends CommandableLambdaClient implements IMyClient {
-    ...
-
-    Future&lt;MyData&gt; getData(IContext? context, id: string) async {
-        var result = await callCommand(
-            "get_data",
-            context,
-            { id: id }
-        );
-    }
-    ...
-}
-
-var client = new MyLambdaClient();
-client.configure(ConfigParams.fromTuples([
-    "connection.region", "us-east-1",
-    "connection.access_id", "XXXXXXXXXXX",
-    "connection.access_key", "XXXXXXXXXXX",
-    "connection.arn", "YYYYYYYYYYYYY"
-]));
-
-var data = client.getData(Context.fromTraceId('123'), '1');
-</code></pre>
-</section>
 
 
     <section>
@@ -125,17 +67,14 @@ var data = client.getData(Context.fromTraceId('123'), '1');
     <ul class="gt-separated dark clazz-relationships">
       <li><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object-class.html">Object</a></li>
         <li><a href="../pip_services4_aws/LambdaClient-class.html">LambdaClient</a></li>
-      <li>CommandableLambdaClient</li>
+        <li><a href="../pip_services4_aws/CommandableLambdaClient-class.html">CommandableLambdaClient</a></li>
+      <li>TestCommandableLambdaClient</li>
     </ul>
   </dd>
 
         
         
 
-        <dt>Implementers</dt>
-        <dd><ul class="comma-separated clazz-relationships">
-          <li><a href="../pip_services4_aws/TestCommandableLambdaClient-class.html">TestCommandableLambdaClient</a></li>
-        </ul></dd>
 
 
         
@@ -149,11 +88,11 @@ var data = client.getData(Context.fromTraceId('123'), '1');
     <h2>Constructors</h2>
 
     <dl class="constructor-summary-list">
-        <dt id="CommandableLambdaClient" class="callable">
-          <span class="name"><a href="../pip_services4_aws/CommandableLambdaClient/CommandableLambdaClient.html">CommandableLambdaClient</a></span><span class="signature">(<span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/String-class.html">String</a></span> <span class="parameter-name">name</span></span>)</span>
+        <dt id="TestCommandableLambdaClient" class="callable">
+          <span class="name"><a href="../pip_services4_aws/TestCommandableLambdaClient/TestCommandableLambdaClient.html">TestCommandableLambdaClient</a></span><span class="signature">(<span class="parameter" id="-param-baseRoute"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/String-class.html">String</a></span> <span class="parameter-name">baseRoute</span></span>)</span>
         </dt>
         <dd>
-          Creates a new instance of this client.
+          
         </dd>
     </dl>
   </section>
@@ -295,7 +234,7 @@ var data = client.getData(Context.fromTraceId('123'), '1');
 </dd>
 
         <dt id="callCommand" class="callable">
-  <span class="name"><a href="../pip_services4_aws/CommandableLambdaClient/callCommand.html">callCommand</a></span><span class="signature">(<wbr><span class="parameter" id="callCommand-param-cmd"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/String-class.html">String</a></span> <span class="parameter-name">cmd</span>, </span><span class="parameter" id="callCommand-param-context"><span class="type-annotation"><a href="https://pub.dev/documentation/pip_services4_components/0.0.1/pip_services4_components/IContext-class.html">IContext</a>?</span> <span class="parameter-name">context</span>, </span><span class="parameter" id="callCommand-param-params"><span class="type-annotation">dynamic</span> <span class="parameter-name">params</span></span>)
+  <span class="name"><a href="../pip_services4_aws/TestCommandableLambdaClient/callCommand.html">callCommand</a></span><span class="signature">(<wbr><span class="parameter" id="callCommand-param-name"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/String-class.html">String</a></span> <span class="parameter-name">name</span>, </span><span class="parameter" id="callCommand-param-context"><span class="type-annotation"><a href="https://pub.dev/documentation/pip_services4_components/0.0.1/pip_services4_components/IContext-class.html">IContext</a>?</span> <span class="parameter-name">context</span>, </span><span class="parameter" id="callCommand-param-params"><span class="type-annotation">dynamic</span> <span class="parameter-name">params</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.0.5/dart-async/Future-class.html">Future</a></span>
   </span>
   
@@ -305,7 +244,7 @@ var data = client.getData(Context.fromTraceId('123'), '1');
   Calls a remote action in AWS Lambda function.
 The name of the action is added as "cmd" parameter
 to the action parameters.
-  
+  <div class="features"><span class="feature">override</span></div>
 
 </dd>
 
@@ -480,7 +419,7 @@ It returns a InstrumentTiming object that is used to end the time measurement.
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
   <li><a href="../index.html">pip_services4_aws</a></li>
   <li><a href="../pip_services4_aws/pip_services4_aws-library.html">pip_services4_aws</a></li>
-  <li class="self-crumb">CommandableLambdaClient class</li>
+  <li class="self-crumb">TestCommandableLambdaClient class</li>
 </ol>
 
 
@@ -513,12 +452,12 @@ It returns a InstrumentTiming object that is used to end the time measurement.
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
     <ol>
 
-        <li class="section-title"><a href="../pip_services4_aws/CommandableLambdaClient-class.html#constructors">Constructors</a></li>
-          <li><a href="../pip_services4_aws/CommandableLambdaClient/CommandableLambdaClient.html">CommandableLambdaClient</a></li>
+        <li class="section-title"><a href="../pip_services4_aws/TestCommandableLambdaClient-class.html#constructors">Constructors</a></li>
+          <li><a href="../pip_services4_aws/TestCommandableLambdaClient/TestCommandableLambdaClient.html">TestCommandableLambdaClient</a></li>
 
 
         <li class="section-title inherited">
-          <a href="../pip_services4_aws/CommandableLambdaClient-class.html#instance-properties">Properties</a>
+          <a href="../pip_services4_aws/TestCommandableLambdaClient-class.html#instance-properties">Properties</a>
         </li>
           <li class="inherited"><a href="../pip_services4_aws/LambdaClient/connection.html">connection</a></li>
           <li class="inherited"><a href="../pip_services4_aws/LambdaClient/connectionResolver.html">connectionResolver</a></li>
@@ -531,9 +470,9 @@ It returns a InstrumentTiming object that is used to end the time measurement.
           <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/runtimeType.html">runtimeType</a></li>
           <li class="inherited"><a href="../pip_services4_aws/LambdaClient/tracer.html">tracer</a></li>
 
-        <li class="section-title"><a href="../pip_services4_aws/CommandableLambdaClient-class.html#instance-methods">Methods</a></li>
+        <li class="section-title"><a href="../pip_services4_aws/TestCommandableLambdaClient-class.html#instance-methods">Methods</a></li>
           <li class="inherited"><a href="../pip_services4_aws/LambdaClient/call.html">call</a></li>
-          <li><a href="../pip_services4_aws/CommandableLambdaClient/callCommand.html">callCommand</a></li>
+          <li><a href="../pip_services4_aws/TestCommandableLambdaClient/callCommand.html">callCommand</a></li>
           <li class="inherited"><a href="../pip_services4_aws/LambdaClient/callOneWay.html">callOneWay</a></li>
           <li class="inherited"><a href="../pip_services4_aws/LambdaClient/close.html">close</a></li>
           <li class="inherited"><a href="../pip_services4_aws/LambdaClient/configure.html">configure</a></li>
@@ -545,7 +484,7 @@ It returns a InstrumentTiming object that is used to end the time measurement.
           <li class="inherited"><a href="../pip_services4_aws/LambdaClient/setReferences.html">setReferences</a></li>
           <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/toString.html">toString</a></li>
 
-        <li class="section-title inherited"><a href="../pip_services4_aws/CommandableLambdaClient-class.html#operators">Operators</a></li>
+        <li class="section-title inherited"><a href="../pip_services4_aws/TestCommandableLambdaClient-class.html#operators">Operators</a></li>
           <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/operator_equals.html">operator ==</a></li>
 
 

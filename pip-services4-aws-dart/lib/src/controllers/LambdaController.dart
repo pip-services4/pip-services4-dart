@@ -175,6 +175,7 @@ abstract class LambdaController
     _interceptors = [];
   }
 
+//<Future Function(dynamic p1)>
   Future applyValidation(
       Schema? schema, Future Function(dynamic) action) async {
     // ignore: unnecessary_null_comparison
@@ -195,14 +196,16 @@ abstract class LambdaController
         }
       }
 
-      final result = await action(params);
-      return result;
+      //final result = action(params);
+      return action(params);
     }
 
     return actionWrapper;
   }
 
-  Future applyInterceptors(Future Function(dynamic) action) async {
+//<Future Function(dynamic p1)>
+  dynamic applyInterceptors(dynamic action) {
+    //Future Function(dynamic) action
     // ignore: unnecessary_null_comparison
     if (action == null) {
       throw UnknownException(null, 'NO_ACTION', 'Missing action');
@@ -211,9 +214,11 @@ abstract class LambdaController
 
     for (var index = _interceptors.length - 1; index >= 0; index--) {
       final interceptor = _interceptors[index];
-      actionWrapper = ((action) => {
-            (params) => {interceptor(params, action)}
-          })(actionWrapper) as Future Function(dynamic p1);
+      // actionWrapper = ((action) => {
+      //       (params) => {interceptor(params, action)}
+      //     })(actionWrapper) as Future Function(dynamic p1);
+
+      actionWrapper = (action) => (params) => interceptor(params, action);
     }
 
     return actionWrapper;
@@ -232,15 +237,19 @@ abstract class LambdaController
   /// - [name]          an action name
   /// - [schema]        a validation schema to validate received parameters.
   /// - [action]        an action function that is called when operation is invoked.
-  void registerAction(
-      String name, Schema? schema, Future Function(dynamic) action) {
-    var actionWrapper = applyValidation(schema, action);
-    actionWrapper =
-        applyInterceptors(actionWrapper as Future Function(dynamic p1));
+  Future<void> registerAction(
+      String name, Schema? schema, Future Function(dynamic) action) async {
+    try {
+      var actionWrapper = await applyValidation(schema, action);
+      actionWrapper = applyInterceptors(actionWrapper);
 
-    final LambdaAction registeredAction = LambdaAction(
-        generateActionCmd(name), schema, (params) => actionWrapper);
-    _actions.add(registeredAction);
+      final LambdaAction registeredAction =
+          LambdaAction(generateActionCmd(name), schema, actionWrapper);
+      _actions.add(registeredAction);
+    } catch (ex) {
+      logger.error(
+          null, ApplicationException().wrap(ex), 'Error while registerAction');
+    }
   }
 
   /// Registers an action with authorization.
@@ -249,21 +258,24 @@ abstract class LambdaController
   /// - [schema]        a validation schema to validate received parameters.
   /// - [authorize]     an authorization interceptor
   /// - [action]        an action function that is called when operation is invoked.
-  void registerActionWithAuth(
+  Future<void> registerActionWithAuth(
       String name,
       Schema schema,
       Future Function(dynamic call, Future Function(dynamic) next) authorize,
-      Future Function(dynamic) action) {
-    var actionWrapper = applyValidation(schema, action);
+      Future Function(dynamic) action) async {
+    var actionWrapper = await applyValidation(schema, action);
     // Add authorization just before validation
-    actionWrapper = ((call) => {
-          authorize(call, actionWrapper as Future Function(dynamic p1))
-        }) as Future;
-    actionWrapper =
-        applyInterceptors(actionWrapper as Future Function(dynamic p1));
+    actionWrapper = (call) => authorize(call, actionWrapper);
+    actionWrapper = applyInterceptors(actionWrapper);
+
+    //     actionWrapper = ((call) => {
+    //       authorize(call, actionWrapper as Future Function(dynamic p1))
+    //     }) as Future;
+    // actionWrapper =
+    //     applyInterceptors(actionWrapper as Future Function(dynamic p1));
 
     final registeredAction = LambdaAction(
-        generateActionCmd(name), schema, (params) => actionWrapper);
+        generateActionCmd(name), schema, (params) async => actionWrapper);
     _actions.add(registeredAction);
   }
 
@@ -304,6 +316,6 @@ abstract class LambdaController
           .withDetails('command', cmd);
     }
 
-    return action.action!(params);
+    return await action.action!(params);
   }
 }

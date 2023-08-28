@@ -7,3 +7,4 @@ export './src/log/log.dart';
 export './src/count/count.dart';
 export './src/build/build.dart';
 export './src/controllers/controllers.dart';
+export './src/test/test.dart';

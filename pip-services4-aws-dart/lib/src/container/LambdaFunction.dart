@@ -157,6 +157,17 @@ abstract class LambdaFunction extends Container {
     register();
   }
 
+  /// Opens the component.
+  ///
+  /// - [context] 	(optional) execution context to trace execution through call chain.
+  @override
+  Future open(IContext? context) async {
+    if (isOpen()) return;
+
+    await super.open(context);
+    registerControllers();
+  }
+
   /// Adds instrumentation to log calls and measure call time.
   /// It returns a Timing object that is used to end the time measurement.
   ///
@@ -225,7 +236,7 @@ abstract class LambdaFunction extends Container {
 
         final actions = controller.getActions();
         for (var action in actions) {
-          registerAction(action.cmd, action.schema, action.action);
+          registerAction(action.cmd, action.schema, action.action!);
         }
       }
     }
@@ -237,11 +248,12 @@ abstract class LambdaFunction extends Container {
   ///  -  [schema]        a validation schema to validate received parameters.
   ///  -  [action]        an action function that is called when action is invoked.
   void registerAction(
-      String? cmd, Schema? schema, Future Function(dynamic)? action) {
+      String? cmd, Schema? schema, Future Function(dynamic) action) {
     if (cmd == null || cmd.isEmpty) {
       throw UnknownException(null, 'NO_COMMAND', 'Missing command');
     }
 
+    // ignore: unnecessary_null_comparison
     if (action == null) {
       throw UnknownException(null, 'NO_ACTION', 'Missing action');
     }

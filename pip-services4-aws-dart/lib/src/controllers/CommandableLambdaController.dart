@@ -68,8 +68,7 @@ abstract class CommandableLambdaController extends LambdaController {
       final name = command.getName();
 
       registerAction(name, null, (params) async {
-        final context =
-            params != null ? Context.fromTraceId(params.trace_id) : null;
+        final context = Context.fromTraceId(params['trace_id'] ?? '');
 
         final args = Parameters.fromValue(params);
         args.remove("trace_id");

@@ -64,7 +64,7 @@
 <li><span class="parameter" id="registerAction-param-schema"><span class="type-annotation"><a href="https://pub.dev/documentation/pip_services4_data/0.0.2/pip_services4_data/Schema-class.html">Schema</a>?</span> <span class="parameter-name">schema</span>, </span></li>
 <li><span class="parameter" id="registerAction-param-action"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-async/Future-class.html">Future</a></span> <span class="parameter-name">action</span>(<ol class="parameter-list"><li><span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span></li>
 </ol>
-)?</span></li>
+)</span></li>
 </ol>)
 
       
@@ -85,11 +85,12 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">void registerAction(
-    String? cmd, Schema? schema, Future Function(dynamic)? action) {
+    String? cmd, Schema? schema, Future Function(dynamic) action) {
   if (cmd == null || cmd.isEmpty) {
     throw UnknownException(null, &#39;NO_COMMAND&#39;, &#39;Missing command&#39;);
   }
 
+  &#47;&#47; ignore: unnecessary_null_comparison
   if (action == null) {
     throw UnknownException(null, &#39;NO_ACTION&#39;, &#39;Missing action&#39;);
   }
@@ -164,7 +165,7 @@
           <li><a href="../../pip_services4_aws/LambdaFunction/instrument.html">instrument</a></li>
           <li class="inherited"><a href="https://pub.dev/documentation/pip_services4_container/0.0.1/pip_services4_container/Container/isOpen.html">isOpen</a></li>
           <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/pip_services4_container/0.0.1/pip_services4_container/Container/open.html">open</a></li>
+          <li><a href="../../pip_services4_aws/LambdaFunction/open.html">open</a></li>
           <li class="inherited"><a href="https://pub.dev/documentation/pip_services4_container/0.0.1/pip_services4_container/Container/readConfigFromFile.html">readConfigFromFile</a></li>
           <li><a href="../../pip_services4_aws/LambdaFunction/register.html">register</a></li>
           <li><a href="../../pip_services4_aws/LambdaFunction/registerAction.html">registerAction</a></li>
