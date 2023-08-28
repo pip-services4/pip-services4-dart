@@ -19,6 +19,7 @@ dependencies:
   aws_cloudwatch_api: ^2.0.0
   aws_logs_api: ^2.0.0
   http: ^0.13.0
+  collection: ^1.18.0
  
 dev_dependencies:
   test: ^1.17.12

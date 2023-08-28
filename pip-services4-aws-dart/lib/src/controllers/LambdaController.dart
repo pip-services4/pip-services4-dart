@@ -3,7 +3,6 @@ import 'package:pip_services4_components/pip_services4_components.dart';
 import 'package:pip_services4_data/pip_services4_data.dart';
 import 'package:pip_services4_observability/pip_services4_observability.dart';
 import 'package:pip_services4_rpc/pip_services4_rpc.dart';
-// ignore: depend_on_referenced_packages
 import 'package:collection/collection.dart';
 
 import '../clients/LambdaClient.dart';
