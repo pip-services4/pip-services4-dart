@@ -101,7 +101,7 @@ abstract class LambdaFunction extends Container {
   Map<String, Schema> schemas = {};
 
   /// The map of registered actions.
-  Map<String, Future Function(dynamic)> actions = {};
+  Map<String, Future Function(Map<String, dynamic>)> actions = {};
 
   /// The default path to config file.
   String configPath = './config/config.yml';
@@ -248,7 +248,7 @@ abstract class LambdaFunction extends Container {
   ///  -  [schema]        a validation schema to validate received parameters.
   ///  -  [action]        an action function that is called when action is invoked.
   void registerAction(
-      String? cmd, Schema? schema, Future Function(dynamic) action) {
+      String? cmd, Schema? schema, Future Function(Map<String, dynamic>) action) {
     if (cmd == null || cmd.isEmpty) {
       throw UnknownException(null, 'NO_COMMAND', 'Missing command');
     }
@@ -259,11 +259,11 @@ abstract class LambdaFunction extends Container {
     }
 
     // Hack!!! Wrapping action to preserve prototyping context
-    Future actionCurl(dynamic params) async {
+    Future actionCurl(Map<String, dynamic> params) async {
       // Perform validation
       if (schema != null) {
-        var context = params['trace_id'];
-        var err = schema.validateAndReturnException(context, params, false);
+        var traceId = params['trace_id'] ?? '';
+        var err = schema.validateAndReturnException(traceId, params, false);
         if (err != null) {
           throw err;
         }

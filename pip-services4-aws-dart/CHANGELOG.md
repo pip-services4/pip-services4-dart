@@ -4,3 +4,7 @@
 
 - Moved the code from PipServices 3
 
+## 0.0.2
+
+- Fixed registerAction() params
+

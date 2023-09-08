@@ -8,9 +8,9 @@ class LambdaAction {
   Schema? schema;
 
   /// Action to be executed
-  Future Function(dynamic)? action;
+  Future Function(Map<String, dynamic>)? action;
 
-  LambdaAction(String? cmd, Schema? schema, Future Function(dynamic) action) {
+  LambdaAction(String? cmd, Schema? schema, Future Function(Map<String, dynamic>) action) {
     this.cmd = cmd;
     this.schema = schema;
     this.action = action;
