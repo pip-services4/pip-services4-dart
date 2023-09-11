@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the invoke method from the AzureFunctionClient class, for the Dart programming language.">
+  <title>invoke method - AzureFunctionClient class - pip_services4_azure library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">pip_services4_azure</a></li>
+    <li><a href="../../pip_services4_azure/pip_services4_azure-library.html">pip_services4_azure</a></li>
+    <li><a href="../../pip_services4_azure/AzureFunctionClient-class.html">AzureFunctionClient</a></li>
+    <li class="self-crumb">invoke method</li>
+  </ol>
+  <div class="self-name">invoke</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-method">invoke</span> method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+
+<span class="returntype"><a href="https://api.dart.dev/stable/3.0.5/dart-async/Future-class.html">Future</a></span>
+<span class="name ">invoke</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="invoke-param-cmd"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">cmd</span>, </span></li>
+<li><span class="parameter" id="invoke-param-context"><span class="type-annotation"><a href="https://pub.dev/documentation/pip_services4_components/0.0.1/pip_services4_components/IContext-class.html">IContext</a>?</span> <span class="parameter-name">context</span>, </span></li>
+<li><span class="parameter" id="invoke-param-args"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Map-class.html">Map</a></span> <span class="parameter-name">args</span></span></li>
+</ol>)
+
+      
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Performs Azure Function invocation.</p>
+<ul>
+<li><code>invocationType</code>    an invocation type: 'RequestResponse' or 'Event'</li>
+<li><code>cmd</code>               an action name to be called.</li>
+<li><code>context</code>     (optional) a context to trace execution through call chain.</li>
+<li><code>args</code>              action arguments
+ Return          Future that receives action result
+Throws error.</li>
+</ul>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">Future invoke(String? cmd, IContext? context, Map args) async {
+  if (cmd == null || cmd.isEmpty) {
+    var err = UnknownException(
+        context != null ? ContextResolver.getTraceId(context) : null,
+        &#39;NO_COMMAND&#39;,
+        &#39;Missing Seneca pattern cmd&#39;);
+    logger.error(context, err, &#39;Failed to call %s&#39;, [cmd]);
+    throw err;
+  }
+
+  var cloneArgs = Map.from(args);
+  cloneArgs[&#39;cmd&#39;] = cmd;
+  cloneArgs[&#39;trace_id&#39;] = context != null
+      ? ContextResolver.getTraceId(context)
+      : IdGenerator.nextShort();
+  headers[&#39;Content-Type&#39;] = &#39;application&#47;json&#39;;
+  http.Response? response;
+
+  try {
+    response = await client!.post(Uri.parse(uri!),
+        headers: headers, body: json.encode(cloneArgs));
+
+    &#47;&#47; ignore: unnecessary_null_comparison
+    if (response == null) {
+      throw ApplicationExceptionFactory.create(ErrorDescriptionFactory.create(
+          UnknownException(
+              context != null ? ContextResolver.getTraceId(context) : null,
+              &#39;Unable to get a result from uri $uri&#39;)));
+    }
+
+    if (response.statusCode == 204) {
+      return null;
+    }
+
+    return response.body;
+  } catch (err) {
+    logger.error(context, InvocationException().wrap(err),
+        &#39;Failed to invoke AzureFunction function&#39;);
+
+    throw InvocationException(
+            context != null ? ContextResolver.getTraceId(context) : null,
+            &#39;CALL_FAILED&#39;,
+            &#39;Failed to invoke AzureFunction function&#39;)
+        .withCause(err);
+  }
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">pip_services4_azure</a></li>
+  <li><a href="../../pip_services4_azure/pip_services4_azure-library.html">pip_services4_azure</a></li>
+  <li><a href="../../pip_services4_azure/AzureFunctionClient-class.html">AzureFunctionClient</a></li>
+  <li class="self-crumb">invoke method</li>
+</ol>
+
+
+    <h5>AzureFunctionClient class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../pip_services4_azure/AzureFunctionClient-class.html#constructors">Constructors</a></li>
+          <li><a href="../../pip_services4_azure/AzureFunctionClient/AzureFunctionClient.html">AzureFunctionClient</a></li>
+
+
+        <li class="section-title">
+          <a href="../../pip_services4_azure/AzureFunctionClient-class.html#instance-properties">Properties</a>
+        </li>
+          <li><a href="../../pip_services4_azure/AzureFunctionClient/client.html">client</a></li>
+          <li><a href="../../pip_services4_azure/AzureFunctionClient/connection.html">connection</a></li>
+          <li><a href="../../pip_services4_azure/AzureFunctionClient/connectionResolver.html">connectionResolver</a></li>
+          <li><a href="../../pip_services4_azure/AzureFunctionClient/counters.html">counters</a></li>
+          <li><a href="../../pip_services4_azure/AzureFunctionClient/dependencyResolver.html">dependencyResolver</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/hashCode.html">hashCode</a></li>
+          <li><a href="../../pip_services4_azure/AzureFunctionClient/headers.html">headers</a></li>
+          <li><a href="../../pip_services4_azure/AzureFunctionClient/logger.html">logger</a></li>
+          <li><a href="../../pip_services4_azure/AzureFunctionClient/opened.html">opened</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/runtimeType.html">runtimeType</a></li>
+          <li><a href="../../pip_services4_azure/AzureFunctionClient/tracer.html">tracer</a></li>
+          <li><a href="../../pip_services4_azure/AzureFunctionClient/uri.html">uri</a></li>
+
+        <li class="section-title"><a href="../../pip_services4_azure/AzureFunctionClient-class.html#instance-methods">Methods</a></li>
+          <li><a href="../../pip_services4_azure/AzureFunctionClient/call.html">call</a></li>
+          <li><a href="../../pip_services4_azure/AzureFunctionClient/close.html">close</a></li>
+          <li><a href="../../pip_services4_azure/AzureFunctionClient/configure.html">configure</a></li>
+          <li><a href="../../pip_services4_azure/AzureFunctionClient/instrument.html">instrument</a></li>
+          <li><a href="../../pip_services4_azure/AzureFunctionClient/invoke.html">invoke</a></li>
+          <li><a href="../../pip_services4_azure/AzureFunctionClient/isOpen.html">isOpen</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+          <li><a href="../../pip_services4_azure/AzureFunctionClient/open.html">open</a></li>
+          <li><a href="../../pip_services4_azure/AzureFunctionClient/setReferences.html">setReferences</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/toString.html">toString</a></li>
+
+        <li class="section-title inherited"><a href="../../pip_services4_azure/AzureFunctionClient-class.html#operators">Operators</a></li>
+          <li class="inherited"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    pip_services4_azure
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
