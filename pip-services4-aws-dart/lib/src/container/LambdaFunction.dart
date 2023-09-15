@@ -129,21 +129,10 @@ abstract class LambdaFunction extends Container {
 
     // Activate graceful exit
     ProcessSignal.sigint.watch().listen((signal) {
-      if (Platform.operatingSystem.toLowerCase().contains('windows')) {
-        close(context);
-        logger.info(context, 'Goodbye!');
-      }
+      close(context);
+      logger.info(context, 'Goodbye!');
       exit(0);
     });
-
-    //Gracefully shutdown
-    if (!Platform.operatingSystem.toLowerCase().contains('windows')) {
-      ProcessSignal.sigquit.watch().listen((signal) {
-        close(context);
-        logger.info(context, 'Goodbye!');
-        exit(0);
-      });
-    }
   }
 
   /// Sets references to dependent components.

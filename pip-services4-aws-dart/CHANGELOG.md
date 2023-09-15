@@ -8,3 +8,7 @@
 
 - Fixed registerAction() params
 
+## 0.0.3
+
+- Fixed LambdaFunction _captureExit()
+
