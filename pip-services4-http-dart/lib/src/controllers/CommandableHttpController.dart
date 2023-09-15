@@ -117,8 +117,7 @@ abstract class CommandableHttpController extends RestController {
           timing.endTiming();
           return await sendResult(req, result);
         } catch (err) {
-          instrumentError(
-              context, '${baseRoute ?? ''}.${command.getName()}', err);
+          timing.endFailure(err as Exception);
           return await sendError(req, ApplicationException().wrap(err));
         }
       });
