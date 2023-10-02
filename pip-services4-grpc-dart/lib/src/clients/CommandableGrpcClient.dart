@@ -124,8 +124,6 @@ class CommandableGrpcClient extends GrpcClient {
         err = ApplicationException().wrap(ex);
       }
       timing.endFailure(err as Exception);
-    } finally {
-      timing.endSuccess();
     }
   }
 }

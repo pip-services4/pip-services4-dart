@@ -68,11 +68,10 @@ class DummyGrpcController extends command.DummiesServiceBase
       if (result != null) {
         response.mergeFromJsonMap(result.toGrpcJson());
       }
+      timing.endTiming();
     } catch (ex) {
       var err = ApplicationException().wrap(ex);
       timing.endFailure(err);
-    } finally {
-      timing.endTiming();
     }
     return response;
   }
@@ -96,12 +95,11 @@ class DummyGrpcController extends command.DummiesServiceBase
       if (result != null) {
         response.mergeFromJsonMap(result.toGrpcJson());
       }
+      timing.endTiming();
     } catch (ex) {
       var err = ApplicationException().wrap(ex);
 
       timing.endFailure(err);
-    } finally {
-      timing.endTiming();
     }
     return response;
   }
@@ -137,11 +135,10 @@ class DummyGrpcController extends command.DummiesServiceBase
       // Hack for set total value
       response.total += result.total;
       response.data.addAll(list);
+      timing.endTiming();
     } catch (ex) {
       var err = ApplicationException().wrap(ex);
       timing.endFailure(err);
-    } finally {
-      timing.endTiming();
     }
     return response;
   }
@@ -166,11 +163,10 @@ class DummyGrpcController extends command.DummiesServiceBase
       if (result != null) {
         response.mergeFromJsonMap(result.toGrpcJson());
       }
+      timing.endTiming();
     } catch (ex) {
       var err = ApplicationException().wrap(ex);
       timing.endFailure(err);
-    } finally {
-      timing.endTiming();
     }
 
     return response;
@@ -195,11 +191,10 @@ class DummyGrpcController extends command.DummiesServiceBase
       var dummy = Dummy.fromGrpcJson(request.dummy.writeToJsonMap());
       var result = await _service!.update(context, dummy);
       response.mergeFromJsonMap(result!.toGrpcJson());
+      timing.endTiming();
     } catch (ex) {
       var err = ApplicationException().wrap(ex);
       timing.endFailure(err);
-    } finally {
-      timing.endTiming();
     }
 
     return response;

@@ -88,11 +88,10 @@ abstract class CommandableGrpcController with GrpcController {
         var timing = instrument(context, method);
         try {
           var result = await command.execute(context, args);
+          timing.endTiming();
           return result;
         } catch (err) {
           timing.endFailure(err as Exception);
-        } finally {
-          timing.endTiming();
         }
       });
     }
