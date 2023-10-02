@@ -176,15 +176,16 @@ abstract class LambdaController
 
 //<Future Function(dynamic p1)>
   Future applyValidation(
-      Schema? schema, Future Function(dynamic) action) async {
+      Schema? schema, Future Function(Map<String, dynamic>) action) async {
     // ignore: unnecessary_null_comparison
     if (action == null) {
       throw UnknownException(null, 'NO_ACTION', 'Missing action');
     }
 
     // Create an action function
-    Future actionWrapper(params) async {
+    Future actionWrapper(Map<String, dynamic> params) async {
       // Validate object
+      // ignore: unnecessary_null_comparison
       if (schema != null && params != null) {
         // Perform validation
         final context = Context.fromTraceId(params['trace_id'] ?? '');
@@ -237,7 +238,7 @@ abstract class LambdaController
   /// - [schema]        a validation schema to validate received parameters.
   /// - [action]        an action function that is called when operation is invoked.
   Future<void> registerAction(
-      String name, Schema? schema, Future Function(dynamic) action) async {
+      String name, Schema? schema, Future Function(Map<String, dynamic>) action) async {
     try {
       var actionWrapper = await applyValidation(schema, action);
       actionWrapper = applyInterceptors(actionWrapper);
@@ -260,8 +261,8 @@ abstract class LambdaController
   Future<void> registerActionWithAuth(
       String name,
       Schema schema,
-      Future Function(dynamic call, Future Function(dynamic) next) authorize,
-      Future Function(dynamic) action) async {
+      Future Function(dynamic call, Future Function(Map<String, dynamic>) next) authorize,
+      Future Function(Map<String, dynamic>) action) async {
     var actionWrapper = await applyValidation(schema, action);
     // Add authorization just before validation
     actionWrapper = (call) => authorize(call, actionWrapper);

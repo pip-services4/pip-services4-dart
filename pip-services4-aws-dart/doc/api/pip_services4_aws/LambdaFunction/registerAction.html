@@ -62,7 +62,7 @@
 <span class="returntype">void</span>
 <span class="name ">registerAction</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="registerAction-param-cmd"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">cmd</span>, </span></li>
 <li><span class="parameter" id="registerAction-param-schema"><span class="type-annotation"><a href="https://pub.dev/documentation/pip_services4_data/0.0.2/pip_services4_data/Schema-class.html">Schema</a>?</span> <span class="parameter-name">schema</span>, </span></li>
-<li><span class="parameter" id="registerAction-param-action"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-async/Future-class.html">Future</a></span> <span class="parameter-name">action</span>(<ol class="parameter-list"><li><span class="parameter" id="param-"><span class="type-annotation">dynamic</span></span></li>
+<li><span class="parameter" id="registerAction-param-action"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-async/Future-class.html">Future</a></span> <span class="parameter-name">action</span>(<ol class="parameter-list"><li><span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.0.5/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.0.5/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span></span></li>
 </ol>
 )</span></li>
 </ol>)
@@ -85,7 +85,7 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">void registerAction(
-    String? cmd, Schema? schema, Future Function(dynamic) action) {
+    String? cmd, Schema? schema, Future Function(Map&lt;String, dynamic&gt;) action) {
   if (cmd == null || cmd.isEmpty) {
     throw UnknownException(null, &#39;NO_COMMAND&#39;, &#39;Missing command&#39;);
   }
@@ -96,11 +96,11 @@
   }
 
   &#47;&#47; Hack!!! Wrapping action to preserve prototyping context
-  Future actionCurl(dynamic params) async {
+  Future actionCurl(Map&lt;String, dynamic&gt; params) async {
     &#47;&#47; Perform validation
     if (schema != null) {
-      var context = params[&#39;trace_id&#39;];
-      var err = schema.validateAndReturnException(context, params, false);
+      var traceId = params[&#39;trace_id&#39;] ?? &#39;&#39;;
+      var err = schema.validateAndReturnException(traceId, params, false);
       if (err != null) {
         throw err;
       }
@@ -193,7 +193,7 @@
 <footer>
   <span class="no-break">
     pip_services4_aws
-      0.0.1
+      0.0.2
   </span>
 
   

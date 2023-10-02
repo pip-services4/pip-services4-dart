@@ -93,15 +93,11 @@ Future open(IContext? context) async {
 
   connection = await connectionResolver.resolve(context);
 
-  &#47;&#47;final Client httpClient = ConsoleClient(idleTimeout: Duration(milliseconds: _connectTimeout));
-  _httpClient = ConsoleClient();
   final credentials = AwsClientCredentials(
       accessKey: connection!.getAccessId() ?? &#39;&#39;,
       secretKey: connection!.getAccessKey() ?? &#39;&#39;);
   &#47;&#47;
   try {
-    &#47;&#47;_aws = Aws(credentials: credentials, httpClient: _httpClient);
-    &#47;&#47;lambda = _aws.lambda(connection.getRegion());
     lambda = Lambda(
         region: connection!.getRegion() ?? &#39;&#39;, credentials: credentials);
 
@@ -111,7 +107,6 @@ Future open(IContext? context) async {
   } catch (ex) {
     logger.error(context, ApplicationException().wrap(ex),
         &#39;Error while open AWS client&#39;);
-    await _httpClient?.close();
     return ex;
   }
 }</code></pre>
@@ -187,7 +182,7 @@ Future open(IContext? context) async {
 <footer>
   <span class="no-break">
     pip_services4_aws
-      0.0.1
+      0.0.2
   </span>
 
   

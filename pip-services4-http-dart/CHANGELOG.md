@@ -8,3 +8,7 @@
 
 - Moved the code from PipServices 3
 
+## 0.0.2
+
+- Added timing to log calls and measure call time
+

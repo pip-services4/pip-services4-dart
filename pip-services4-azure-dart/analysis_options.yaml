@@ -1,0 +1,22 @@
+# Defines a default set of lint rules enforced for
+# projects at Google. For details and rationale,
+# see https://github.com/dart-lang/pedantic#enabled-lints.
+include: package:lints/recommended.yaml
+
+# For lint rules and documentation, see http://dart-lang.github.io/linter/lints.
+# Uncomment to specify additional rules.
+# linter:
+#   rules:
+#     - camel_case_types
+analyzer:
+  errors:
+    todo: ignore
+    file_names: ignore
+    constant_identifier_names: ignore
+    non_constant_identifier_names: ignore
+    prefer_initializing_formals: ignore
+    unnecessary_getters_setters: ignore
+
+# analyzer:
+#   exclude:
+#     - path/to/excluded/files/**

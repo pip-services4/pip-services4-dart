@@ -82,8 +82,8 @@ class CommandableHttpClient extends RestClient {
       timing.endTiming();
       return response;
     } catch (err) {
-      timing.endTiming();
-      instrumentError(context, '${baseRoute ?? ''}.$name', err, true);
+      timing.endFailure(err as Exception);
+      rethrow;
     }
   }
 }

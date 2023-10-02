@@ -86,9 +86,6 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Future close(IContext? context) async {
-  if (_httpClient != null) {
-    await _httpClient?.close();
-  }
   opened = false;
 }</code></pre>
 </section>
@@ -163,7 +160,7 @@ Future close(IContext? context) async {
 <footer>
   <span class="no-break">
     pip_services4_aws
-      0.0.1
+      0.0.2
   </span>
 
   

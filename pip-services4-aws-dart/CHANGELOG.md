@@ -4,3 +4,11 @@
 
 - Moved the code from PipServices 3
 
+## 0.0.2
+
+- Fixed registerAction() params
+
+## 0.0.3
+
+- Fixed LambdaFunction _captureExit()
+

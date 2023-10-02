@@ -161,9 +161,7 @@ abstract class RestOperations implements IConfigurable, IReferenceable {
     try {
       return await operation();
     } catch (err) {
-      instrumentError(
-          traceId != null ? Context.fromTraceId(traceId) : null, name, err);
-
+      timing.endTiming();
       return await error(ApplicationException().wrap(err));
     } finally {
       timing.endTiming();
