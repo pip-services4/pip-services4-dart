@@ -12,3 +12,7 @@
 
 - Fixed LambdaFunction _captureExit()
 
+## 0.0.4
+
+- Fixed timings
+

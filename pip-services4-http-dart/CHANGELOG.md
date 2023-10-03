@@ -11,3 +11,7 @@
 ## 0.0.3
 
 - fixed error with zero statuses
+
+## 0.0.4
+
+- Fixed timings

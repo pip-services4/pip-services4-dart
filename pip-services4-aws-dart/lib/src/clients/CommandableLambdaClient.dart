@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:pip_services4_commons/pip_services4_commons.dart';
 import 'package:pip_services4_components/pip_services4_components.dart';
 
 import './LambdaClient.dart';
@@ -82,11 +83,11 @@ class CommandableLambdaClient extends LambdaClient {
     dynamic result;
     try {
       result = await call(cmd, context, params);
-    } catch (err) {
-      rethrow;
-    } finally {
       timing.endTiming();
+      return result;
+    } catch (err) {
+      timing.endFailure(err as Exception);
+      rethrow;
     }
-    return result;
   }
 }

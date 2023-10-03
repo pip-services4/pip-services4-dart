@@ -48,7 +48,7 @@ import '../controllers/controllers.dart';
 ///             timing.endTiming();
 ///             return result;
 ///           } catch (err) {
-///                timing.endTiming();
+///                timing.endFailure(err as Exception);
 ///                rethrow;
 ///            });
 ///        }

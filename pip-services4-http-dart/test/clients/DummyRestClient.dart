@@ -19,12 +19,11 @@ class DummyRestClient extends RestClient implements IDummyClient {
     try {
       var result = await call('get', '/dummies', context, params);
       if (result == null) return null;
+      timing.endTiming();
       return DataPage<Dummy>.fromJson(
           json.decode(result), (item) => Dummy.fromJson(item));
     } catch (ex) {
       timing.endFailure(ex as Exception);
-    } finally {
-      timing.endTiming();
     }
     return null;
   }
@@ -36,11 +35,10 @@ class DummyRestClient extends RestClient implements IDummyClient {
     try {
       var result = await call('get', '/dummies/$dummyId', context, {}, null);
       if (result == null) return null;
+      timing.endTiming();
       return Dummy.fromJson(json.decode(result));
     } catch (ex) {
       timing.endFailure(ex as Exception);
-    } finally {
-      timing.endTiming();
     }
     return null;
   }
@@ -51,11 +49,10 @@ class DummyRestClient extends RestClient implements IDummyClient {
     try {
       var result = await call('post', '/dummies', context, {}, dummy);
       if (result == null) return null;
+      timing.endTiming();
       return Dummy.fromJson(json.decode(result));
     } catch (ex) {
       timing.endFailure(ex as Exception);
-    } finally {
-      timing.endTiming();
     }
     return null;
   }
@@ -66,11 +63,10 @@ class DummyRestClient extends RestClient implements IDummyClient {
     try {
       var result = await call('put', '/dummies', context, {}, dummy);
       if (result == null) return null;
+      timing.endTiming();
       return Dummy.fromJson(json.decode(result));
     } catch (ex) {
       timing.endFailure(ex as Exception);
-    } finally {
-      timing.endTiming();
     }
     return null;
   }
@@ -81,11 +77,10 @@ class DummyRestClient extends RestClient implements IDummyClient {
     try {
       var result = await call('delete', '/dummies/$dummyId', context, {});
       if (result == null) return null;
+      timing.endTiming();
       return Dummy.fromJson(json.decode(result));
     } catch (ex) {
       timing.endFailure(ex as Exception);
-    } finally {
-      timing.endTiming();
     }
     return null;
   }
@@ -95,11 +90,10 @@ class DummyRestClient extends RestClient implements IDummyClient {
     var timing = instrument(context, 'dummy.check_trace_id');
     try {
       var result = await call('get', '/dummies/check/trace_id', context, {});
+      timing.endTiming();
       return result != null ? json.decode(result)['trace_id'] : null;
     } catch (ex) {
       timing.endFailure(ex as Exception);
-    } finally {
-      timing.endTiming();
     }
     return null;
   }

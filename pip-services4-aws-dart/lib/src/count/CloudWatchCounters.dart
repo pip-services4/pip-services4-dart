@@ -56,8 +56,9 @@ import '../connect/AwsConnectionResolver.dart';
 ///     var timing = counters.beginTiming('mycomponent.mymethod.exec_time');
 ///     try {
 ///         ...
-///     } finally {
-///         timing.endTiming();
+///       timing.endTiming();
+///     } catch (ex) {
+///         timing.endFailure(err as Exception);
 ///     }
 ///
 ///     counters.dump();

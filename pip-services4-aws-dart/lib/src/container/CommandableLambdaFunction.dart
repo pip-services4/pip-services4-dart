@@ -76,13 +76,10 @@ abstract class CommandableLambdaFunction extends LambdaFunction {
         try {
           result = await command.execute(context, args);
           timing.endTiming();
+          return result;
         } catch (ex) {
-          timing.endTiming();
-          rethrow;
-        } finally {
-          timing.endTiming();
-        }
-        return result;
+          timing.endFailure(ex as Exception);
+        }        
       });
     }
   }
