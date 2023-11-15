@@ -10,6 +10,9 @@ on:
     - '!pip-services4-aws-dart/README.md'
   workflow_dispatch:
 
+env:
+  IS_MONOREPO: true
+  
 jobs:
   # Setup job
   setup:
