@@ -4,7 +4,7 @@ name: Pip.Services Postgres Dart Delivery
 on: 
   push:
     branches:
-      - master
+      - main
     paths:
     - 'pip-services4-postgres-dart/**'
     - '!pip-services4-postgres-dart/README.md'

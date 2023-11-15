@@ -4,7 +4,7 @@ name: Pip.Services Persistence Dart Delivery
 on: 
   push:
     branches:
-      - master
+      - main
     paths:
     - 'pip-services4-persistence-dart/**'
     - '!pip-services4-persistence-dart/README.md'

@@ -4,7 +4,7 @@ name: Pip.Services Prometheus Dart Delivery
 on: 
   push:
     branches:
-      - master
+      - main
     paths:
     - 'pip-services4-prometheus-dart/**'
     - '!pip-services4-prometheus-dart/README.md'

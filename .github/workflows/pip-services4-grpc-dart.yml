@@ -4,7 +4,7 @@ name: Pip.Services GRPC Dart Delivery
 on: 
   push:
     branches:
-      - master
+      - main
     paths:
     - 'pip-services4-grpc-dart/**'
     - '!pip-services4-grpc-dart/README.md'

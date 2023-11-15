@@ -4,7 +4,7 @@ name: Pip.Services RabbitMQ Dart Delivery
 on: 
   push:
     branches:
-      - master
+      - main
     paths:
     - 'pip-services4-rabbitmq-dart/**'
     - '!pip-services4-rabbitmq-dart/README.md'

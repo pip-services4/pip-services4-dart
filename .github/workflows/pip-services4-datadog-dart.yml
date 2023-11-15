@@ -4,7 +4,7 @@ name: Pip.Services DataDog Dart Delivery
 on: 
   push:
     branches:
-      - master
+      - main
     paths:
     - 'pip-services4-datadog-dart/**'
     - '!pip-services4-datadog-dart/README.md'

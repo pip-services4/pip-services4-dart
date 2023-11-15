@@ -4,7 +4,7 @@ name: Pip.Services AWS Dart Delivery
 on: 
   push:
     branches:
-      - master
+      - main
     paths:
     - 'pip-services4-aws-dart/**'
     - '!pip-services4-aws-dart/README.md'

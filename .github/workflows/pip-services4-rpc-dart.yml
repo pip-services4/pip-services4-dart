@@ -4,7 +4,7 @@ name: Pip.Services RPC Dart Delivery
 on: 
   push:
     branches:
-      - master
+      - main
     paths:
     - 'pip-services4-rpc-dart/**'
     - '!pip-services4-rpc-dart/README.md'

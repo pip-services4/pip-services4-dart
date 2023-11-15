@@ -4,7 +4,7 @@ name: Pip.Services Elasticsearch Dart Delivery
 on: 
   push:
     branches:
-      - master
+      - main
     paths:
     - 'pip-services4-elasticsearch-dart/**'
     - '!pip-services4-elasticsearch-dart/README.md'

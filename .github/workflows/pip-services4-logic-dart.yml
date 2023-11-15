@@ -4,7 +4,7 @@ name: Pip.Services Logic Dart Delivery
 on: 
   push:
     branches:
-      - master
+      - main
     paths:
     - 'pip-services4-logic-dart/**'
     - '!pip-services4-logic-dart/README.md'

@@ -4,7 +4,7 @@ name: Pip.Services HTTP Dart Delivery
 on: 
   push:
     branches:
-      - master
+      - main
     paths:
     - 'pip-services4-http-dart/**'
     - '!pip-services4-http-dart/README.md'

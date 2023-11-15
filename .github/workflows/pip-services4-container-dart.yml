@@ -4,7 +4,7 @@ name: Pip.Services Container Dart Delivery
 on: 
   push:
     branches:
-      - master
+      - main
     paths:
     - 'pip-services4-container-dart/**'
     - '!pip-services4-container-dart/README.md'
